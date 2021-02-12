@@ -1,0 +1,10 @@
+{
+  "_template": "gh:cjolowicz/cookiecutter-hypermodern-python",
+  "author": "Thiago Carvalho D'\u00c1vila",
+  "email": "thiagocavila@gmail.com",
+  "friendly_name": "Human Readable",
+  "github_user": "staticdev",
+  "package_name": "human_readable",
+  "project_name": "human-readable",
+  "version": "0.0.0"
+}

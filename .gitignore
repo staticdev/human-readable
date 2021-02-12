@@ -1,0 +1,15 @@
+.mypy_cache/
+/.coverage
+/.nox/
+/.python-version
+/.pytype/
+/dist/
+/docs/_build/
+/src/*.egg-info/
+__pycache__/
+
+# Pycharm
+.idea/
+
+# Visual Studio Code
+.vscode/
