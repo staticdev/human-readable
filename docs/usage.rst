@@ -11,13 +11,13 @@ File size humanization:
 
 .. code-block:: python
 
-   human_readable.natural_size(1000000)
+   human_readable.file_size(1000000)
    "1.0 MB"
 
-   human_readable.natural_size(1000000, binary=True)
+   human_readable.file_size(1000000, binary=True)
    "976.6 KiB"
 
-   human_readable.natural_size(1000000, gnu=True)
+   human_readable.file_size(1000000, gnu=True)
    "976.6K"
 
 
