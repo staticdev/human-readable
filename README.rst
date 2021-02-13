@@ -39,6 +39,7 @@ Human Readable
 Features
 --------
 
+* File size humanization.
 * List humanization.
 
 
@@ -61,18 +62,38 @@ You can install *Human Readable* via pip_ from PyPI_:
 Usage
 -----
 
-Humanization of lists:
+Import the lib with:
 
 .. code-block:: python
 
-   human_readable.listing(["Cláudio", "Maria"], ",")
-   "Cláudio, Maria"
+   import human_readable
 
-   human_readable.listing(["Cláudio", "Maria"], ",", "e")
-   "Cláudio e Maria"
+File size humanization:
 
-   human_readable.listing(["Cláudio", "Maria", "José"], ";", "ou")
-   "Cláudio; Maria ou José"
+.. code-block:: python
+
+   human_readable.file_size(1000000)
+   "1.0 MB"
+
+   human_readable.file_size(1000000, binary=True)
+   "976.6 KiB"
+
+   human_readable.file_size(1000000, gnu=True)
+   "976.6K"
+
+
+List humanization:
+
+.. code-block:: python
+
+   human_readable.listing(["Alpha", "Bravo"], ",")
+   "Alpha, Bravo"
+
+   human_readable.listing(["Alpha", "Bravo"], ",", "and")
+   "Alpha and Bravo"
+
+   human_readable.listing(["Alpha", "Bravo", "Charlie"], ";", "or")
+   "Alpha; Bravo or Charlie"
 
 
 Please see the `Command-line Reference <Usage_>`_ for details.

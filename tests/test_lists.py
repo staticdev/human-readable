@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Tests for listing humanizing."""
 import human_readable.lists as lists
