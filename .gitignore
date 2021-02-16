@@ -1,15 +1,31 @@
-.mypy_cache/
-/.coverage
-/.nox/
-/.python-version
-/.pytype/
-/dist/
-/docs/_build/
-/src/*.egg-info/
+# Byte-compiled / optimized / DLL files
 __pycache__/
 
-# Pycharm
-.idea/
+# Distribution / packaging
+dist/
+*.egg-info/
 
-# Visual Studio Code
+# Sphinx documentation
+docs/_build/
+
+# Unit test / coverage reports
+.cache
+.coverage
+.nox/
+
+# Translations
+*.mo
+*.pot
+
+# pyenv
+.python-version
+
+# mypy
+.mypy_cache/
+
+# Pytype
+.pytype/
+
+# IDEs
+.idea/
 .vscode/

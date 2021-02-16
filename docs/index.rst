@@ -1,8 +1,7 @@
 .. include:: ../README.rst
    :end-before: github-only
 
-.. _Contributor Guide: contributing.html
-.. _Usage: usage.html
+.. _Contributor Guide: CONTRIBUTING.rst
 
 .. toctree::
    :hidden:

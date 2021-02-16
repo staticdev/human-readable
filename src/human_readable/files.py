@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 """Bits & Bytes related humanization."""
 
 
@@ -10,16 +8,16 @@ def file_size(
 
     Format a number of byteslike a human readable filesize (eg. 10 kB).  By
     default, decimal suffixes (kB, MB) are used.  Passing binary=true will use
-    binary suffixes (KiB, MiB) are used and the base will be 2**10 instead of
-    10**3.  If ``gnu`` is True, the binary argument is ignored and GNU-style
-    (ls -sh style) prefixes are used (K, M) with the 2**10 definition.
+    binary suffixes (KiB, MiB) are used and the base will be `2**10` instead of
+    `10**3`.  If ``gnu`` is True, the binary argument is ignored and GNU-style
+    (``ls -sh`` style) prefixes are used (K, M) with the `2**10` definition.
     Non-gnu modes are compatible with jinja2's ``filesizeformat`` filter.
 
     Args:
         value: size number.
         binary: binary format. Defaults to False.
         gnu: GNU format. Defaults to False.
-        formatting: format pattern. Defaults to "%.1f".
+        formatting: format pattern. Defaults to ".1f".
 
     Returns:
         str: file size in natural language.
@@ -34,11 +32,11 @@ def file_size(
     base = 1024 if (gnu or binary) else 1000
 
     if value == 1 and not gnu:
-        return "1 Byte"
+        return f"{1:{formatting}} Byte"
     if value < base and not gnu:
-        return f"{value} Bytes"
+        return f"{value:{formatting}} Bytes"
     if value < base and gnu:
-        return f"{value}B"
+        return f"{value:{formatting}}B"
 
     byte_size = float(value)
     suffix = ""
