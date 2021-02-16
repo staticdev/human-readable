@@ -68,6 +68,7 @@ Import the lib with:
 
    import human_readable
 
+
 File size humanization:
 
 .. code-block:: python
@@ -82,21 +83,60 @@ File size humanization:
    "976.6K"
 
 
-List humanization:
+Lists humanization:
 
 .. code-block:: python
 
    human_readable.listing(["Alpha", "Bravo"], ",")
    "Alpha, Bravo"
 
-   human_readable.listing(["Alpha", "Bravo"], ",", "and")
-   "Alpha and Bravo"
-
    human_readable.listing(["Alpha", "Bravo", "Charlie"], ";", "or")
    "Alpha; Bravo or Charlie"
 
 
-Please see the `Command-line Reference <Usage_>`_ for details.
+Numbers humanization:
+
+.. code-block:: python
+
+   human_readable.int_comma(12345)
+   "12,345"
+
+   human_readable.int_word(123455913)
+   "123.5 million"
+
+   human_readable.int_word(12345591313)
+   "12.3 billion"
+
+   human_readable.ap_number(4)
+   "four"
+
+   human_readable.ap_number(41)
+   "41"
+
+
+Floating point number humanization:
+
+.. code-block:: python
+
+   human_readable.fractional(1.5)
+   "1 1/2"
+
+   human_readable.fractional(0.3)
+   "3/10"
+
+
+Scientific notation:
+
+.. code-block:: python
+
+   human_readable.scientific_notation(1000)
+   "1.00 x 10³"
+
+   human_readable.scientific_notation(5781651000, precision=4)
+   "5.7817 x 10⁹"
+
+
+Click here for more examples and detailed usage_.
 
 
 Contributing
@@ -123,6 +163,8 @@ please `file an issue`_ along with a detailed description.
 Credits
 -------
 
+This lib is based on original humanize_ with some added features such as listing, improved naming, documentation, some more testing, bug fixes and better Portuguese support.
+
 This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter`_ template.
 
 
@@ -130,9 +172,10 @@ This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _MIT: http://opensource.org/licenses/MIT
 .. _PyPI: https://pypi.org/
+.. _humanize: https://github.com/jmoiron/humanize
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _file an issue: https://github.com/staticdev/human-readable/issues
 .. _pip: https://pip.pypa.io/
 .. github-only
 .. _Contributor Guide: CONTRIBUTING.rst
-.. _Usage: https://human-readable.readthedocs.io/en/latest/usage.html
+.. _usage: https://human-readable.readthedocs.io/en/latest/usage.html

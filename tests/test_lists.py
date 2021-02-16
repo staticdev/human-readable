@@ -1,31 +1,40 @@
-# -*- coding: utf-8 -*-
-"""Tests for listing humanizing."""
+"""Tests for listing humanization."""
+from typing import List
+from typing import Tuple
+
+import pytest
+
 import human_readable.lists as lists
 
 
-def test_listing_empty() -> None:
-    """It returns empty string."""
-    assert lists.listing([], "") == ""
+@pytest.mark.parametrize(
+    "params, expected",
+    [
+        (([], ","), ""),  # empty list
+        ((["jorbas"], ","), "jorbas"),  # one element
+        ((["jorbas", "maria"], ","), "jorbas, maria"),  # two elements
+        ((["jorbas", "maria"], ""), "jorbas maria"),  # empty separator
+    ],
+)
+def test_listing(params: Tuple[List[str], str], expected: str) -> None:
+    """Listing with separator."""
+    assert lists.listing(*params) == expected
 
 
-def test_listing_one() -> None:
-    """It returns one name."""
-    assert lists.listing(["jorbas"], ",") == "jorbas"
-
-
-def test_listing_one_with_conjunction() -> None:
-    """It returns one name."""
-    assert lists.listing(["Jorbas"], ",", "and") == "Jorbas"
-
-
-def test_listing_two() -> None:
-    """It returns two names with separator."""
-    assert lists.listing(["jorbas", "maria"], ",") == "jorbas, maria"
-
-
-def test_listing_many_with_conjunction() -> None:
-    """It returns three names with separator and conjunction."""
-    assert (
-        lists.listing(["jorbas", "maria", "gustavo"], ";", "ou")
-        == "jorbas; maria ou gustavo"
-    )
+@pytest.mark.parametrize(
+    "params, expected",
+    [
+        (([], ";", "or"), ""),  # empty list
+        ((["jorbas"], ";", "or"), "jorbas"),  # one element
+        ((["jorbas", "maria"], ";", "or"), "jorbas or maria"),  # two elements
+        (
+            (["jorbas", "maria", "gustavo"], ";", "or"),
+            "jorbas; maria or gustavo",
+        ),  # three elements
+    ],
+)
+def test_listing_with_conjunction(
+    params: Tuple[List[str], str, str], expected: str
+) -> None:
+    """Listing with separator and conjunction."""
+    assert lists.listing(*params) == expected

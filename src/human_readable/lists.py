@@ -1,6 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""Lists related humanization."""
+"""Tests for lists humanization."""
 from typing import List
 
 __all__ = ["listing"]
