@@ -4,16 +4,17 @@ from typing import Union
 
 import pytest
 
+import human_readable.i18n as i18n
 import human_readable.numbers as numbers
 
 
 @pytest.mark.parametrize(
     "params, expected",
     [
-        (1, "1º"),  # first suffix
-        ("1", "1º"),  # str number
-        (13, "13º"),  # third suffix
-        (111, "111º"),  # more than hundred
+        (1, "1st"),  # first suffix
+        ("1", "1st"),  # str number
+        (13, "13th"),  # third suffix
+        (111, "111th"),  # more than hundred
     ],
 )
 def test_ordinal(params: int, expected: str) -> None:
@@ -33,6 +34,21 @@ def test_ordinal(params: int, expected: str) -> None:
 def test_int_comma(params: int, expected: str) -> None:
     """Int comma tests."""
     assert numbers.int_comma(params) == expected
+
+
+def test_int_comma_localization() -> None:
+    """Int comma localization tests."""
+    number = 10_000_000
+
+    assert numbers.int_comma(number) == "10,000,000"
+
+    try:
+        i18n.activate("fr_FR")
+        assert numbers.int_comma(number) == "10 000 000"
+
+    finally:
+        i18n.deactivate()
+        assert numbers.int_comma(number) == "10,000,000"
 
 
 @pytest.mark.parametrize(

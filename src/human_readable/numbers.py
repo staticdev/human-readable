@@ -1,12 +1,13 @@
 """Humanizing functions for numbers."""
 import fractions
 import re
-import threading
 from typing import Union
 
+import human_readable.i18n as i18n
 
-_CURRENT = threading.local()
 
+_ = i18n.gettext
+P_ = i18n.pgettext
 
 # Mapping of locale to thousands separator
 _THOUSANDS_SEPARATOR = {
@@ -21,7 +22,7 @@ def _thousands_separator() -> str:
          str: Thousands separator.
     """
     try:
-        sep = _THOUSANDS_SEPARATOR[_CURRENT.locale]
+        sep = _THOUSANDS_SEPARATOR[i18n._CURRENT.locale]
     except (AttributeError, KeyError):
         sep = ","
     return sep
@@ -40,22 +41,22 @@ def ordinal(value: Union[int, str]) -> str:
     Returns:
         str: ordinal string.
     """
-    suffix = {
-        0: "º",
-        1: "º",
-        2: "º",
-        3: "º",
-        4: "º",
-        5: "º",
-        6: "º",
-        7: "º",
-        8: "º",
-        9: "º",
-    }
+    suffixes = (
+        P_("0", "th"),
+        P_("1", "st"),
+        P_("2", "nd"),
+        P_("3", "rd"),
+        P_("4", "th"),
+        P_("5", "th"),
+        P_("6", "th"),
+        P_("7", "th"),
+        P_("8", "th"),
+        P_("9", "th"),
+    )
     value = int(value)
     if value % 100 in (11, 12, 13):
-        return f"{value}{suffix[0]}"
-    return f"{value}{suffix[value % 10]}"
+        return f"{value}{suffixes[0]}"
+    return f"{value}{suffixes[value % 10]}"
 
 
 def int_comma(value: Union[str, float]) -> str:
