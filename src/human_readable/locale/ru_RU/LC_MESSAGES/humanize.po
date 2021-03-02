@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-29 20:53+0300\n"
+"POT-Creation-Date: 2021-03-02 09:59+0100\n"
 "PO-Revision-Date: 2021-03-01 16:17+0100\n"
 "Last-Translator: Sergey Prokhorov <me@seriyps.ru>\n"
 "Language-Team: ru_RU <LL@li.org>\n"
@@ -21,147 +21,160 @@ msgstr ""
 "X-Generator: Poedit 2.4.1\n"
 
 # в Django тут "ий" но на самом деле оба варианта работают плохо
-#: src/humanize/number.py:31
+#: src/human_readable/numbers.py:46
 msgctxt "0"
 msgid "th"
 msgstr "ой"
 
-#: src/humanize/number.py:32
+#: src/human_readable/numbers.py:47
 msgctxt "1"
 msgid "st"
 msgstr "ый"
 
-#: src/humanize/number.py:33
+#: src/human_readable/numbers.py:48
 msgctxt "2"
 msgid "nd"
 msgstr "ой"
 
-#: src/humanize/number.py:34
+#: src/human_readable/numbers.py:49
 msgctxt "3"
 msgid "rd"
 msgstr "ий"
 
 # в Django тут "ий" но на самом деле оба варианта работают плохо
-#: src/humanize/number.py:35
+#: src/human_readable/numbers.py:50
 msgctxt "4"
 msgid "th"
 msgstr "ый"
 
 # в Django тут "ий" но на самом деле оба варианта работают плохо
-#: src/humanize/number.py:36
+#: src/human_readable/numbers.py:51
 msgctxt "5"
 msgid "th"
 msgstr "ый"
 
 # в Django тут "ий" но на самом деле оба варианта работают плохо
-#: src/humanize/number.py:37
+#: src/human_readable/numbers.py:52
 msgctxt "6"
 msgid "th"
 msgstr "ой"
 
 # в Django тут "ий" но на самом деле оба варианта работают плохо
-#: src/humanize/number.py:38
+#: src/human_readable/numbers.py:53
 msgctxt "7"
 msgid "th"
 msgstr "ой"
 
 # в Django тут "ий" но на самом деле оба варианта работают плохо
-#: src/humanize/number.py:39
+#: src/human_readable/numbers.py:54
 msgctxt "8"
 msgid "th"
 msgstr "ой"
 
 # в Django тут "ий" но на самом деле оба варианта работают плохо
-#: src/humanize/number.py:40
+#: src/human_readable/numbers.py:55
 msgctxt "9"
 msgid "th"
 msgstr "ый"
 
-#: src/humanize/number.py:82
+#: src/human_readable/numbers.py:90
 msgid "million"
 msgstr "миллиона"
 
-#: src/humanize/number.py:83
+#: src/human_readable/numbers.py:91
 msgid "billion"
 msgstr "миллиарда"
 
-#: src/humanize/number.py:84
+#: src/human_readable/numbers.py:92
 msgid "trillion"
 msgstr "триллиона"
 
-#: src/humanize/number.py:85
+#: src/human_readable/numbers.py:93
 msgid "quadrillion"
 msgstr "квадриллиона"
 
-#: src/humanize/number.py:86
+#: src/human_readable/numbers.py:94
 msgid "quintillion"
 msgstr "квинтиллиона"
 
-#: src/humanize/number.py:87
+#: src/human_readable/numbers.py:95
 msgid "sextillion"
 msgstr "сикстиллиона"
 
-#: src/humanize/number.py:88
+#: src/human_readable/numbers.py:96
 msgid "septillion"
 msgstr "септиллиона"
 
-#: src/humanize/number.py:89
+#: src/human_readable/numbers.py:97
 msgid "octillion"
 msgstr "октиллиона"
 
-#: src/humanize/number.py:90
+#: src/human_readable/numbers.py:98
 msgid "nonillion"
 msgstr "нониллиона"
 
-#: src/humanize/number.py:91
+#: src/human_readable/numbers.py:99
 msgid "decillion"
 msgstr "децилиона"
 
-#: src/humanize/number.py:92
+#: src/human_readable/numbers.py:100
 msgid "googol"
 msgstr "гогола"
 
-#: src/humanize/number.py:147
+#: src/human_readable/numbers.py:151
 msgid "zero"
 msgstr ""
 
-#: src/humanize/number.py:148
+#: src/human_readable/numbers.py:152
 msgid "one"
 msgstr "один"
 
-#: src/humanize/number.py:149
+#: src/human_readable/numbers.py:153
 msgid "two"
 msgstr "два"
 
-#: src/humanize/number.py:150
+#: src/human_readable/numbers.py:154
 msgid "three"
 msgstr "три"
 
-#: src/humanize/number.py:151
+#: src/human_readable/numbers.py:155
 msgid "four"
 msgstr "четыре"
 
-#: src/humanize/number.py:152
+#: src/human_readable/numbers.py:156
 msgid "five"
 msgstr "пять"
 
-#: src/humanize/number.py:153
+#: src/human_readable/numbers.py:157
 msgid "six"
 msgstr "шесть"
 
-#: src/humanize/number.py:154
+#: src/human_readable/numbers.py:158
 msgid "seven"
 msgstr "семь"
 
-#: src/humanize/number.py:155
+#: src/human_readable/numbers.py:159
 msgid "eight"
 msgstr "восемь"
 
-#: src/humanize/number.py:156
+#: src/human_readable/numbers.py:160
 msgid "nine"
 msgstr "девять"
 
-#: src/humanize/time.py:119
+#: src/human_readable/times.py:148
+msgid "morning"
+msgstr ""
+
+#: src/human_readable/times.py:150
+msgid "afternoon"
+msgstr ""
+
+#: src/human_readable/times.py:152
+#, fuzzy
+msgid "evening"
+msgstr "семь"
+
+#: src/human_readable/times.py:258
 #, python-format
 msgid "%d microsecond"
 msgid_plural "%d microseconds"
@@ -169,7 +182,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/humanize/time.py:128
+#: src/human_readable/times.py:267
 #, python-format
 msgid "%d millisecond"
 msgid_plural "%d milliseconds"
@@ -177,15 +190,15 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/humanize/time.py:131 src/humanize/time.py:204
+#: src/human_readable/times.py:270 src/human_readable/times.py:414
 msgid "a moment"
 msgstr "только что"
 
-#: src/humanize/time.py:133
+#: src/human_readable/times.py:272
 msgid "a second"
 msgstr "секунду"
 
-#: src/humanize/time.py:135
+#: src/human_readable/times.py:274
 #, python-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -193,11 +206,11 @@ msgstr[0] "%d секунда"
 msgstr[1] "%d секунды"
 msgstr[2] "%d секунд"
 
-#: src/humanize/time.py:137
+#: src/human_readable/times.py:276
 msgid "a minute"
 msgstr "минуту"
 
-#: src/humanize/time.py:140
+#: src/human_readable/times.py:279
 #, python-format
 msgid "%d minute"
 msgid_plural "%d minutes"
@@ -205,11 +218,11 @@ msgstr[0] "%d минута"
 msgstr[1] "%d минуты"
 msgstr[2] "%d минут"
 
-#: src/humanize/time.py:142
+#: src/human_readable/times.py:281
 msgid "an hour"
 msgstr "час"
 
-#: src/humanize/time.py:145
+#: src/human_readable/times.py:284
 #, python-format
 msgid "%d hour"
 msgid_plural "%d hours"
@@ -217,11 +230,11 @@ msgstr[0] "%d час"
 msgstr[1] "%d часа"
 msgstr[2] "%d часов"
 
-#: src/humanize/time.py:148
+#: src/human_readable/times.py:290
 msgid "a day"
 msgstr "день"
 
-#: src/humanize/time.py:150 src/humanize/time.py:153
+#: src/human_readable/times.py:292 src/human_readable/times.py:295
 #, python-format
 msgid "%d day"
 msgid_plural "%d days"
@@ -229,11 +242,11 @@ msgstr[0] "%d день"
 msgstr[1] "%d дня"
 msgstr[2] "%d дней"
 
-#: src/humanize/time.py:155
+#: src/human_readable/times.py:297
 msgid "a month"
 msgstr "месяц"
 
-#: src/humanize/time.py:157
+#: src/human_readable/times.py:299
 #, python-format
 msgid "%d month"
 msgid_plural "%d months"
@@ -241,11 +254,11 @@ msgstr[0] "%d месяц"
 msgstr[1] "%d месяца"
 msgstr[2] "%d месяцев"
 
-#: src/humanize/time.py:160
+#: src/human_readable/times.py:304
 msgid "a year"
 msgstr "год"
 
-#: src/humanize/time.py:162 src/humanize/time.py:171
+#: src/human_readable/times.py:306 src/human_readable/times.py:315
 #, python-format
 msgid "1 year, %d day"
 msgid_plural "1 year, %d days"
@@ -253,11 +266,11 @@ msgstr[0] "1 год, %d день"
 msgstr[1] "1 год, %d дня"
 msgstr[2] "1 год, %d дней"
 
-#: src/humanize/time.py:165
+#: src/human_readable/times.py:309
 msgid "1 year, 1 month"
 msgstr "1 год, 1 месяц"
 
-#: src/humanize/time.py:168
+#: src/human_readable/times.py:312
 #, python-format
 msgid "1 year, %d month"
 msgid_plural "1 year, %d months"
@@ -265,7 +278,7 @@ msgstr[0] "1 год, %d месяц"
 msgstr[1] "1 год, %d месяца"
 msgstr[2] "1 год, %d месяцев"
 
-#: src/humanize/time.py:173
+#: src/human_readable/times.py:375
 #, python-format
 msgid "%d year"
 msgid_plural "%d years"
@@ -273,33 +286,33 @@ msgstr[0] "%d год"
 msgstr[1] "%d года"
 msgstr[2] "%d лет"
 
-#: src/humanize/time.py:201
+#: src/human_readable/times.py:415
+msgid "now"
+msgstr "сейчас"
+
+#: src/human_readable/times.py:418
 #, python-format
 msgid "%s from now"
 msgstr "через %s"
 
-#: src/humanize/time.py:201
+#: src/human_readable/times.py:420
 #, python-format
 msgid "%s ago"
 msgstr "%s назад"
 
-#: src/humanize/time.py:205
-msgid "now"
-msgstr "сейчас"
-
-#: src/humanize/time.py:227
+#: src/human_readable/times.py:439
 msgid "today"
 msgstr "сегодня"
 
-#: src/humanize/time.py:229
+#: src/human_readable/times.py:441
 msgid "tomorrow"
 msgstr "завтра"
 
-#: src/humanize/time.py:231
+#: src/human_readable/times.py:443
 msgid "yesterday"
 msgstr "вчера"
 
-#: src/humanize/time.py:498
-#, python-format
+#: src/human_readable/times.py:801
+#, python-brace-format
 msgid "{head} and {tail}"
 msgstr "{head} и {tail}"

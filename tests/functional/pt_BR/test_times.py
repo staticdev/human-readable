@@ -59,23 +59,23 @@ class FakeTime:
         self.hour, self.minute, self.second = hour, minute, second
 
 
-# @pytest.mark.parametrize(
-#     "hour, expected",
-#     [
-#         (0, ""),
-#         (1, "manhã"),
-#         (11, "manhã"),
-#         (12, ""),
-#         (13, "tarde"),
-#         (17, "tarde"),
-#         (18, "tarde"),
-#         (19, "noite"),
-#         (23, "noite")
-#     ],
-# )
-# def test_time_of_day(hour: int, expected: str) -> None:
-#     """It returns period of the day."""
-#     assert times.time_of_day(hour) == expected
+@pytest.mark.parametrize(
+    "hour, expected",
+    [
+        (0, ""),
+        (1, "manhã"),
+        (11, "manhã"),
+        (12, ""),
+        (13, "tarde"),
+        (17, "tarde"),
+        (18, "tarde"),
+        (19, "noite"),
+        (23, "noite"),
+    ],
+)
+def test_time_of_day(activate_pt_br: MockerFixture, hour: int, expected: str) -> None:
+    """It returns period of the day."""
+    assert times.time_of_day(hour) == expected
 
 
 # def test_timing_formal() -> None:

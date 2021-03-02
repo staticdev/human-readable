@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-29 21:07+0300\n"
+"POT-Creation-Date: 2021-03-02 09:59+0100\n"
 "PO-Revision-Date: 2021-03-01 17:10+0100\n"
 "Last-Translator: Olivier Cortès <oc@1flow.io>\n"
 "Language-Team: vi_VI <sapd@vccloud.vn>\n"
@@ -19,276 +19,289 @@ msgstr ""
 "Generated-By: Babel 0.9.6\n"
 "X-Generator: Poedit 2.4.1\n"
 
-#: src/humanize/number.py:31
+#: src/human_readable/numbers.py:46
 msgctxt "0"
 msgid "th"
 msgstr "."
 
-#: src/humanize/number.py:32
+#: src/human_readable/numbers.py:47
 msgctxt "1"
 msgid "st"
 msgstr "."
 
-#: src/humanize/number.py:33
+#: src/human_readable/numbers.py:48
 msgctxt "2"
 msgid "nd"
 msgstr "."
 
-#: src/humanize/number.py:34
+#: src/human_readable/numbers.py:49
 msgctxt "3"
 msgid "rd"
 msgstr "."
 
-#: src/humanize/number.py:35
+#: src/human_readable/numbers.py:50
 msgctxt "4"
 msgid "th"
 msgstr "."
 
-#: src/humanize/number.py:36
+#: src/human_readable/numbers.py:51
 msgctxt "5"
 msgid "th"
 msgstr "."
 
-#: src/humanize/number.py:37
+#: src/human_readable/numbers.py:52
 msgctxt "6"
 msgid "th"
 msgstr "."
 
-#: src/humanize/number.py:38
+#: src/human_readable/numbers.py:53
 msgctxt "7"
 msgid "th"
 msgstr "."
 
-#: src/humanize/number.py:39
+#: src/human_readable/numbers.py:54
 msgctxt "8"
 msgid "th"
 msgstr "."
 
-#: src/humanize/number.py:40
+#: src/human_readable/numbers.py:55
 msgctxt "9"
 msgid "th"
 msgstr "."
 
-#: src/humanize/number.py:82
+#: src/human_readable/numbers.py:90
 msgid "million"
 msgstr "%(value)s triệu"
 
-#: src/humanize/number.py:83
+#: src/human_readable/numbers.py:91
 msgid "billion"
 msgstr "tỷ"
 
-#: src/humanize/number.py:84
+#: src/human_readable/numbers.py:92
 msgid "trillion"
 msgstr "%(value)s nghìn tỷ"
 
-#: src/humanize/number.py:85
+#: src/human_readable/numbers.py:93
 msgid "quadrillion"
 msgstr "%(value)s triệu tỷ"
 
-#: src/humanize/number.py:86
+#: src/human_readable/numbers.py:94
 #, fuzzy
 msgid "quintillion"
 msgstr "%(value)s quintillion"
 
-#: src/humanize/number.py:87
+#: src/human_readable/numbers.py:95
 #, fuzzy
 msgid "sextillion"
 msgstr "%(value)s sextillion"
 
-#: src/humanize/number.py:88
+#: src/human_readable/numbers.py:96
 #, fuzzy
 msgid "septillion"
 msgstr "%(value)s septillion"
 
-#: src/humanize/number.py:89
+#: src/human_readable/numbers.py:97
 #, fuzzy
 msgid "octillion"
 msgstr "%(value)s octillion"
 
-#: src/humanize/number.py:90
+#: src/human_readable/numbers.py:98
 #, fuzzy
 msgid "nonillion"
 msgstr "%(value)s nonillion"
 
-#: src/humanize/number.py:91
+#: src/human_readable/numbers.py:99
 #, fuzzy
 msgid "decillion"
 msgstr "%(value)s décillion"
 
-#: src/humanize/number.py:92
+#: src/human_readable/numbers.py:100
 #, fuzzy
 msgid "googol"
 msgstr "%(value)s gogol"
 
-#: src/humanize/number.py:147
+#: src/human_readable/numbers.py:151
 msgid "zero"
 msgstr ""
 
-#: src/humanize/number.py:148
+#: src/human_readable/numbers.py:152
 msgid "one"
 msgstr "một"
 
-#: src/humanize/number.py:149
+#: src/human_readable/numbers.py:153
 msgid "two"
 msgstr "hai"
 
-#: src/humanize/number.py:150
+#: src/human_readable/numbers.py:154
 msgid "three"
 msgstr "ba"
 
-#: src/humanize/number.py:151
+#: src/human_readable/numbers.py:155
 msgid "four"
 msgstr "bốn"
 
-#: src/humanize/number.py:152
+#: src/human_readable/numbers.py:156
 msgid "five"
 msgstr "năm"
 
-#: src/humanize/number.py:153
+#: src/human_readable/numbers.py:157
 msgid "six"
 msgstr "sáu"
 
-#: src/humanize/number.py:154
+#: src/human_readable/numbers.py:158
 msgid "seven"
 msgstr "bảy"
 
-#: src/humanize/number.py:155
+#: src/human_readable/numbers.py:159
 msgid "eight"
 msgstr "tám"
 
-#: src/humanize/number.py:156
+#: src/human_readable/numbers.py:160
 msgid "nine"
 msgstr "chín"
 
-#: src/humanize/time.py:119
+#: src/human_readable/times.py:148
+msgid "morning"
+msgstr ""
+
+#: src/human_readable/times.py:150
+msgid "afternoon"
+msgstr ""
+
+#: src/human_readable/times.py:152
+#, fuzzy
+msgid "evening"
+msgstr "bảy"
+
+#: src/human_readable/times.py:258
 #, python-format
 msgid "%d microsecond"
 msgid_plural "%d microseconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/humanize/time.py:128
+#: src/human_readable/times.py:267
 #, python-format
 msgid "%d millisecond"
 msgid_plural "%d milliseconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/humanize/time.py:131 src/humanize/time.py:204
+#: src/human_readable/times.py:270 src/human_readable/times.py:414
 msgid "a moment"
 msgstr "ngay lúc này"
 
-#: src/humanize/time.py:133
+#: src/human_readable/times.py:272
 msgid "a second"
 msgstr "một giây"
 
-#: src/humanize/time.py:135
+#: src/human_readable/times.py:274
 #, python-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] "%d giây"
 msgstr[1] "%d giây"
 
-#: src/humanize/time.py:137
+#: src/human_readable/times.py:276
 msgid "a minute"
 msgstr "một phút"
 
-#: src/humanize/time.py:140
+#: src/human_readable/times.py:279
 #, python-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d phút"
 msgstr[1] "%d phút"
 
-#: src/humanize/time.py:142
+#: src/human_readable/times.py:281
 msgid "an hour"
 msgstr "một giờ"
 
-#: src/humanize/time.py:145
+#: src/human_readable/times.py:284
 #, python-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d giờ"
 msgstr[1] "%d giờ"
 
-#: src/humanize/time.py:148
+#: src/human_readable/times.py:290
 msgid "a day"
 msgstr "một ngày"
 
-#: src/humanize/time.py:150 src/humanize/time.py:153
+#: src/human_readable/times.py:292 src/human_readable/times.py:295
 #, python-format
 msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] "%d ngày"
 msgstr[1] "%d ngày"
 
-#: src/humanize/time.py:155
+#: src/human_readable/times.py:297
 msgid "a month"
 msgstr "một tháng"
 
-#: src/humanize/time.py:157
+#: src/human_readable/times.py:299
 #, python-format
 msgid "%d month"
 msgid_plural "%d months"
 msgstr[0] "%d tháng"
 msgstr[1] "%d tháng"
 
-#: src/humanize/time.py:160
+#: src/human_readable/times.py:304
 msgid "a year"
 msgstr "một năm"
 
-#: src/humanize/time.py:162 src/humanize/time.py:171
+#: src/human_readable/times.py:306 src/human_readable/times.py:315
 #, python-format
 msgid "1 year, %d day"
 msgid_plural "1 year, %d days"
 msgstr[0] "1 năm %d ngày"
 msgstr[1] "1 năm %d ngày"
 
-#: src/humanize/time.py:165
+#: src/human_readable/times.py:309
 msgid "1 year, 1 month"
 msgstr "1 năm 1 tháng"
 
-#: src/humanize/time.py:168
+#: src/human_readable/times.py:312
 #, python-format
 msgid "1 year, %d month"
 msgid_plural "1 year, %d months"
 msgstr[0] "1 năm %d tháng"
 msgstr[1] "un an et %d mois"
 
-#: src/humanize/time.py:173
+#: src/human_readable/times.py:375
 #, python-format
 msgid "%d year"
 msgid_plural "%d years"
 msgstr[0] "%d năm"
 msgstr[1] "%d năm"
 
-#: src/humanize/time.py:201
+#: src/human_readable/times.py:415
+msgid "now"
+msgstr "ngay bây giờ"
+
+#: src/human_readable/times.py:418
 #, python-format
 msgid "%s from now"
 msgstr "%s ngày tới"
 
-#: src/humanize/time.py:201
+#: src/human_readable/times.py:420
 #, python-format
 msgid "%s ago"
 msgstr "%s trước"
 
-#: src/humanize/time.py:205
-msgid "now"
-msgstr "ngay bây giờ"
-
-#: src/humanize/time.py:227
+#: src/human_readable/times.py:439
 msgid "today"
 msgstr "hôm nay"
 
-#: src/humanize/time.py:229
+#: src/human_readable/times.py:441
 msgid "tomorrow"
 msgstr "ngày mai"
 
-#: src/humanize/time.py:231
+#: src/human_readable/times.py:443
 msgid "yesterday"
 msgstr "ngày hôm qua"
 
-#: src/humanize/time.py:498
-#, python-format
+#: src/human_readable/times.py:801
+#, python-brace-format
 msgid "{head} and {tail}"
 msgstr "{head} và {tail}"

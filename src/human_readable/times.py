@@ -372,7 +372,8 @@ def time_delta(
         return _less_than_a_year(days, months, use_months)
     elif years == 1:
         return _one_year(days, months, use_months)
-    return i18n.ngettext(f"{years} year", f"{years} years", years)
+    translation = i18n.ngettext("%d year", "%d years", years)
+    return translation % years
 
 
 def date_time(
@@ -414,7 +415,7 @@ def date_time(
         return _("now")
 
     if future:
-        return ("%s from now") % str_delta
+        return _("%s from now") % str_delta
     else:
         return _("%s ago") % str_delta
 
