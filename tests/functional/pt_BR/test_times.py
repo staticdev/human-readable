@@ -78,64 +78,46 @@ def test_time_of_day(activate_pt_br: MockerFixture, hour: int, expected: str) ->
     assert times.time_of_day(hour) == expected
 
 
-# def test_timing_formal() -> None:
-#     """Tests timing method."""
-#     meia_noite_meia = dt.time(0, 30, 0)
-#     treze_um = dt.time(13, 1, 0)
-#     dez_p_cinco = dt.time(4, 50, 10)
-#     cinco_p_meiodia = dt.time(11, 55, 0)
-#     vinteuma = dt.time(21, 0, 40)
-#     overflowtest = FakeTime(120390192341, 2, 2)
-#     test_list = [
-#         meia_noite_meia,
-#         treze_um,
-#         dez_p_cinco,
-#         cinco_p_meiodia,
-#         vinteuma,
-#         overflowtest,
-#     ]
-#     result_list = [
-#         "zero hora e trinta minutos",
-#         "treze horas e um minuto",
-#         "dez minutos para cinco horas",
-#         "cinco minutos para doze horas",
-#         "vinte e uma horas",
-#         overflowtest,
-#     ]
-#     self.assert_many_results(times.timing, test_list, result_list)
+@pytest.mark.parametrize(
+    "time, expected",
+    [
+        (dt.time(0, 30, 0), "zero hora e trinta minutos"),
+        (dt.time(6, 59, 0), "um minuto para as sete horas"),
+        (dt.time(13, 1, 0), "treze horas e um minuto"),
+        (dt.time(4, 50, 10), "dez minutos para as cinco horas"),
+        (dt.time(11, 55, 0), "cinco minutos para as doze horas"),
+        (dt.time(21, 0, 40), "vinte e uma horas"),
+    ],
+)
+def test_timing_formal(
+    activate_pt_br: MockerFixture, time: dt.time, expected: str
+) -> None:
+    """Tests timing method."""
+    result = times.timing(time)
+
+    assert result == expected
 
 
-# def test_timing_informal() -> None:
-#     """Tests timing method with formal=False."""
-#     meia_noite_meia = dt.time(0, 30, 0)
-#     treze_um = dt.time(13, 1, 0)
-#     dez_p_cinco = dt.time(4, 50, 10)
-#     cinco_p_meiodia = dt.time(11, 55, 0)
-#     vinteuma = dt.time(21, 0, 40)
-#     overflowtest = FakeTime(120390192341, 2, 2)
-#     test_list = [
-#         "Not a time at all.",
-#         meia_noite_meia,
-#         treze_um,
-#         dez_p_cinco,
-#         cinco_p_meiodia,
-#         vinteuma,
-#         overflowtest,
-#     ]
-#     result_list = [
-#         "Not a time at all.",
-#         "meia noite e meia",
-#         "uma e um da tarde",
-#         "dez para cinco da manhã",
-#         "cinco para meio dia",
-#         "nove da noite",
-#         overflowtest,
-#     ]
-#     self.assert_many_results(
-#         lambda d: times.timing(d, formal=False),
-#         test_list,
-#         result_list,
-#     )
+@pytest.mark.parametrize(
+    "time, expected",
+    [
+        (dt.time(0, 30, 0), "meia-noite e meia"),
+        (dt.time(6, 35, 0), "vinte e cinco para as sete da manhã"),
+        (dt.time(13, 1, 0), "uma e um da tarde"),
+        (dt.time(4, 50, 10), "dez para as cinco da manhã"),
+        (dt.time(10, 45, 0), "quinze para as onze da manhã"),
+        (dt.time(11, 55, 0), "cinco para o meio-dia"),
+        (dt.time(12, 15, 0), "meio-dia e quinze"),
+        (dt.time(21, 0, 40), "nove da noite"),
+    ],
+)
+def test_timing_informal(
+    activate_pt_br: MockerFixture, time: dt.time, expected: str
+) -> None:
+    """Tests timing method with formal=False."""
+    result = times.timing(time, formal=False)
+
+    assert result == expected
 
 
 # @pytest.mark.parametrize(

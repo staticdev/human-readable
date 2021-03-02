@@ -13,111 +13,7 @@ import human_readable.i18n as i18n
 
 
 _ = i18n.gettext
-
-
-MONTHS = {
-    1: "janeiro",
-    2: "fevereiro",
-    3: "março",
-    4: "abril",
-    5: "maio",
-    6: "junho",
-    7: "julho",
-    8: "agosto",
-    9: "setembro",
-    10: "outubro",
-    11: "novembro",
-    12: "dezembro",
-}
-
-COUNT_HOURS = {
-    0: "zero",
-    1: "uma",
-    2: "duas",
-    3: "três",
-    4: "quatro",
-    5: "cinco",
-    6: "seis",
-    7: "sete",
-    8: "oito",
-    9: "nove",
-    10: "dez",
-    11: "onze",
-    12: "doze",
-    13: "treze",
-    14: "quatorze",
-    15: "quinze",
-    16: "dezesseis",
-    17: "dezessete",
-    18: "dezoito",
-    19: "dezenove",
-    20: "vinte",
-    21: "vinte e uma",
-    22: "vinte e duas",
-    23: "vinte e três",
-}
-
-COUNT_MINUTES = {
-    1: "um",
-    2: "dois",
-    3: "três",
-    4: "quatro",
-    5: "cinco",
-    6: "seis",
-    7: "sete",
-    8: "oito",
-    9: "nove",
-    10: "dez",
-    11: "onze",
-    12: "doze",
-    13: "treze",
-    14: "quatorze",
-    15: "quinze",
-    16: "dezesseis",
-    17: "dezessete",
-    18: "dezoito",
-    19: "dezenove",
-    20: "vinte",
-    21: "vinte e um",
-    22: "vinte e dois",
-    23: "vinte e três",
-    24: "vinte e quatro",
-    25: "vinte e cinco",
-    26: "vinte e seis",
-    27: "vinte e sete",
-    28: "vinte e oito",
-    29: "vinte e nove",
-    30: "trinta",
-    31: "trinta e um",
-    32: "trinta e dois",
-    33: "trinta e três",
-    34: "trinta e quatro",
-    35: "trinta e cinco",
-    36: "trinta e seis",
-    37: "trinta e sete",
-    38: "trinta e oito",
-    39: "trinta e nove",
-    40: "quarenta",
-    41: "quarenta e um",
-    42: "quarenta e dois",
-    43: "quarenta e três",
-    44: "quarenta e quatro",
-    45: "quarenta e cinco",
-    46: "quarenta e seis",
-    47: "quarenta e sete",
-    48: "quarenta e oito",
-    49: "quarenta e nove",
-    50: "cinquenta",
-    51: "cinquenta e um",
-    52: "cinquenta e dois",
-    53: "cinquenta e três",
-    54: "cinquenta e quatro",
-    55: "cinquenta e cinco",
-    56: "cinquenta e seis",
-    57: "cinquenta e sete",
-    58: "cinquenta e oito",
-    59: "cinquenta e nove",
-}
+P_ = i18n.pgettext
 
 
 @functools.total_ordering
@@ -153,66 +49,199 @@ def time_of_day(hour: int) -> str:
     return ""
 
 
-# def _formal_time(value: dt.time, hour: int) -> str:
-#     clock = COUNT_HOURS[hour]
-#     if hour in [0, 1]:
-#         clock += " hora"
-#     else:
-#         clock += " horas"
-#     if value.minute in [40, 45, 50, 55]:
-#         clock = COUNT_MINUTES[60 - value.minute] + " minutos para " + clock
-#     elif value.minute == 1:
-#         clock += " e um minuto"
-#     elif value.minute != 0:
-#         clock += " e " + COUNT_MINUTES[value.minute] + " minutos"
-#     return clock
+def _formal_time(
+    value: dt.time, hour: int, count_hours: List[str], count_minutes: List[str]
+) -> str:
+    hour_count = count_hours[hour]
+    if value.minute > 30:
+        reversed_minute_count = count_minutes[60 - value.minute]
+        minute_translation = i18n.ngettext(
+            "{minute_count} minute", "{minute_count} minutes", 60 - value.minute
+        ).format(minute_count=reversed_minute_count)
+        return i18n.ngettext(
+            "{minute_translation} to {hour_count} hour",
+            "{minute_translation} to {hour_count} hours",
+            hour,
+        ).format(minute_translation=minute_translation, hour_count=hour_count)
+    elif value.minute == 0:
+        return i18n.ngettext(
+            "{hour_count} o'clock", "{hour_count} o'clock", hour
+        ).format(hour_count=hour_count)
+    else:
+        minute_count = count_minutes[value.minute]
+        minute_translation = i18n.ngettext(
+            "{minute_count} minute", "{minute_count} minutes", value.minute
+        ).format(minute_count=minute_count)
+        return i18n.ngettext(
+            "{minute_translation} past {hour_count}",
+            "{minute_translation} past {hour_count}",
+            hour,
+        ).format(hour_count=hour_count, minute_translation=minute_translation)
 
 
-# def _informal_time(value: dt.time, hour: int) -> str:
-#     clock = COUNT_HOURS[hour]
-#     if hour == 0:
-#         clock = "meia noite"
-#     elif hour == 12:
-#         clock = "meio dia"
-#     if value.minute in [40, 45, 50, 55]:
-#         clock = COUNT_MINUTES[60 - value.minute] + " para " + clock
-#     elif value.minute == 30:
-#         clock += " e meia"
-#     elif value.minute != 0:
-#         clock += " e " + COUNT_MINUTES[value.minute]
-#     return clock
+def _informal_time(
+    value: dt.time, hour: int, count_hours: List[str], count_minutes: List[str]
+) -> str:
+    hour_count = count_hours[hour]
+    if hour == 0:
+        hour_count = _("midnight")
+    elif hour == 12:
+        hour_count = _("noon")
+    elif value.minute == 0:
+        return hour_count
+
+    if value.minute > 30:
+        if value.minute == 45:
+            reversed_minute_count = _("a quarter")
+        else:
+            reversed_minute_count = count_minutes[60 - value.minute]
+        if hour == 0:
+            clock = _("{reversed_minute_count} to midnight").format(
+                reversed_minute_count=reversed_minute_count
+            )
+        elif hour == 12:
+            clock = _("{reversed_minute_count} to noon").format(
+                reversed_minute_count=reversed_minute_count
+            )
+        else:
+            clock = i18n.ngettext(
+                "{reversed_minute_count} to {hour_count}",
+                "{reversed_minute_count} to {hour_count}",
+                hour,
+            ).format(reversed_minute_count=reversed_minute_count, hour_count=hour_count)
+    elif value.minute == 30:
+        clock = _("half past {hour_count}").format(hour_count=hour_count)
+    elif value.minute == 15:
+        clock = _("a quarter past {hour_count}").format(hour_count=hour_count)
+    else:
+        minute_count = count_minutes[value.minute]
+        return _("{hour_count} and {minute_count}").format(
+            hour_count=hour_count, minute_count=minute_count
+        )
+    return clock
 
 
-# def timing(time: dt.time, formal: bool = True) -> str:
-#     """Return human-readable time.
+def timing(time: dt.time, formal: bool = True) -> str:
+    """Return human-readable time.
 
-#     Compares time values to present time returns representing readable of time
-#     with the given day period.
+    Compares time values to present time returns representing readable of time
+    with the given day period.
 
-#     Args:
-#         time: any datetime.
-#         formal: Formal or informal reading. Defaults to True.
+    Args:
+        time: any datetime.
+        formal: Formal or informal reading. Defaults to True.
 
-#     Returns:
-#         str: readable time or original object.
-#     """
-#     if time.minute in [40, 45, 50, 55]:
-#         hour = time.hour + 1
-#     else:
-#         hour = time.hour
+    Returns:
+        str: readable time or original object.
+    """
+    count_hours = [
+        P_("hour 0", "zero"),
+        P_("hour 1", "one"),
+        P_("hour 2", "two"),
+        P_("hour 3", "three"),
+        P_("hour 4", "four"),
+        P_("hour 5", "five"),
+        P_("hour 6", "six"),
+        P_("hour 7", "seven"),
+        P_("hour 8", "eight"),
+        P_("hour 9", "nine"),
+        P_("hour 10", "ten"),
+        P_("hour 11", "eleven"),
+        P_("hour 12", "twelve"),
+        P_("hour 13", "one"),
+        P_("hour 14", "two"),
+        P_("hour 15", "three"),
+        P_("hour 16", "four"),
+        P_("hour 17", "five"),
+        P_("hour 18", "six"),
+        P_("hour 19", "seven"),
+        P_("hour 20", "eight"),
+        P_("hour 21", "nine"),
+        P_("hour 22", "ten"),
+        P_("hour 23", "eleven"),
+    ]
 
-#     if formal:
-#         clock = _formal_time(time, hour)
-#     else:
-#         period = time_of_day(hour)
+    count_minutes = [
+        P_("minute 0", "zero"),
+        P_("minute 1", "one"),
+        P_("minute 2", "two"),
+        P_("minute 3", "three"),
+        P_("minute 4", "four"),
+        P_("minute 5", "five"),
+        P_("minute 6", "six"),
+        P_("minute 7", "seven"),
+        P_("minute 8", "eight"),
+        P_("minute 9", "nine"),
+        P_("minute 10", "ten"),
+        P_("minute 11", "eleven"),
+        P_("minute 12", "twelve"),
+        P_("minute 13", "thirteen"),
+        P_("minute 14", "fourteen"),
+        P_("minute 15", "fifteen"),
+        P_("minute 16", "sixteen"),
+        P_("minute 17", "seventeen"),
+        P_("minute 18", "eighteen"),
+        P_("minute 19", "nineteen"),
+        P_("minute 20", "twenty"),
+        P_("minute 21", "twenty one"),
+        P_("minute 22", "twenty two"),
+        P_("minute 23", "twenty three"),
+        P_("minute 24", "twenty four"),
+        P_("minute 25", "twenty five"),
+        P_("minute 26", "twenty six"),
+        P_("minute 27", "twenty seven"),
+        P_("minute 28", "twenty eight"),
+        P_("minute 29", "twenty nine"),
+        P_("minute 30", "thirty"),
+        P_("minute 31", "thirty one"),
+        P_("minute 32", "thirty two"),
+        P_("minute 33", "thirty three"),
+        P_("minute 34", "thirty four"),
+        P_("minute 35", "thirty five"),
+        P_("minute 36", "thirty six"),
+        P_("minute 37", "thirty seven"),
+        P_("minute 38", "thirty eight"),
+        P_("minute 39", "thirty nine"),
+        P_("minute 40", "forty"),
+        P_("minute 41", "forty one"),
+        P_("minute 42", "forty two"),
+        P_("minute 43", "forty three"),
+        P_("minute 44", "forty four"),
+        P_("minute 45", "forty five"),
+        P_("minute 46", "forty six"),
+        P_("minute 47", "forty seven"),
+        P_("minute 48", "forty eight"),
+        P_("minute 49", "forty nine"),
+        P_("minute 50", "fifty"),
+        P_("minute 51", "fifty one"),
+        P_("minute 52", "fifty two"),
+        P_("minute 53", "fifty three"),
+        P_("minute 54", "fifty four"),
+        P_("minute 55", "fifty five"),
+        P_("minute 56", "fifty six"),
+        P_("minute 57", "fifty seven"),
+        P_("minute 58", "fifty eight"),
+        P_("minute 59", "fifty nine"),
+    ]
 
-#         if hour > 12:
-#             hour -= 12
-#         clock = _informal_time(time, hour)
-#         if period:
-#             clock += " da " + period
+    # time relative to next hour
+    if time.minute > 30:
+        hour = time.hour + 1
+    else:
+        hour = time.hour
 
-#     return str(clock)
+    if formal:
+        clock = _formal_time(time, hour, count_hours, count_minutes)
+    else:
+        period = time_of_day(hour)
+
+        if hour > 12:
+            hour -= 12
+        clock = _informal_time(time, hour, count_hours, count_minutes)
+        if period:
+            clock = _("{clock} in the {period}").format(clock=clock, period=period)
+
+    return clock
 
 
 def _abs_timedelta(delta: dt.timedelta) -> dt.timedelta:
