@@ -1,14 +1,14 @@
 """Activate, get and deactivate translations."""
 import gettext as gettext_module
 import os.path
+import sys
 import threading
 from typing import Optional
-from typing import Union
 
 
 __all__ = ["activate", "deactivate", "gettext", "ngettext"]
 
-_TRANSLATIONS = {None: gettext_module.NullTranslations()}
+_TRANSLATIONS = {"": gettext_module.NullTranslations()}
 _CURRENT = threading.local()
 
 
@@ -21,14 +21,16 @@ def _get_default_locale_path() -> Optional[str]:
         return None
 
 
-def get_translation() -> Union[str, gettext_module.NullTranslations]:
+def get_translation() -> gettext_module.NullTranslations:
     try:
         return _TRANSLATIONS[_CURRENT.locale]
     except (AttributeError, KeyError):
-        return _TRANSLATIONS[None]
+        return _TRANSLATIONS[""]
 
 
-def activate(locale: str, path: Optional[str] = None):
+def activate(
+    locale: str, path: Optional[str] = None
+) -> gettext_module.NullTranslations:
     """Activate internationalisation.
 
     Set `locale` as current locale. Search for locale in directory `path`.
@@ -90,11 +92,11 @@ def pgettext(msgctxt: str, message: str) -> str:
     """
     # This GNU gettext function was added in Python 3.8, so for older versions we
     # reimplement it. It works by joining `msgctx` and `message` by '4' byte.
-    try:
-        # Python 3.8+
+    # Python 3.8+
+    if sys.version_info >= (3, 8):
         return get_translation().pgettext(msgctxt, message)
-    except AttributeError:
-        # Python 3.7 and older
+    # Python 3.7 and older
+    else:
         key = msgctxt + "\x04" + message
         translation = get_translation().gettext(key)
         return message if translation == key else translation

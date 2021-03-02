@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Time humanizing functions."""
 import datetime as dt
 import enum
@@ -31,7 +30,7 @@ MONTHS = {
     12: "dezembro",
 }
 
-HOURS = {
+COUNT_HOURS = {
     0: "zero",
     1: "uma",
     2: "duas",
@@ -58,7 +57,7 @@ HOURS = {
     23: "vinte e três",
 }
 
-MINUTES = {
+COUNT_MINUTES = {
     1: "um",
     2: "dois",
     3: "três",
@@ -134,11 +133,9 @@ class Unit(enum.Enum):
     MONTHS = 6
     YEARS = 7
 
-    def __lt__(self, other):
+    def __lt__(self, other: Any) -> Any:
         """Comparison between units."""
-        if self.__class__ is other.__class__:
-            return self.value < other.value
-        return NotImplemented
+        return self.value < other.value
 
 
 def _now() -> dt.datetime:
@@ -148,77 +145,77 @@ def _now() -> dt.datetime:
 def time_of_day(hour: int) -> str:
     """Given current hour, returns time of the day."""
     if 0 < hour < 12:
-        return "manhã"
+        return _("morning")
     elif 12 < hour <= 18:
-        return "tarde"
+        return _("afternoon")
     elif 18 < hour <= 23:
-        return "noite"
+        return _("evening")
     return ""
 
 
-def _formal_time(value: dt.time, hour: int) -> str:
-    clock = HOURS[hour]
-    if hour in [0, 1]:
-        clock += " hora"
-    else:
-        clock += " horas"
-    if value.minute in [40, 45, 50, 55]:
-        clock = MINUTES[60 - value.minute] + " minutos para " + clock
-    elif value.minute == 1:
-        clock += " e um minuto"
-    elif value.minute != 0:
-        clock += " e " + MINUTES[value.minute] + " minutos"
-    return clock
+# def _formal_time(value: dt.time, hour: int) -> str:
+#     clock = COUNT_HOURS[hour]
+#     if hour in [0, 1]:
+#         clock += " hora"
+#     else:
+#         clock += " horas"
+#     if value.minute in [40, 45, 50, 55]:
+#         clock = COUNT_MINUTES[60 - value.minute] + " minutos para " + clock
+#     elif value.minute == 1:
+#         clock += " e um minuto"
+#     elif value.minute != 0:
+#         clock += " e " + COUNT_MINUTES[value.minute] + " minutos"
+#     return clock
 
 
-def _informal_time(value: dt.time, hour: int) -> str:
-    clock = HOURS[hour]
-    if hour == 0:
-        clock = "meia noite"
-    elif hour == 12:
-        clock = "meio dia"
-    if value.minute in [40, 45, 50, 55]:
-        clock = MINUTES[60 - value.minute] + " para " + clock
-    elif value.minute == 30:
-        clock += " e meia"
-    elif value.minute != 0:
-        clock += " e " + MINUTES[value.minute]
-    return clock
+# def _informal_time(value: dt.time, hour: int) -> str:
+#     clock = COUNT_HOURS[hour]
+#     if hour == 0:
+#         clock = "meia noite"
+#     elif hour == 12:
+#         clock = "meio dia"
+#     if value.minute in [40, 45, 50, 55]:
+#         clock = COUNT_MINUTES[60 - value.minute] + " para " + clock
+#     elif value.minute == 30:
+#         clock += " e meia"
+#     elif value.minute != 0:
+#         clock += " e " + COUNT_MINUTES[value.minute]
+#     return clock
 
 
-def timing(time: dt.time, formal: bool = True) -> str:
-    """Return human-readable time.
+# def timing(time: dt.time, formal: bool = True) -> str:
+#     """Return human-readable time.
 
-    Compares time values to present time returns representing readable of time
-    with the given day period.
+#     Compares time values to present time returns representing readable of time
+#     with the given day period.
 
-    Args:
-        time: any datetime.
-        formal: Formal or informal reading. Defaults to True.
+#     Args:
+#         time: any datetime.
+#         formal: Formal or informal reading. Defaults to True.
 
-    Returns:
-        str: readable time or original object.
-    """
-    if time.minute in [40, 45, 50, 55]:
-        hour = time.hour + 1
-    else:
-        hour = time.hour
+#     Returns:
+#         str: readable time or original object.
+#     """
+#     if time.minute in [40, 45, 50, 55]:
+#         hour = time.hour + 1
+#     else:
+#         hour = time.hour
 
-    period = time_of_day(hour)
+#     if formal:
+#         clock = _formal_time(time, hour)
+#     else:
+#         period = time_of_day(hour)
 
-    if formal:
-        clock = _formal_time(time, hour)
-    else:
-        if hour > 12:
-            hour -= 12
-        clock = _informal_time(time, hour)
-        if period:
-            clock += " da " + period
+#         if hour > 12:
+#             hour -= 12
+#         clock = _informal_time(time, hour)
+#         if period:
+#             clock += " da " + period
 
-    return str(clock)
+#     return str(clock)
 
 
-def abs_timedelta(delta: dt.timedelta) -> dt.timedelta:
+def _abs_timedelta(delta: dt.timedelta) -> dt.timedelta:
     """Return an "absolute" value for a timedelta.
 
     Args:
@@ -251,7 +248,7 @@ def date_and_delta(
         value = int(value)
         delta = dt.timedelta(seconds=value)
         date = now - delta
-    return date, abs_timedelta(delta)
+    return date, _abs_timedelta(delta)
 
 
 def _less_than_a_day(seconds: int, minimum_unit_type: Unit, delta: dt.timedelta) -> str:
@@ -267,7 +264,7 @@ def _less_than_a_day(seconds: int, minimum_unit_type: Unit, delta: dt.timedelta)
         ):
             milliseconds = delta.microseconds / 1000
             return (
-                i18n.ngettext("%d millisecond", "%d milliseconds", milliseconds)
+                i18n.ngettext("%d millisecond", "%d milliseconds", int(milliseconds))
                 % milliseconds
             )
         return _("a moment")
@@ -285,6 +282,7 @@ def _less_than_a_day(seconds: int, minimum_unit_type: Unit, delta: dt.timedelta)
     elif 3600 < seconds:
         hours = seconds // 3600
         return i18n.ngettext("%d hour", "%d hours", hours) % hours
+    return ""
 
 
 def _less_than_a_year(days: int, months: int, use_months: bool) -> str:
@@ -318,10 +316,10 @@ def _one_year(days: int, months: int, use_months: bool) -> str:
 
 
 def time_delta(
-    value: dt.timedelta,
+    value: Union[dt.timedelta, int, dt.datetime],
     use_months: bool = True,
     minimum_unit: str = "seconds",
-    when: Optional[dt.timedelta] = None,
+    when: Optional[dt.datetime] = None,
 ) -> str:
     """Return human-readable time difference.
 
@@ -350,9 +348,15 @@ def time_delta(
         raise ValueError(f"Minimum unit '{minimum_unit}' not supported")
     minimum_unit_type = tmp
 
-    date, delta = date_and_delta(value, now=when)
-    if date is None:
-        return value
+    if isinstance(value, dt.datetime):
+        if not when:
+            when = _now()
+        delta_value = when - value
+    elif isinstance(value, int):
+        delta_value = dt.timedelta(seconds=value)
+    else:
+        delta_value = value
+    delta = _abs_timedelta(delta_value)
 
     seconds = abs(delta.seconds)
     days = abs(delta.days)
@@ -361,7 +365,9 @@ def time_delta(
     months = int(days // 30.5)
 
     if not years and days < 1:
-        return _less_than_a_day(seconds, minimum_unit_type, delta)
+        result = _less_than_a_day(seconds, minimum_unit_type, delta)
+        if result:
+            return result
     elif years == 0:
         return _less_than_a_year(days, months, use_months)
     elif years == 1:
@@ -370,11 +376,11 @@ def time_delta(
 
 
 def date_time(
-    value: Any,
+    value: Union[dt.timedelta, int, dt.datetime],
     future: bool = False,
     use_months: bool = True,
     minimum_unit: str = "seconds",
-    when: dt.datetime = None,
+    when: Optional[dt.datetime] = None,
 ) -> str:
     """Return human-readable time.
 
@@ -398,22 +404,22 @@ def date_time(
     """
     now = when or _now()
     date, delta = date_and_delta(value, now=now)
-    if date is None:
-        return value
     # determine tense by value only if datetime/timedelta were passed
     if isinstance(value, (dt.datetime, dt.timedelta)):
         future = date > now
 
-    ago = _("%s from now") if future else _("%s ago")
-    delta = time_delta(delta, use_months, minimum_unit, when=when)
+    str_delta = time_delta(delta, use_months, minimum_unit, when=when)
 
-    if delta == _("a moment"):
+    if str_delta == _("a moment"):
         return _("now")
 
-    return ago % delta
+    if future:
+        return ("%s from now") % str_delta
+    else:
+        return _("%s ago") % str_delta
 
 
-def day(date: dt.date, has_year: bool = False) -> str:
+def day(date: dt.date, formatting: str = "%b %d") -> str:
     """Return human-readable day.
 
     For date values that are tomorrow, today or yesterday compared to
@@ -422,46 +428,42 @@ def day(date: dt.date, has_year: bool = False) -> str:
 
     Args:
         date: a date.
-        has_year: if year is added. Defaults to False.
+        formatting: chosen display format.
 
     Returns:
         str: date formatted in natural language.
     """
     delta = date - dt.date.today()
     if delta.days == 0:
-        return "hoje"
-    if delta.days == 1:
-        return "amanhã"
-    if delta.days == -1:
-        return "ontem"
-    month = MONTHS[date.month]
-    natday = "{0} de {1}".format(date.day, month)
-    if has_year:
-        natday += " de {0}".format(date.year)
-    return natday
+        return _("today")
+    elif delta.days == 1:
+        return _("tomorrow")
+    elif delta.days == -1:
+        return _("yesterday")
+    return date.strftime(formatting)
 
 
-def year(date: dt.date) -> str:
-    """Return human-readable year.
+# def year(date: dt.date) -> str:
+#     """Return human-readable year.
 
-    For date values that are last year, this year or next year compared to
-    present year returns representing string. Otherwise, returns a string
-    formatted according to the year.
+#     For date values that are last year, this year or next year compared to
+#     present year returns representing string. Otherwise, returns a string
+#     formatted according to the year.
 
-    Args:
-        date: a date.
+#     Args:
+#         date: a date.
 
-    Returns:
-        str: year in natural language.
-    """
-    delta = date.year - dt.date.today().year
-    if delta == 0:
-        return "este ano"
-    if delta == 1:
-        return "ano que vem"
-    if delta == -1:
-        return "ano passado"
-    return str(date.year)
+#     Returns:
+#         str: year in natural language.
+#     """
+#     delta = date.year - dt.date.today().year
+#     if delta == 0:
+#         return "este ano"
+#     if delta == 1:
+#         return "ano que vem"
+#     if delta == -1:
+#         return "ano passado"
+#     return str(date.year)
 
 
 def date(date: dt.date) -> str:
@@ -476,15 +478,15 @@ def date(date: dt.date) -> str:
     Returns:
         str: date in natural language.
     """
-    delta = abs_timedelta(date - dt.date.today())
-    if delta.days >= 365:
-        return day(date, True)
+    delta = _abs_timedelta(date - dt.date.today())
+    if delta.days >= 5 * 365 / 12:
+        return day(date, "%b %d %Y")
     return day(date)
 
 
 def _quotient_and_remainder(
-    value: int, divisor: int, unit: Unit, minimum_unit: Unit, suppress: List[Unit]
-) -> Tuple[int, int]:
+    value: float, divisor: float, unit: Unit, minimum_unit: Unit, suppress: List[Unit]
+) -> Tuple[float, float]:
     """Divide `value` by `divisor` returning the quotient and remainder.
 
     If `unit` is `minimum_unit`, makes the quotient a float number and the remainder
@@ -529,13 +531,13 @@ def _quotient_and_remainder(
 
 
 def _carry(
-    value1: int,
-    value2: int,
-    ratio: int,
+    value1: float,
+    value2: float,
+    ratio: float,
     unit: Unit,
     min_unit: Unit,
     suppress: List[Unit],
-) -> Tuple[float, int]:
+) -> Tuple[float, float]:
     """Return a tuple with two values.
 
     If the unit is in `suppress`, multiply `value1` by `ratio` and add it to `value2`
@@ -635,11 +637,11 @@ def _suppress_lower_units(min_unit: Unit, suppress: List[Unit]) -> List[Unit]:
 
 
 def precise_delta(
-    value: dt.timedelta,
+    value: Union[dt.timedelta, int],
     minimum_unit: str = "seconds",
-    suppress: Optional[List[Unit]] = None,
+    suppress: Optional[List[str]] = None,
     formatting: str = "%0.2f",
-):
+) -> str:
     """Return a precise representation of a timedelta.
 
     >>> import datetime as dt
@@ -694,28 +696,30 @@ def precise_delta(
     Returns:
         Humanized time delta.
     """
-    date, delta = date_and_delta(value)
-    if date is None:
-        return value
+    if isinstance(value, int):
+        delta = dt.timedelta(seconds=value)
+    else:
+        delta = value
 
     if not suppress:
-        suppress = []
-    suppress = [Unit[s.upper()] for s in suppress]
+        suppress_units = []
+    else:
+        suppress_units = [Unit[unit.upper()] for unit in suppress]
 
     # Find a suitable minimum unit (it can be greater the one that the
     # user gave us if it is suppressed).
     min_unit = Unit[minimum_unit.upper()]
-    min_unit = _suitable_minimum_unit(min_unit, suppress)
+    min_unit = _suitable_minimum_unit(min_unit, suppress_units)
     del minimum_unit
 
     # Expand the suppressed units list/set to include all the units
     # that are below the minimum unit
-    ext_suppress = _suppress_lower_units(min_unit, suppress)
+    ext_suppress = _suppress_lower_units(min_unit, suppress_units)
 
     # handy aliases
-    days = delta.days
-    secs = delta.seconds
-    usecs = delta.microseconds
+    days: float = delta.days
+    secs: float = delta.seconds
+    usecs: float = delta.microseconds
 
     MICROSECONDS, MILLISECONDS, SECONDS, MINUTES, HOURS, DAYS, MONTHS, YEARS = list(
         Unit
@@ -766,15 +770,23 @@ def precise_delta(
         ("%d microsecond", "%d microseconds", usecs),
     ]
 
-    texts = []
+    texts: List[str] = []
     for unit, fmt in zip(reversed(Unit), fmts):
-        singular_txt, plural_txt, value = fmt
-        if value > 0 or (not texts and unit == min_unit):
-            fmt_txt = i18n.ngettext(singular_txt, plural_txt, value)
-            if unit == min_unit and math.modf(value)[0] > 0:
+        singular_txt, plural_txt, ammount = fmt
+        if ammount > 0 or (not texts and unit == min_unit):
+            # rule for English / unfortunatelly ngettext does not support floats
+            if ammount > 1:
+                fmt_txt = i18n.ngettext(singular_txt, plural_txt, math.ceil(ammount))
+            elif ammount < 1:
+                fmt_txt = i18n.ngettext(singular_txt, plural_txt, math.floor(ammount))
+            else:
+                fmt_txt = i18n.ngettext(singular_txt, plural_txt, 1)
+
+            # apply formatting if ammount is factional
+            if unit == min_unit and math.modf(ammount)[0] > 0:
                 fmt_txt = fmt_txt.replace("%d", formatting)
 
-            texts.append(fmt_txt % value)
+            texts.append(fmt_txt % ammount)
 
         if unit == min_unit:
             break
@@ -785,4 +797,4 @@ def precise_delta(
     head = ", ".join(texts[:-1])
     tail = texts[-1]
 
-    return _("%s and %s") % (head, tail)
+    return _("{head} and {tail}").format(head=head, tail=tail)

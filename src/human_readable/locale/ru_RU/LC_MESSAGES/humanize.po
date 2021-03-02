@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-29 20:53+0300\n"
-"PO-Revision-Date: 2014-03-24 20:32+0300\n"
+"PO-Revision-Date: 2021-03-01 16:17+0100\n"
 "Last-Translator: Sergey Prokhorov <me@seriyps.ru>\n"
 "Language-Team: ru_RU <LL@li.org>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Generated-By: Babel 0.9.6\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.4.1\n"
 
 # в Django тут "ий" но на самом деле оба варианта работают плохо
 #: src/humanize/number.py:31
@@ -162,7 +162,7 @@ msgid "nine"
 msgstr "девять"
 
 #: src/humanize/time.py:119
-#, fuzzy, python-format
+#, python-format
 msgid "%d microsecond"
 msgid_plural "%d microseconds"
 msgstr[0] ""
@@ -170,7 +170,7 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: src/humanize/time.py:128
-#, fuzzy, python-format
+#, python-format
 msgid "%d millisecond"
 msgid_plural "%d milliseconds"
 msgstr[0] ""
@@ -301,5 +301,5 @@ msgstr "вчера"
 
 #: src/humanize/time.py:498
 #, python-format
-msgid "%s and %s"
-msgstr "%s и %s"
+msgid "{head} and {tail}"
+msgstr "{head} и {tail}"

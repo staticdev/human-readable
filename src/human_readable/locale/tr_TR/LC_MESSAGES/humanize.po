@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: humanize\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-29 21:07+0300\n"
-"PO-Revision-Date: 2017-02-23 20:00+0300\n"
+"PO-Revision-Date: 2021-03-01 17:04+0100\n"
 "Last-Translator: Emre Çintay <emre@cintay.com>\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "Generated-By: Emre Çintay\n"
 
 #: src/humanize/number.py:31
@@ -154,14 +154,14 @@ msgid "nine"
 msgstr "dokuz"
 
 #: src/humanize/time.py:119
-#, fuzzy, python-format
+#, python-format
 msgid "%d microsecond"
 msgid_plural "%d microseconds"
 msgstr[0] ""
 msgstr[1] ""
 
 #: src/humanize/time.py:128
-#, fuzzy, python-format
+#, python-format
 msgid "%d millisecond"
 msgid_plural "%d milliseconds"
 msgstr[0] ""
@@ -283,5 +283,5 @@ msgstr "dün"
 
 #: src/humanize/time.py:498
 #, python-format
-msgid "%s and %s"
-msgstr ""
+msgid "{head} and {tail}"
+msgstr "{head} ve {tail}"

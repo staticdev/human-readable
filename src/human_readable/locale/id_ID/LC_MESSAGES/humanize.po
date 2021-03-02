@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-29 21:07+0300\n"
-"PO-Revision-Date: 2017-03-18 15:41+0700\n"
+"PO-Revision-Date: 2021-03-01 16:25+0100\n"
 "Last-Translator: adie.rebel@gmail.com\n"
 "Language-Team: Indonesian\n"
 "Language: id\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=ASCII\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: src/humanize/number.py:31
 msgctxt "0"
@@ -153,13 +153,13 @@ msgid "nine"
 msgstr "sembilan"
 
 #: src/humanize/time.py:119
-#, fuzzy, python-format
+#, python-format
 msgid "%d microsecond"
 msgid_plural "%d microseconds"
 msgstr[0] "%d mikro detik"
 
 #: src/humanize/time.py:128
-#, fuzzy, python-format
+#, python-format
 msgid "%d millisecond"
 msgid_plural "%d milliseconds"
 msgstr[0] "%d mili detik"
@@ -272,5 +272,5 @@ msgstr "kemarin"
 
 #: src/humanize/time.py:498
 #, python-format
-msgid "%s and %s"
-msgstr "%s dan %s"
+msgid "{head} and {tail}"
+msgstr "{head} dan {tail}"

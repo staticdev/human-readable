@@ -12,8 +12,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Generated-By:\n"
-"X-Generator: \n"
+"Generated-By: \n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: src/humanize/number.py:31
 msgctxt "0"
@@ -150,7 +150,7 @@ msgid "nine"
 msgstr "дев'ять"
 
 #: src/humanize/time.py:119
-#, fuzzy, python-format
+#, python-format
 msgid "%d microsecond"
 msgid_plural "%d microseconds"
 msgstr[0] "%d мікросекунда"
@@ -158,7 +158,7 @@ msgstr[1] "%d мікросекунд"
 msgstr[2] "%d мікросекунди"
 
 #: src/humanize/time.py:128
-#, fuzzy, python-format
+#, python-format
 msgid "%d millisecond"
 msgid_plural "%d milliseconds"
 msgstr[0] "%d мілісекунда"
@@ -289,5 +289,5 @@ msgstr "вчора"
 
 #: src/humanize/time.py:498
 #, python-format
-msgid "%s and %s"
-msgstr ""
+msgid "{head} and {tail}"
+msgstr "{head} i {tail}"

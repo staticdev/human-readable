@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: humanize\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-29 21:07+0300\n"
-"PO-Revision-Date: 2018-01-22 10:48+0900\n"
+"PO-Revision-Date: 2021-03-01 16:29+0100\n"
 "Last-Translator: Kan Torii <oss@qoolloop.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 0.9.6\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: src/humanize/number.py:31
 msgctxt "0"
@@ -163,13 +163,13 @@ msgid "nine"
 msgstr "九"
 
 #: src/humanize/time.py:119
-#, fuzzy, python-format
+#, python-format
 msgid "%d microsecond"
 msgid_plural "%d microseconds"
 msgstr[0] ""
 
 #: src/humanize/time.py:128
-#, fuzzy, python-format
+#, python-format
 msgid "%d millisecond"
 msgid_plural "%d milliseconds"
 msgstr[0] ""
@@ -266,7 +266,6 @@ msgid "%s ago"
 msgstr "%s前"
 
 #: src/humanize/time.py:205
-#, fuzzy
 msgid "now"
 msgstr "今"
 
@@ -284,5 +283,5 @@ msgstr "昨日"
 
 #: src/humanize/time.py:498
 #, python-format
-msgid "%s and %s"
-msgstr ""
+msgid "{head} and {tail}"
+msgstr "{head}{tail}"

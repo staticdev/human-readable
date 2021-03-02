@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-29 21:07+0300\n"
-"PO-Revision-Date: 2016-11-14 23:02+0000\n"
+"PO-Revision-Date: 2021-03-01 17:11+0100\n"
 "Last-Translator: Liwen SUN <sunliwen@gmail.com>\n"
 "Language-Team: Chinese (simplified)\n"
 "Language: zh_CN\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: src/humanize/number.py:31
 msgctxt "0"
@@ -153,14 +154,14 @@ msgid "nine"
 msgstr "九"
 
 #: src/humanize/time.py:119
-#, fuzzy, python-format
+#, python-format
 msgid "%d microsecond"
 msgid_plural "%d microseconds"
 msgstr[0] ""
 msgstr[1] ""
 
 #: src/humanize/time.py:128
-#, fuzzy, python-format
+#, python-format
 msgid "%d millisecond"
 msgid_plural "%d milliseconds"
 msgstr[0] ""
@@ -282,5 +283,5 @@ msgstr "昨天"
 
 #: src/humanize/time.py:498
 #, python-format
-msgid "%s and %s"
-msgstr ""
+msgid "{head} and {tail}"
+msgstr "{head}{tail}"

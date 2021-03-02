@@ -7,6 +7,7 @@ import human_readable.i18n as i18n
 
 
 _ = i18n.gettext
+N_ = i18n.gettext_noop
 P_ = i18n.pgettext
 
 # Mapping of locale to thousands separator
@@ -86,17 +87,17 @@ def int_comma(value: Union[str, float]) -> str:
 
 POWERS = [10 ** x for x in (6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 100)]
 HUMAN_POWERS = (
-    "milhão",
-    "bilhão",
-    "trilhão",
-    "quatrilhão",
-    "quintilhão",
-    "sextilhão",
-    "septilhão",
-    "octilhão",
-    "nonilhão",
-    "decilhão",
-    "googol",
+    N_("million"),
+    N_("billion"),
+    N_("trillion"),
+    N_("quadrillion"),
+    N_("quintillion"),
+    N_("sextillion"),
+    N_("septillion"),
+    N_("octillion"),
+    N_("nonillion"),
+    N_("decillion"),
+    N_("googol"),
 )
 
 
@@ -126,9 +127,9 @@ def int_word(value: float, formatting: str = ".1f") -> str:
             chopped = value / float(POWERS[ordinal - 1])
             if float(f"{chopped:{formatting}}") == float(10 ** 3):
                 chopped = value / float(POWERS[ordinal])
-                return f"{chopped:{formatting}} {HUMAN_POWERS[ordinal]}"
+                return f"{chopped:{formatting}} {_(HUMAN_POWERS[ordinal])}"
             else:
-                return f"{chopped:{formatting}} {HUMAN_POWERS[ordinal - 1]}"
+                return f"{chopped:{formatting}} {_(HUMAN_POWERS[ordinal - 1])}"
     return str(value)
 
 
@@ -147,16 +148,16 @@ def ap_number(value: Union[float, str]) -> Union[str, float]:
     if not 0 <= value < 10:
         return str(value)
     return (
-        "zero",
-        "um",
-        "dois",
-        "três",
-        "quatro",
-        "cinco",
-        "seis",
-        "sete",
-        "oito",
-        "nove",
+        _("zero"),
+        _("one"),
+        _("two"),
+        _("three"),
+        _("four"),
+        _("five"),
+        _("six"),
+        _("seven"),
+        _("eight"),
+        _("nine"),
     )[value]
 
 

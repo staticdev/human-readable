@@ -1,1 +1,1 @@
-"""Test suite for the human_readable package."""
+"""Test suite for the human readable package."""

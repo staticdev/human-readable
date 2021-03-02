@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-29 21:07+0300\n"
-"PO-Revision-Date: 2015-03-25 21:08+0100\n"
+"PO-Revision-Date: 2021-03-01 16:58+0100\n"
 "Last-Translator: Martin van Wingerden\n"
 "Language-Team: nl_NL\n"
 "Language: nl_NL\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 0.9.6\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: src/humanize/number.py:31
 msgctxt "0"
@@ -154,14 +154,14 @@ msgid "nine"
 msgstr "negen"
 
 #: src/humanize/time.py:119
-#, fuzzy, python-format
+#, python-format
 msgid "%d microsecond"
 msgid_plural "%d microseconds"
 msgstr[0] "%d microseconde"
 msgstr[1] "%d microseconden"
 
 #: src/humanize/time.py:128
-#, fuzzy, python-format
+#, python-format
 msgid "%d millisecond"
 msgid_plural "%d milliseconds"
 msgstr[0] "%d milliseconde"
@@ -283,5 +283,5 @@ msgstr "gisteren"
 
 #: src/humanize/time.py:498
 #, python-format
-msgid "%s and %s"
-msgstr "%s en %s"
+msgid "{head} and {tail}"
+msgstr "{head} en {tail}"
