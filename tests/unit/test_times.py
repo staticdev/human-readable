@@ -29,6 +29,8 @@ with freezegun.freeze_time("2020-02-02"):
     TODAY = dt.date.today()
     TOMORROW = TODAY + ONE_DAY_DELTA
     YESTERDAY = TODAY - ONE_DAY_DELTA
+    LAST_YEAR = TODAY - 365 * ONE_DAY_DELTA
+    NEXT_YEAR = TODAY + 365 * ONE_DAY_DELTA
 
 
 class FakeDate:
@@ -400,39 +402,21 @@ def test_date(date: dt.date, expected: str) -> None:
     assert times.date(date) == expected
 
 
-# def test_year() -> None:
-#     """Tests year method."""
-#     next_year = TODAY + ONE_YEAR
-#     last_year = TODAY - ONE_YEAR
+@freezegun.freeze_time("2020-02-02")
+@pytest.mark.parametrize(
+    "date, expected",
+    [
+        (TODAY, "this year"),
+        (NEXT_YEAR, "next year"),
+        (LAST_YEAR, "last year"),
+        (FakeDate(1988, 1, 1), "1988"),
+    ],
+)
+def test_year(date: dt.date, expected: str) -> None:
+    """Tests year method."""
+    result = times.year(date)
 
-#     someyear = FakeDate(1988, 1, 1)
-#     valerrtest = FakeDate(290149024, 2, 2)
-#     overflowtest = FakeDate(120390192341, 2, 2)
-#     test_list = [
-#         TODAY,
-#         next_year,
-#         last_year,
-#         "1955",
-#         someyear,
-#         None,
-#         "Not a date at all.",
-#         valerrtest,
-#         overflowtest,
-#     ]
-#     result_list = [
-#         "este ano",
-#         "ano que vem",
-#         "ano passado",
-#         "1955",
-#         "1988",
-#         None,
-#         "Not a date at all.",
-#         valerrtest,
-#         overflowtest,
-#     ]
-#     self.assert_many_results(
-#         times.year, test_list, result_list
-#     )
+    assert result == expected
 
 
 @pytest.mark.parametrize(

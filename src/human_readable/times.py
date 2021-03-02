@@ -473,27 +473,27 @@ def day(date: dt.date, formatting: str = "%b %d") -> str:
     return date.strftime(formatting)
 
 
-# def year(date: dt.date) -> str:
-#     """Return human-readable year.
+def year(date: dt.date) -> str:
+    """Return human-readable year.
 
-#     For date values that are last year, this year or next year compared to
-#     present year returns representing string. Otherwise, returns a string
-#     formatted according to the year.
+    For date values that are last year, this year or next year compared to
+    present year returns representing string. Otherwise, returns a string
+    formatted according to the year.
 
-#     Args:
-#         date: a date.
+    Args:
+        date: a date.
 
-#     Returns:
-#         str: year in natural language.
-#     """
-#     delta = date.year - dt.date.today().year
-#     if delta == 0:
-#         return "este ano"
-#     if delta == 1:
-#         return "ano que vem"
-#     if delta == -1:
-#         return "ano passado"
-#     return str(date.year)
+    Returns:
+        Year in natural language.
+    """
+    delta = date.year - dt.date.today().year
+    if delta == 0:
+        return _("this year")
+    if delta == 1:
+        return _("next year")
+    if delta == -1:
+        return _("last year")
+    return str(date.year)
 
 
 def date(date: dt.date) -> str:
