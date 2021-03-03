@@ -52,6 +52,7 @@ def time_of_day(hour: int) -> str:
 def _formal_time(
     value: dt.time, hour: int, count_hours: List[str], count_minutes: List[str]
 ) -> str:
+    """Return formal timing."""
     hour_count = count_hours[hour]
     if value.minute > 30:
         reversed_minute_count = count_minutes[60 - value.minute]
@@ -79,18 +80,26 @@ def _formal_time(
         ).format(hour_count=hour_count, minute_translation=minute_translation)
 
 
-def _informal_time(
-    value: dt.time, hour: int, count_hours: List[str], count_minutes: List[str]
-) -> str:
-    hour_count = count_hours[hour]
+def _informal_hour_count(hour: int, count_hours: List[str]) -> str:
+    """Return word hour used in informal timing."""
     if hour == 0:
         hour_count = _("midnight")
     elif hour == 12:
         hour_count = _("noon")
-    elif value.minute == 0:
-        return hour_count
+    elif hour > 12:
+        hour_count = count_hours[hour - 12]
+    else:
+        hour_count = count_hours[hour]
+    return hour_count
 
-    if value.minute > 30:
+
+def _informal_minute_count(
+    value: dt.time, hour: int, hour_count: str, count_minutes: List[str]
+) -> str:
+    """Return messsage format informal timing based on minute count."""
+    if value.minute == 0:
+        clock = hour_count
+    elif value.minute > 30:
         if value.minute == 45:
             reversed_minute_count = _("a quarter")
         else:
@@ -115,9 +124,24 @@ def _informal_time(
         clock = _("a quarter past {hour_count}").format(hour_count=hour_count)
     else:
         minute_count = count_minutes[value.minute]
-        return _("{hour_count} and {minute_count}").format(
+        clock = _("{hour_count} and {minute_count}").format(
             hour_count=hour_count, minute_count=minute_count
         )
+    return clock
+
+
+def _informal_time(
+    value: dt.time, hour: int, count_hours: List[str], count_minutes: List[str]
+) -> str:
+    """Return informal timing."""
+    period = time_of_day(hour)
+
+    hour_count = _informal_hour_count(hour, count_hours)
+
+    clock = _informal_minute_count(value, hour, hour_count, count_minutes)
+
+    if period:
+        return _("{clock} in the {period}").format(clock=clock, period=period)
     return clock
 
 
@@ -129,7 +153,7 @@ def timing(time: dt.time, formal: bool = True) -> str:
 
     Args:
         time: any datetime.
-        formal: Formal or informal reading. Defaults to True.
+        formal: formal or informal reading. Defaults to True.
 
     Returns:
         str: readable time or original object.
@@ -227,19 +251,15 @@ def timing(time: dt.time, formal: bool = True) -> str:
     # time relative to next hour
     if time.minute > 30:
         hour = time.hour + 1
+        if hour == 24:
+            hour = 0
     else:
         hour = time.hour
 
     if formal:
         clock = _formal_time(time, hour, count_hours, count_minutes)
     else:
-        period = time_of_day(hour)
-
-        if hour > 12:
-            hour -= 12
         clock = _informal_time(time, hour, count_hours, count_minutes)
-        if period:
-            clock = _("{clock} in the {period}").format(clock=clock, period=period)
 
     return clock
 

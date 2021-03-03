@@ -31,14 +31,7 @@ with freezegun.freeze_time("2020-02-02"):
     YESTERDAY = TODAY - ONE_DAY_DELTA
     LAST_YEAR = TODAY - 365 * ONE_DAY_DELTA
     NEXT_YEAR = TODAY + 365 * ONE_DAY_DELTA
-
-
-class FakeDate:
-    """Test helper to fake date."""
-
-    def __init__(self, year: int, month: int, day: int) -> None:
-        """Initializes fake date."""
-        self.year, self.month, self.day = year, month, day
+    SOME_YEAR = dt.date(1988, 11, 12)
 
 
 def assert_equal_datetime(dt1: dt.datetime, dt2: dt.datetime) -> None:
@@ -111,6 +104,7 @@ def test_timing_formal(
         (dt.time(11, 55, 0), "cinco para o meio-dia"),
         (dt.time(12, 15, 0), "meio-dia e quinze"),
         (dt.time(21, 0, 40), "nove da noite"),
+        (dt.time(23, 40, 30), "vinte para a meia-noite"),
     ],
 )
 def test_timing_informal(
@@ -129,7 +123,7 @@ def test_timing_informal(
         (TODAY, "este ano"),
         (NEXT_YEAR, "ano que vem"),
         (LAST_YEAR, "ano passado"),
-        (FakeDate(1988, 1, 1), "1988"),
+        (SOME_YEAR, "1988"),
     ],
 )
 def test_year(activate_pt_br: MockerFixture, date: dt.date, expected: str) -> None:
