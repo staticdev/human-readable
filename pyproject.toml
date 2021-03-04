@@ -13,6 +13,7 @@ classifiers = [
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
 ]
+exclude = ["src/human_readable/locale/**/*.po"]
 
 [tool.poetry.urls]
 Changelog = "https://github.com/staticdev/human-readable/releases"
@@ -42,6 +43,8 @@ reorder-python-imports = "^2.3.6"
 pre-commit-hooks = "^3.4.0"
 sphinx-rtd-theme = "^0.5.1"
 Pygments = "^2.8.0"
+freezegun = "^1.1.0"
+pytest-mock = "^3.5.1"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
@@ -52,7 +55,7 @@ source = ["human_readable"]
 
 [tool.coverage.report]
 show_missing = true
-fail_under = 100
+fail_under = 98
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

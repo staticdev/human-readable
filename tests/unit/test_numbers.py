@@ -10,10 +10,10 @@ import human_readable.numbers as numbers
 @pytest.mark.parametrize(
     "params, expected",
     [
-        (1, "1º"),  # first suffix
-        ("1", "1º"),  # str number
-        (13, "13º"),  # third suffix
-        (111, "111º"),  # more than hundred
+        (1, "1st"),  # first suffix
+        ("1", "1st"),  # str number
+        (13, "13th"),  # third suffix
+        (111, "111th"),  # more than hundred
     ],
 )
 def test_ordinal(params: int, expected: str) -> None:
@@ -39,10 +39,10 @@ def test_int_comma(params: int, expected: str) -> None:
     "params, expected",
     [
         (100, "100"),  # simple number
-        (1200000, "1.2 milhão"),  # million number
-        (8100000000000000000000000000000000, "8.1 decilhão"),  # decillion number
+        (1200000, "1.2 million"),  # million number
+        (8100000000000000000000000000000000, "8.1 decillion"),  # decillion number
         (10 ** 101, "1" + "0" * 101),  # very big number without suffix
-        (999999999, "1.0 bilhão"),  # rounded up suffix
+        (999999999, "1.0 billion"),  # rounded up suffix
     ],
 )
 def test_int_word(params: int, expected: str) -> None:
@@ -52,7 +52,7 @@ def test_int_word(params: int, expected: str) -> None:
 
 def test_int_word_formatted() -> None:
     """Int word with formatting tests."""
-    expected = "1.23 milhão"
+    expected = "1.23 million"
     assert numbers.int_word(1230000, "0.2f") == expected
 
 
@@ -60,7 +60,7 @@ def test_int_word_formatted() -> None:
     "params, expected",
     [
         (0, "zero"),  # simplest number
-        ("7", "sete"),  # string number
+        ("7", "seven"),  # string number
         (10, "10"),  # bigger than 9
     ],
 )

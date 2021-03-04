@@ -1,0 +1,1090 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-04 14:51+0100\n"
+"PO-Revision-Date: 2021-03-02 18:34+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#: src/human_readable/numbers.py:46
+msgctxt "0"
+msgid "th"
+msgstr "º"
+
+#: src/human_readable/numbers.py:47
+msgctxt "1"
+msgid "st"
+msgstr "º"
+
+#: src/human_readable/numbers.py:48
+msgctxt "2"
+msgid "nd"
+msgstr "º"
+
+#: src/human_readable/numbers.py:49
+msgctxt "3"
+msgid "rd"
+msgstr "º"
+
+#: src/human_readable/numbers.py:50
+msgctxt "4"
+msgid "th"
+msgstr "º"
+
+#: src/human_readable/numbers.py:51
+msgctxt "5"
+msgid "th"
+msgstr "º"
+
+#: src/human_readable/numbers.py:52
+msgctxt "6"
+msgid "th"
+msgstr "º"
+
+#: src/human_readable/numbers.py:53
+msgctxt "7"
+msgid "th"
+msgstr "º"
+
+#: src/human_readable/numbers.py:54
+msgctxt "8"
+msgid "th"
+msgstr "º"
+
+#: src/human_readable/numbers.py:55
+msgctxt "9"
+msgid "th"
+msgstr "º"
+
+#: src/human_readable/numbers.py:90
+msgid "million"
+msgstr "milhão"
+
+#: src/human_readable/numbers.py:91
+msgid "billion"
+msgstr "bilhão"
+
+#: src/human_readable/numbers.py:92
+msgid "trillion"
+msgstr "trilhão"
+
+#: src/human_readable/numbers.py:93
+msgid "quadrillion"
+msgstr "quatrilhão"
+
+#: src/human_readable/numbers.py:94
+msgid "quintillion"
+msgstr "quintilhão"
+
+#: src/human_readable/numbers.py:95
+msgid "sextillion"
+msgstr "sextilhão"
+
+#: src/human_readable/numbers.py:96
+msgid "septillion"
+msgstr "septilhão"
+
+#: src/human_readable/numbers.py:97
+msgid "octillion"
+msgstr "octilhão"
+
+#: src/human_readable/numbers.py:98
+msgid "nonillion"
+msgstr "nonilhão"
+
+#: src/human_readable/numbers.py:99
+msgid "decillion"
+msgstr "decilhão"
+
+#: src/human_readable/numbers.py:100
+msgid "googol"
+msgstr "undecilhão"
+
+#: src/human_readable/numbers.py:151
+msgid "zero"
+msgstr "zero"
+
+#: src/human_readable/numbers.py:152
+msgid "one"
+msgstr "um"
+
+#: src/human_readable/numbers.py:153
+msgid "two"
+msgstr "dois"
+
+#: src/human_readable/numbers.py:154
+msgid "three"
+msgstr "três"
+
+#: src/human_readable/numbers.py:155
+msgid "four"
+msgstr "quatro"
+
+#: src/human_readable/numbers.py:156
+msgid "five"
+msgstr "cinco"
+
+#: src/human_readable/numbers.py:157
+msgid "six"
+msgstr "seis"
+
+#: src/human_readable/numbers.py:158
+msgid "seven"
+msgstr "sete"
+
+#: src/human_readable/numbers.py:159
+msgid "eight"
+msgstr "oito"
+
+#: src/human_readable/numbers.py:160
+msgid "nine"
+msgstr "nove"
+
+#: src/human_readable/times.py:44
+msgid "morning"
+msgstr "manhã"
+
+#: src/human_readable/times.py:46
+msgid "afternoon"
+msgstr "tarde"
+
+#: src/human_readable/times.py:48
+msgid "evening"
+msgstr "noite"
+
+#: src/human_readable/times.py:60 src/human_readable/times.py:74
+#, python-brace-format
+msgid "{minute_count} minute"
+msgid_plural "{minute_count} minutes"
+msgstr[0] "{minute_count} minuto"
+msgstr[1] "{minute_count} minutos"
+
+#: src/human_readable/times.py:63
+#, python-brace-format
+msgid "{minute_translation} to {hour_count} hour"
+msgid_plural "{minute_translation} to {hour_count} hours"
+msgstr[0] "{minute_translation} para a {hour_count} hora"
+msgstr[1] "{minute_translation} para as {hour_count} horas"
+
+#: src/human_readable/times.py:69
+#, python-brace-format
+msgid "{hour_count} o'clock"
+msgid_plural "{hour_count} o'clock"
+msgstr[0] "{hour_count} hora"
+msgstr[1] "{hour_count} horas"
+
+#: src/human_readable/times.py:77
+#, python-brace-format
+msgid "{minute_translation} past {hour_count}"
+msgid_plural "{minute_translation} past {hour_count}"
+msgstr[0] "{hour_count} hora e {minute_translation}"
+msgstr[1] "{hour_count} horas e {minute_translation}"
+
+#: src/human_readable/times.py:86
+msgid "midnight"
+msgstr "meia-noite"
+
+#: src/human_readable/times.py:88
+msgid "noon"
+msgstr "meio-dia"
+
+#: src/human_readable/times.py:104
+msgid "a quarter"
+msgstr "quinze"
+
+#: src/human_readable/times.py:108
+#, python-brace-format
+msgid "{reversed_minute_count} to midnight"
+msgstr "{reversed_minute_count} para a meia-noite"
+
+#: src/human_readable/times.py:112
+#, python-brace-format
+msgid "{reversed_minute_count} to noon"
+msgstr "{reversed_minute_count} para o meio-dia"
+
+#: src/human_readable/times.py:117
+#, python-brace-format
+msgid "{reversed_minute_count} to {hour_count}"
+msgid_plural "{reversed_minute_count} to {hour_count}"
+msgstr[0] "{reversed_minute_count} para a {hour_count}"
+msgstr[1] "{reversed_minute_count} para as {hour_count}"
+
+#: src/human_readable/times.py:122
+#, python-brace-format
+msgid "half past {hour_count}"
+msgstr "{hour_count} e meia"
+
+#: src/human_readable/times.py:124
+#, python-brace-format
+msgid "a quarter past {hour_count}"
+msgstr "{hour_count} e quinze"
+
+#: src/human_readable/times.py:127
+#, python-brace-format
+msgid "{hour_count} and {minute_count}"
+msgstr "{hour_count} e {minute_count}"
+
+#: src/human_readable/times.py:144
+#, python-brace-format
+msgid "{clock} in the {period}"
+msgstr "{clock} da {period}"
+
+#: src/human_readable/times.py:162
+msgctxt "hour 0"
+msgid "zero"
+msgstr "zero"
+
+#: src/human_readable/times.py:163
+msgctxt "hour 1"
+msgid "one"
+msgstr "uma"
+
+#: src/human_readable/times.py:164
+msgctxt "hour 2"
+msgid "two"
+msgstr "duas"
+
+#: src/human_readable/times.py:165
+msgctxt "hour 3"
+msgid "three"
+msgstr "três"
+
+#: src/human_readable/times.py:166
+msgctxt "hour 4"
+msgid "four"
+msgstr "quatro"
+
+#: src/human_readable/times.py:167
+msgctxt "hour 5"
+msgid "five"
+msgstr "cinco"
+
+#: src/human_readable/times.py:168
+msgctxt "hour 6"
+msgid "six"
+msgstr "seis"
+
+#: src/human_readable/times.py:169
+msgctxt "hour 7"
+msgid "seven"
+msgstr "sete"
+
+#: src/human_readable/times.py:170
+msgctxt "hour 8"
+msgid "eight"
+msgstr "oito"
+
+#: src/human_readable/times.py:171
+msgctxt "hour 9"
+msgid "nine"
+msgstr "nove"
+
+#: src/human_readable/times.py:172
+msgctxt "hour 10"
+msgid "ten"
+msgstr "dez"
+
+#: src/human_readable/times.py:173
+msgctxt "hour 11"
+msgid "eleven"
+msgstr "onze"
+
+#: src/human_readable/times.py:174
+msgctxt "hour 12"
+msgid "twelve"
+msgstr "doze"
+
+#: src/human_readable/times.py:175
+msgctxt "hour 13"
+msgid "one"
+msgstr "treze"
+
+#: src/human_readable/times.py:176
+msgctxt "hour 14"
+msgid "two"
+msgstr "quatorze"
+
+#: src/human_readable/times.py:177
+msgctxt "hour 15"
+msgid "three"
+msgstr "quinze"
+
+#: src/human_readable/times.py:178
+msgctxt "hour 16"
+msgid "four"
+msgstr "dezesseis"
+
+#: src/human_readable/times.py:179
+msgctxt "hour 17"
+msgid "five"
+msgstr "dezessete"
+
+#: src/human_readable/times.py:180
+msgctxt "hour 18"
+msgid "six"
+msgstr "dezoito"
+
+#: src/human_readable/times.py:181
+msgctxt "hour 19"
+msgid "seven"
+msgstr "dezenove"
+
+#: src/human_readable/times.py:182
+msgctxt "hour 20"
+msgid "eight"
+msgstr "vinte"
+
+#: src/human_readable/times.py:183
+msgctxt "hour 21"
+msgid "nine"
+msgstr "vinte e uma"
+
+#: src/human_readable/times.py:184
+msgctxt "hour 22"
+msgid "ten"
+msgstr "vinte e duas"
+
+#: src/human_readable/times.py:185
+msgctxt "hour 23"
+msgid "eleven"
+msgstr "vinte e três"
+
+#: src/human_readable/times.py:189
+msgctxt "minute 0"
+msgid "zero"
+msgstr "zero"
+
+#: src/human_readable/times.py:190
+msgctxt "minute 1"
+msgid "one"
+msgstr "um"
+
+#: src/human_readable/times.py:191
+msgctxt "minute 2"
+msgid "two"
+msgstr "dois"
+
+#: src/human_readable/times.py:192
+msgctxt "minute 3"
+msgid "three"
+msgstr "três"
+
+#: src/human_readable/times.py:193
+msgctxt "minute 4"
+msgid "four"
+msgstr "quatro"
+
+#: src/human_readable/times.py:194
+msgctxt "minute 5"
+msgid "five"
+msgstr "cinco"
+
+#: src/human_readable/times.py:195
+msgctxt "minute 6"
+msgid "six"
+msgstr "seis"
+
+#: src/human_readable/times.py:196
+msgctxt "minute 7"
+msgid "seven"
+msgstr "sete"
+
+#: src/human_readable/times.py:197
+msgctxt "minute 8"
+msgid "eight"
+msgstr "oito"
+
+#: src/human_readable/times.py:198
+msgctxt "minute 9"
+msgid "nine"
+msgstr "nove"
+
+#: src/human_readable/times.py:199
+msgctxt "minute 10"
+msgid "ten"
+msgstr "dez"
+
+#: src/human_readable/times.py:200
+msgctxt "minute 11"
+msgid "eleven"
+msgstr "onze"
+
+#: src/human_readable/times.py:201
+msgctxt "minute 12"
+msgid "twelve"
+msgstr "doze"
+
+#: src/human_readable/times.py:202
+msgctxt "minute 13"
+msgid "thirteen"
+msgstr "treze"
+
+#: src/human_readable/times.py:203
+msgctxt "minute 14"
+msgid "fourteen"
+msgstr "quatorze"
+
+#: src/human_readable/times.py:204
+msgctxt "minute 15"
+msgid "fifteen"
+msgstr "quinze"
+
+#: src/human_readable/times.py:205
+msgctxt "minute 16"
+msgid "sixteen"
+msgstr "dezesseis"
+
+#: src/human_readable/times.py:206
+msgctxt "minute 17"
+msgid "seventeen"
+msgstr "dezessete"
+
+#: src/human_readable/times.py:207
+msgctxt "minute 18"
+msgid "eighteen"
+msgstr "dezoito"
+
+#: src/human_readable/times.py:208
+msgctxt "minute 19"
+msgid "nineteen"
+msgstr "dezenove"
+
+#: src/human_readable/times.py:209
+msgctxt "minute 20"
+msgid "twenty"
+msgstr "vinte"
+
+#: src/human_readable/times.py:210
+msgctxt "minute 21"
+msgid "twenty one"
+msgstr "vinte e um"
+
+#: src/human_readable/times.py:211
+msgctxt "minute 22"
+msgid "twenty two"
+msgstr "vinte e dois"
+
+#: src/human_readable/times.py:212
+msgctxt "minute 23"
+msgid "twenty three"
+msgstr "vinte e três"
+
+#: src/human_readable/times.py:213
+msgctxt "minute 24"
+msgid "twenty four"
+msgstr "vinte e quatro"
+
+#: src/human_readable/times.py:214
+msgctxt "minute 25"
+msgid "twenty five"
+msgstr "vinte e cinco"
+
+#: src/human_readable/times.py:215
+msgctxt "minute 26"
+msgid "twenty six"
+msgstr "vinte e seis"
+
+#: src/human_readable/times.py:216
+msgctxt "minute 27"
+msgid "twenty seven"
+msgstr "vinte e sete"
+
+#: src/human_readable/times.py:217
+msgctxt "minute 28"
+msgid "twenty eight"
+msgstr "vinte e oito"
+
+#: src/human_readable/times.py:218
+msgctxt "minute 29"
+msgid "twenty nine"
+msgstr "vinte e nove"
+
+#: src/human_readable/times.py:219
+msgctxt "minute 30"
+msgid "thirty"
+msgstr "trinta"
+
+#: src/human_readable/times.py:220
+msgctxt "minute 31"
+msgid "thirty one"
+msgstr "trinta e um"
+
+#: src/human_readable/times.py:221
+msgctxt "minute 32"
+msgid "thirty two"
+msgstr "trinta e dois"
+
+#: src/human_readable/times.py:222
+msgctxt "minute 33"
+msgid "thirty three"
+msgstr "trinta e três"
+
+#: src/human_readable/times.py:223
+msgctxt "minute 34"
+msgid "thirty four"
+msgstr "trinta e quatro"
+
+#: src/human_readable/times.py:224
+msgctxt "minute 35"
+msgid "thirty five"
+msgstr "trinta e cinco"
+
+#: src/human_readable/times.py:225
+msgctxt "minute 36"
+msgid "thirty six"
+msgstr "trinta e seis"
+
+#: src/human_readable/times.py:226
+msgctxt "minute 37"
+msgid "thirty seven"
+msgstr "trinta e sete"
+
+#: src/human_readable/times.py:227
+msgctxt "minute 38"
+msgid "thirty eight"
+msgstr "trinta e oito"
+
+#: src/human_readable/times.py:228
+msgctxt "minute 39"
+msgid "thirty nine"
+msgstr "trinta e nove"
+
+#: src/human_readable/times.py:229
+msgctxt "minute 40"
+msgid "forty"
+msgstr "quarenta"
+
+#: src/human_readable/times.py:230
+msgctxt "minute 41"
+msgid "forty one"
+msgstr "quarenta e um"
+
+#: src/human_readable/times.py:231
+msgctxt "minute 42"
+msgid "forty two"
+msgstr "quarenta e dois"
+
+#: src/human_readable/times.py:232
+msgctxt "minute 43"
+msgid "forty three"
+msgstr "quarenta e três"
+
+#: src/human_readable/times.py:233
+msgctxt "minute 44"
+msgid "forty four"
+msgstr "quarenta e quatro"
+
+#: src/human_readable/times.py:234
+msgctxt "minute 45"
+msgid "forty five"
+msgstr "quarenta e cinco"
+
+#: src/human_readable/times.py:235
+msgctxt "minute 46"
+msgid "forty six"
+msgstr "quarenta e seis"
+
+#: src/human_readable/times.py:236
+msgctxt "minute 47"
+msgid "forty seven"
+msgstr "quarenta e sete"
+
+#: src/human_readable/times.py:237
+msgctxt "minute 48"
+msgid "forty eight"
+msgstr "quarenta e oito"
+
+#: src/human_readable/times.py:238
+msgctxt "minute 49"
+msgid "forty nine"
+msgstr "quarenta e nove"
+
+#: src/human_readable/times.py:239
+msgctxt "minute 50"
+msgid "fifty"
+msgstr "cinquenta"
+
+#: src/human_readable/times.py:240
+msgctxt "minute 51"
+msgid "fifty one"
+msgstr "cinquenta e um"
+
+#: src/human_readable/times.py:241
+msgctxt "minute 52"
+msgid "fifty two"
+msgstr "cinquenta e dois"
+
+#: src/human_readable/times.py:242
+msgctxt "minute 53"
+msgid "fifty three"
+msgstr "cinquenta e três"
+
+#: src/human_readable/times.py:243
+msgctxt "minute 54"
+msgid "fifty four"
+msgstr "cinquenta e quatro"
+
+#: src/human_readable/times.py:244
+msgctxt "minute 55"
+msgid "fifty five"
+msgstr "cinquenta e cinco"
+
+#: src/human_readable/times.py:245
+msgctxt "minute 56"
+msgid "fifty six"
+msgstr "cinquenta e seis"
+
+#: src/human_readable/times.py:246
+msgctxt "minute 57"
+msgid "fifty seven"
+msgstr "cinquenta e sete"
+
+#: src/human_readable/times.py:247
+msgctxt "minute 58"
+msgid "fifty eight"
+msgstr "cinquenta e oito"
+
+#: src/human_readable/times.py:248
+msgctxt "minute 59"
+msgid "fifty nine"
+msgstr "cinquenta e nove"
+
+#: src/human_readable/times.py:307
+#, python-format
+msgid "%d microsecond"
+msgid_plural "%d microseconds"
+msgstr[0] "%d microssegundo"
+msgstr[1] "%d microssegundos"
+
+#: src/human_readable/times.py:316
+#, python-format
+msgid "%d millisecond"
+msgid_plural "%d milliseconds"
+msgstr[0] "%d milissegundo"
+msgstr[1] "%d milissegundos"
+
+#: src/human_readable/times.py:319 src/human_readable/times.py:464
+msgid "a moment"
+msgstr "um momento"
+
+#: src/human_readable/times.py:321
+msgid "a second"
+msgstr "um segundo"
+
+#: src/human_readable/times.py:323
+#, python-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d segundo"
+msgstr[1] "%d segundos"
+
+#: src/human_readable/times.py:325
+msgid "a minute"
+msgstr "um minuto"
+
+#: src/human_readable/times.py:328
+#, python-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minuto"
+msgstr[1] "%d minutos"
+
+#: src/human_readable/times.py:330
+msgid "an hour"
+msgstr "uma hora"
+
+#: src/human_readable/times.py:333
+#, python-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d hora"
+msgstr[1] "%d horas"
+
+#: src/human_readable/times.py:339
+msgid "a day"
+msgstr "um dia"
+
+#: src/human_readable/times.py:341 src/human_readable/times.py:344
+#, python-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d dia"
+msgstr[1] "%d dias"
+
+#: src/human_readable/times.py:346
+msgid "a month"
+msgstr "um mês"
+
+#: src/human_readable/times.py:348
+#, python-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d mês"
+msgstr[1] "%d meses"
+
+#: src/human_readable/times.py:353
+msgid "a year"
+msgstr "um ano"
+
+#: src/human_readable/times.py:355 src/human_readable/times.py:364
+#, python-format
+msgid "1 year, %d day"
+msgid_plural "1 year, %d days"
+msgstr[0] "1 ano e %d dia"
+msgstr[1] "1 ano e %d dias"
+
+#: src/human_readable/times.py:358
+msgid "1 year, 1 month"
+msgstr "1 ano e 1 mês"
+
+#: src/human_readable/times.py:361
+#, python-format
+msgid "1 year, %d month"
+msgid_plural "1 year, %d months"
+msgstr[0] "1 ano e %d mês"
+msgstr[1] "1 ano e %d meses"
+
+#: src/human_readable/times.py:425
+#, python-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d ano"
+msgstr[1] "%d anos"
+
+#: src/human_readable/times.py:465
+msgid "now"
+msgstr "agora"
+
+#: src/human_readable/times.py:468
+#, python-format
+msgid "%s from now"
+msgstr "em %s"
+
+#: src/human_readable/times.py:470
+#, python-format
+msgid "%s ago"
+msgstr "há %s"
+
+#: src/human_readable/times.py:489
+msgid "today"
+msgstr "hoje"
+
+#: src/human_readable/times.py:491
+msgid "tomorrow"
+msgstr "amanhã"
+
+#: src/human_readable/times.py:493
+msgid "yesterday"
+msgstr "ontem"
+
+#: src/human_readable/times.py:530
+msgid "this year"
+msgstr "este ano"
+
+#: src/human_readable/times.py:532
+msgid "next year"
+msgstr "ano que vem"
+
+#: src/human_readable/times.py:534
+msgid "last year"
+msgstr "ano passado"
+
+#: src/human_readable/times.py:852
+#, python-brace-format
+msgid "{head} and {tail}"
+msgstr "{head} e {tail}"
+
+#~ msgctxt "hour|0"
+#~ msgid "zero"
+#~ msgstr "zero"
+
+#~ msgctxt "hour|1"
+#~ msgid "one"
+#~ msgstr "um"
+
+#~ msgctxt "hour|2"
+#~ msgid "two"
+#~ msgstr "dois"
+
+#~ msgctxt "hour|3"
+#~ msgid "three"
+#~ msgstr "três"
+
+#~ msgctxt "hour|4"
+#~ msgid "four"
+#~ msgstr "quatro"
+
+#~ msgctxt "hour|5"
+#~ msgid "five"
+#~ msgstr "cinco"
+
+#~ msgctxt "hour|6"
+#~ msgid "six"
+#~ msgstr "seis"
+
+#~ msgctxt "hour|7"
+#~ msgid "seven"
+#~ msgstr "sete"
+
+#~ msgctxt "hour|8"
+#~ msgid "eight"
+#~ msgstr "oito"
+
+#~ msgctxt "hour|9"
+#~ msgid "nine"
+#~ msgstr "nove"
+
+#~ msgctxt "hour|13"
+#~ msgid "one"
+#~ msgstr "um"
+
+#~ msgctxt "hour|14"
+#~ msgid "two"
+#~ msgstr "dois"
+
+#~ msgctxt "hour|15"
+#~ msgid "three"
+#~ msgstr "três"
+
+#~ msgctxt "hour|16"
+#~ msgid "four"
+#~ msgstr "quatro"
+
+#~ msgctxt "hour|17"
+#~ msgid "five"
+#~ msgstr "cinco"
+
+#~ msgctxt "hour|18"
+#~ msgid "six"
+#~ msgstr "seis"
+
+#~ msgctxt "hour|19"
+#~ msgid "seven"
+#~ msgstr "sete"
+
+#~ msgctxt "hour|20"
+#~ msgid "eight"
+#~ msgstr "oito"
+
+#~ msgctxt "hour|21"
+#~ msgid "nine"
+#~ msgstr "nove"
+
+#~ msgctxt "hour|22"
+#~ msgid "ten"
+#~ msgstr "dez"
+
+#~ msgctxt "hour|23"
+#~ msgid "eleven"
+#~ msgstr "onze"
+
+#~ msgctxt "0"
+#~ msgid "hour"
+#~ msgstr "zero"
+
+#~ msgctxt "1"
+#~ msgid "hour"
+#~ msgstr "uma"
+
+#~ msgctxt "2"
+#~ msgid "hour"
+#~ msgstr "duas"
+
+#~ msgctxt "3"
+#~ msgid "hour"
+#~ msgstr "três"
+
+#~ msgctxt "4"
+#~ msgid "hour"
+#~ msgstr "quatro"
+
+#~ msgctxt "5"
+#~ msgid "hour"
+#~ msgstr "cinco"
+
+#~ msgctxt "6"
+#~ msgid "hour"
+#~ msgstr "seis"
+
+#~ msgctxt "7"
+#~ msgid "hour"
+#~ msgstr "sete"
+
+#~ msgctxt "8"
+#~ msgid "hour"
+#~ msgstr "oito"
+
+#~ msgctxt "9"
+#~ msgid "hour"
+#~ msgstr "nove"
+
+#~ msgctxt "10"
+#~ msgid "hour"
+#~ msgstr "dez"
+
+#~ msgctxt "11"
+#~ msgid "hour"
+#~ msgstr "onze"
+
+#~ msgctxt "12"
+#~ msgid "hour"
+#~ msgstr "doze"
+
+#~ msgctxt "13"
+#~ msgid "hour"
+#~ msgstr "treze"
+
+#~ msgctxt "14"
+#~ msgid "hour"
+#~ msgstr "quatorze"
+
+#~ msgctxt "15"
+#~ msgid "hour"
+#~ msgstr "quinze"
+
+#~ msgctxt "16"
+#~ msgid "hour"
+#~ msgstr "dezesseis"
+
+#~ msgctxt "17"
+#~ msgid "hour"
+#~ msgstr "dezessete"
+
+#~ msgctxt "18"
+#~ msgid "hour"
+#~ msgstr "dezoito"
+
+#~ msgctxt "19"
+#~ msgid "hour"
+#~ msgstr "dezenove"
+
+#~ msgctxt "20"
+#~ msgid "hour"
+#~ msgstr "vinte"
+
+#~ msgctxt "21"
+#~ msgid "hour"
+#~ msgstr "vinte e uma"
+
+#~ msgctxt "22"
+#~ msgid "hour"
+#~ msgstr "vinte e duas"
+
+#~ msgctxt "23"
+#~ msgid "hour"
+#~ msgstr "vinte e três"
+
+#~ msgctxt "hour"
+#~ msgid "0"
+#~ msgstr "zero"
+
+#~ msgctxt "hour"
+#~ msgid "1"
+#~ msgstr "uma"
+
+#~ msgctxt "hour"
+#~ msgid "2"
+#~ msgstr "duas"
+
+#~ msgctxt "hour"
+#~ msgid "3"
+#~ msgstr "três"
+
+#~ msgctxt "hour"
+#~ msgid "4"
+#~ msgstr "quatro"
+
+#~ msgctxt "hour"
+#~ msgid "5"
+#~ msgstr "cinco"
+
+#~ msgctxt "hour"
+#~ msgid "6"
+#~ msgstr "seis"
+
+#~ msgctxt "hour"
+#~ msgid "7"
+#~ msgstr "sete"
+
+#~ msgctxt "hour"
+#~ msgid "8"
+#~ msgstr "oito"
+
+#~ msgctxt "hour"
+#~ msgid "9"
+#~ msgstr "nove"
+
+#~ msgctxt "hour"
+#~ msgid "10"
+#~ msgstr "dez"
+
+#~ msgctxt "hour"
+#~ msgid "11"
+#~ msgstr "onze"
+
+#~ msgctxt "hour"
+#~ msgid "12"
+#~ msgstr "doze"
+
+#~ msgctxt "hour"
+#~ msgid "13"
+#~ msgstr "treze"
+
+#~ msgctxt "hour"
+#~ msgid "14"
+#~ msgstr "quatorze"
+
+#~ msgctxt "hour"
+#~ msgid "15"
+#~ msgstr "quinze"
+
+#~ msgctxt "hour"
+#~ msgid "16"
+#~ msgstr "dezesseis"
+
+#~ msgctxt "hour"
+#~ msgid "17"
+#~ msgstr "dezessete"
+
+#~ msgctxt "hour"
+#~ msgid "18"
+#~ msgstr "dezoito"
+
+#~ msgctxt "hour"
+#~ msgid "19"
+#~ msgstr "dezenove"
+
+#~ msgctxt "hour"
+#~ msgid "20"
+#~ msgstr "vinte"
+
+#~ msgctxt "hour"
+#~ msgid "21"
+#~ msgstr "vinte e um"
+
+#~ msgctxt "hour"
+#~ msgid "22"
+#~ msgstr "vinte e dois"
+
+#~ msgctxt "hour"
+#~ msgid "23"
+#~ msgstr "vinte e três"
+
+#~ msgid "a quarter to {hour_count}"
+#~ msgstr "quinze para as {hour_count}"
+
+#, fuzzy
+#~ msgid "one minute past {hour_count}"
+#~ msgstr "{hour_count} e quinze"

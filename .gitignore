@@ -14,8 +14,10 @@ docs/_build/
 .nox/
 
 # Translations
-*.mo
+## BUG IN POETRY https://github.com/python-poetry/poetry/issues/3285 https://github.com/python-poetry/poetry/issues/3673 https://github.com/python-poetry/poetry-core/pull/46
+#*.mo
 *.pot
+*.po~
 
 # pyenv
 .python-version
@@ -29,3 +31,6 @@ docs/_build/
 # IDEs
 .idea/
 .vscode/
+
+# Scripts
+scripts/

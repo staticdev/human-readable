@@ -7,9 +7,9 @@ Human Readable
 
 |pre-commit| |Black|
 
-.. |Status| image:: https://badgen.net/badge/status/alpha/d8624d
-   :target: https://badgen.net/badge/status/alpha/d8624d
-   :alt: Status
+.. |Status| image:: https://badgen.net/badge/status/beta/orange
+   :target: https://badgen.net/badge/status/beta/orange
+   :alt: Project Status
 .. |PyPI| image:: https://img.shields.io/pypi/v/human-readable.svg
    :target: https://pypi.org/project/human-readable/
    :alt: PyPI
@@ -41,6 +41,31 @@ Features
 
 * File size humanization.
 * List humanization.
+* Numbers humanization.
+* Time and dates humanization.
+* Internacionalization (i18n) to 20+ locales:
+
+  * Abbreviated English (en_ABBR)
+  * Brazilian Portuguese (pt_BR)
+  * Dutch (nl_NL)
+  * Finnish (fi_FI)
+  * French (fr_FR)
+  * German (de_DE)
+  * Indonesian (id_ID)
+  * Italian (it_IT)
+  * Japanese (ja_JP)
+  * Korean (ko_KR)
+  * Persian (fa_IR)
+  * Polish (pl_PL)
+  * Portugal Portuguese (pt_PT)
+  * Russian (ru_RU)
+  * Simplified Chinese (zh_CN)
+  * Slovak (sk_SK)
+  * Spanish (es_ES)
+  * Taiwan Chinese (zh_TW)
+  * Turkish (tr_TR)
+  * Ukrainian (uk_UA)
+  * Vietnamese (vi_VI)
 
 
 Requirements
@@ -59,8 +84,10 @@ You can install *Human Readable* via pip_ from PyPI_:
    $ pip install human-readable
 
 
-Usage
------
+.. basic-usage
+
+Basic usage
+-----------
 
 Import the lib with:
 
@@ -69,7 +96,53 @@ Import the lib with:
    import human_readable
 
 
-File size humanization:
+Date and time humanization examples:
+
+.. code-block:: python
+
+   human_readable.time_of_day(17)
+   "afternoon"
+
+   import datetime as dt
+   human_readable.timing(dt.time(6, 59, 0))
+   "one minute to seven hours"
+
+   human_readable.timing(dt.time(21, 0, 40), formal=False)
+   "nine in the evening"
+
+   human_readable.time_delta(dt.timedelta(days=65))
+   "2 months"
+
+   human_readable.date_time(dt.datetime.now() - dt.timedelta(minutes=2))
+   "2 minutes ago"
+
+   human_readable.day(dt.date.today() - dt.timedelta(days=1))
+   "yesterday"
+
+   human_readable.date(dt.date(2019, 7, 2))
+   "Jul 02 2019"
+
+   human_readable.year(dt.date.today() + dt.timedelta(days=365))
+   "next year"
+
+
+Precise time delta examples:
+
+.. code-block:: python
+
+   import datetime as dt
+   delta = dt.timedelta(seconds=3633, days=2, microseconds=123000)
+   human_readable.precise_delta(delta)
+   "2 days, 1 hour and 33.12 seconds"
+
+   human_readable.precise_delta(delta, minimum_unit="microseconds")
+   "2 days, 1 hour, 33 seconds and 123 milliseconds"
+
+   human_readable.precise_delta(delta, suppress=["days"], format="%0.4f")
+   "49 hours and 33.1230 seconds"
+
+
+File size humanization examples:
 
 .. code-block:: python
 
@@ -83,7 +156,7 @@ File size humanization:
    "976.6K"
 
 
-Lists humanization:
+Lists humanization examples:
 
 .. code-block:: python
 
@@ -94,7 +167,7 @@ Lists humanization:
    "Alpha; Bravo or Charlie"
 
 
-Numbers humanization:
+Numbers humanization examples:
 
 .. code-block:: python
 
@@ -114,7 +187,7 @@ Numbers humanization:
    "41"
 
 
-Floating point number humanization:
+Floating point number humanization examples:
 
 .. code-block:: python
 
@@ -125,7 +198,7 @@ Floating point number humanization:
    "3/10"
 
 
-Scientific notation:
+Scientific notation examples:
 
 .. code-block:: python
 
@@ -135,8 +208,66 @@ Scientific notation:
    human_readable.scientific_notation(5781651000, precision=4)
    "5.7817 x 10⁹"
 
+.. end-basic-usage
 
-Click here for more examples and detailed usage_.
+Complete instructions can be found at `human-readable.readthedocs.io`_.
+
+
+Localization
+------------
+
+How to change locale at runtime:
+
+.. code-block:: python
+
+   import datetime as dt
+   human_readable.date_time(dt.timedelta(seconds=3))
+   '3 seconds ago'
+
+   _t = human_readable.i18n.activate("ru_RU")
+   human_readable.date_time(dt.timedelta(seconds=3))
+   '3 секунды назад'
+
+   human_readable.i18n.deactivate()
+   human_readable.date_time(dt.timedelta(seconds=3))
+   '3 seconds ago'
+
+
+You can pass additional parameter `path` to `activate` to specify a path to search
+locales in.
+
+.. code-block:: python
+
+   human_readable.i18n.activate("xx_XX")
+   ...
+   FileNotFoundError: [Errno 2] No translation file found for domain: 'human_readable'
+   human_readable.i18n.activate("pt_BR", path="path/to/my/portuguese/translation/")
+   <gettext.GNUTranslations instance ...>
+
+You can see how to add a new locale on the `Contributor Guide`_.
+
+A special locale, `en_ABBR`, renderes abbreviated versions of output:
+
+.. code-block:: python
+
+    human_readable.date_time(datetime.timedelta(seconds=3))
+    3 seconds ago
+
+    human_readable.int_word(12345591313)
+    12.3 billion
+
+    human_readable.date_time(datetime.timedelta(seconds=86400*476))
+    1 year, 3 months ago
+
+    human_readable.i18n.activate('en_ABBR')
+    human_readable.date_time(datetime.timedelta(seconds=3))
+    3s
+
+    human_readable.int_word(12345591313)
+    12.3 B
+
+    human_readable.date_time(datetime.timedelta(seconds=86400*476))
+    1y 3M
 
 
 Contributing
@@ -176,6 +307,6 @@ This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _file an issue: https://github.com/staticdev/human-readable/issues
 .. _pip: https://pip.pypa.io/
+.. _human-readable.readthedocs.io: https://human-readable.readthedocs.io
 .. github-only
 .. _Contributor Guide: CONTRIBUTING.rst
-.. _usage: https://human-readable.readthedocs.io/en/latest/usage.html
