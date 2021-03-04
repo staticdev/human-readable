@@ -382,7 +382,8 @@ def time_delta(
         value: A timedelta or a number of seconds.
         use_months: If `True`, then a number of months (based on 30.5 days) will be
             used for fuzziness between years.
-        minimum_unit: The lowest unit that can be used.
+        minimum_unit: The lowest unit that can be used. Options: "years", "months",
+            "days", "hours", "minutes", "seconds", "milliseconds" or "microseconds".
         when: Point in time relative to which _value_ is
             interpreted.  Defaults to the current time in the local timezone.
 
@@ -390,7 +391,7 @@ def time_delta(
         ValueError: when `minimum_unit` is specified.
 
     Returns:
-        str: time representation in natural language.
+        Time representation in natural language.
     """
     tmp = Unit[minimum_unit.upper()]
     if tmp not in (Unit.SECONDS, Unit.MILLISECONDS, Unit.MICROSECONDS):
@@ -450,7 +451,7 @@ def date_time(
             interpreted.  Defaults to the current time in the local timezone.
 
     Returns:
-        str: time in natural language.
+        Time in natural language.
     """
     now = when or _now()
     date, delta = date_and_delta(value, now=now)
@@ -493,6 +494,24 @@ def day(date: dt.date, formatting: str = "%b %d") -> str:
     return date.strftime(formatting)
 
 
+def date(date: dt.date) -> str:
+    """Return human-readable date.
+
+    Like ``day()``, but will append a year for dates that are a year
+    ago or more.
+
+    Args:
+        date: a date.
+
+    Returns:
+        str: date in natural language.
+    """
+    delta = _abs_timedelta(date - dt.date.today())
+    if delta.days >= 5 * 365 / 12:
+        return day(date, "%b %d %Y")
+    return day(date)
+
+
 def year(date: dt.date) -> str:
     """Return human-readable year.
 
@@ -514,24 +533,6 @@ def year(date: dt.date) -> str:
     if delta == -1:
         return _("last year")
     return str(date.year)
-
-
-def date(date: dt.date) -> str:
-    """Return human-readable date.
-
-    Like ``day()``, but will append a year for dates that are a year
-    ago or more.
-
-    Args:
-        date: a date.
-
-    Returns:
-        str: date in natural language.
-    """
-    delta = _abs_timedelta(date - dt.date.today())
-    if delta.days >= 5 * 365 / 12:
-        return day(date, "%b %d %Y")
-    return day(date)
 
 
 def _quotient_and_remainder(
@@ -690,7 +691,7 @@ def precise_delta(
     value: Union[dt.timedelta, int],
     minimum_unit: str = "seconds",
     suppress: Optional[List[str]] = None,
-    formatting: str = "%0.2f",
+    formatting: str = "%.2f",
 ) -> str:
     """Return a precise representation of a timedelta.
 
@@ -703,7 +704,7 @@ def precise_delta(
     A custom `formatting` can be specified to control how the fractional part
     is represented:
 
-    >>> precise_delta(delta, formatting="%0.4f")
+    >>> precise_delta(delta, formatting="%.4f")
     '2 days, 1 hour and 33.1230 seconds'
 
     Instead, the `minimum_unit` can be changed to have a better resolution;
@@ -717,14 +718,14 @@ def precise_delta(
     If desired, some units can be suppressed: you will not see them represented and the
     time of the other units will be adjusted to keep representing the same timedelta:
 
-    >>> precise_delta(delta, suppress=['days'])
+    >>> precise_delta(delta, suppress=["days"])
     '49 hours and 33.12 seconds'
 
     Note that microseconds precision is lost if the seconds and all
     the units below are suppressed:
 
     >>> delta = dt.timedelta(seconds=90, microseconds=100)
-    >>> precise_delta(delta, suppress=['seconds', 'milliseconds', 'microseconds'])
+    >>> precise_delta(delta, suppress=["seconds", "milliseconds", "microseconds"])
     '1.50 minutes'
 
     If the delta is too small to be represented with the minimum unit,
@@ -733,6 +734,7 @@ def precise_delta(
     >>> delta = dt.timedelta(seconds=1)
     >>> precise_delta(delta, minimum_unit="minutes")
     '0.02 minutes'
+
     >>> delta = dt.timedelta(seconds=0.1)
     >>> precise_delta(delta, minimum_unit="minutes")
     '0 minutes'

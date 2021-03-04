@@ -96,6 +96,31 @@ and are written using the pytest_ testing framework.
 .. _pytest: https://pytest.readthedocs.io/
 
 
+How to add a new locale
+-----------------------
+
+Make sure you have installed a PO Editor, you can easily install that on a Debian-based system with:
+
+.. code:: console
+
+   apt install poedit
+
+To add a new locale you need to execute:
+
+.. code:: console
+
+   xgettext --from-code=UTF-8 -o human_readable.pot -k'_' -k'N_' -k'P_:1c,2' -l python src/human_readable/*.py  # extract new phrases
+   msginit -i human_readable.pot -o human_readable/locale/<locale name>/LC_MESSAGES/human_readable.po --locale <locale name>
+
+Then edit your .po file in the locale folder that got created.
+
+If possible, add tests to `tests/functional/new_locale`. Run them with:
+
+.. code:: console
+
+   nox -s tests
+
+
 How to submit changes
 ---------------------
 

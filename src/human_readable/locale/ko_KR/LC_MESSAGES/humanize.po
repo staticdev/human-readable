@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 18:33+0100\n"
+"POT-Creation-Date: 2021-03-04 08:36+0100\n"
 "PO-Revision-Date: 2021-03-01 16:57+0100\n"
 "Last-Translator: @youngrok\n"
 "Language-Team: ko_KR <LL@li.org>\n"
@@ -185,688 +185,688 @@ msgstr ""
 msgid "evening"
 msgstr "일곱"
 
-#: src/human_readable/times.py:59 src/human_readable/times.py:73
+#: src/human_readable/times.py:60 src/human_readable/times.py:74
 #, python-brace-format
 msgid "{minute_count} minute"
 msgid_plural "{minute_count} minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/human_readable/times.py:62
+#: src/human_readable/times.py:63
 #, python-brace-format
 msgid "{minute_translation} to {hour_count} hour"
 msgid_plural "{minute_translation} to {hour_count} hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/human_readable/times.py:68
+#: src/human_readable/times.py:69
 #, python-brace-format
 msgid "{hour_count} o'clock"
 msgid_plural "{hour_count} o'clock"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/human_readable/times.py:76
+#: src/human_readable/times.py:77
 #, python-brace-format
 msgid "{minute_translation} past {hour_count}"
 msgid_plural "{minute_translation} past {hour_count}"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/human_readable/times.py:87
+#: src/human_readable/times.py:86
 #, fuzzy
 msgid "midnight"
 msgstr "여덟"
 
-#: src/human_readable/times.py:89
+#: src/human_readable/times.py:88
 msgid "noon"
 msgstr ""
 
-#: src/human_readable/times.py:95
+#: src/human_readable/times.py:104
 msgid "a quarter"
 msgstr ""
 
-#: src/human_readable/times.py:99
+#: src/human_readable/times.py:108
 #, python-brace-format
 msgid "{reversed_minute_count} to midnight"
 msgstr ""
 
-#: src/human_readable/times.py:103
+#: src/human_readable/times.py:112
 #, python-brace-format
 msgid "{reversed_minute_count} to noon"
 msgstr ""
 
-#: src/human_readable/times.py:108
+#: src/human_readable/times.py:117
 #, python-brace-format
 msgid "{reversed_minute_count} to {hour_count}"
 msgid_plural "{reversed_minute_count} to {hour_count}"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/human_readable/times.py:113
+#: src/human_readable/times.py:122
 #, python-brace-format
 msgid "half past {hour_count}"
 msgstr ""
 
-#: src/human_readable/times.py:115
+#: src/human_readable/times.py:124
 #, python-brace-format
 msgid "a quarter past {hour_count}"
 msgstr ""
 
-#: src/human_readable/times.py:118
+#: src/human_readable/times.py:127
 #, python-brace-format
 msgid "{hour_count} and {minute_count}"
 msgstr ""
 
-#: src/human_readable/times.py:138
+#: src/human_readable/times.py:144
+#, python-brace-format
+msgid "{clock} in the {period}"
+msgstr ""
+
+#: src/human_readable/times.py:162
 msgctxt "hour 0"
 msgid "zero"
 msgstr ""
 
-#: src/human_readable/times.py:139
+#: src/human_readable/times.py:163
 #, fuzzy
 msgctxt "hour 1"
 msgid "one"
 msgstr "하나"
 
-#: src/human_readable/times.py:140
+#: src/human_readable/times.py:164
 #, fuzzy
 msgctxt "hour 2"
 msgid "two"
 msgstr "둘"
 
-#: src/human_readable/times.py:141
+#: src/human_readable/times.py:165
 #, fuzzy
 msgctxt "hour 3"
 msgid "three"
 msgstr "셋"
 
-#: src/human_readable/times.py:142
+#: src/human_readable/times.py:166
 #, fuzzy
 msgctxt "hour 4"
 msgid "four"
 msgstr "넷"
 
-#: src/human_readable/times.py:143
+#: src/human_readable/times.py:167
 #, fuzzy
 msgctxt "hour 5"
 msgid "five"
 msgstr "다섯"
 
-#: src/human_readable/times.py:144
+#: src/human_readable/times.py:168
 #, fuzzy
 msgctxt "hour 6"
 msgid "six"
 msgstr "여섯"
 
-#: src/human_readable/times.py:145
+#: src/human_readable/times.py:169
 #, fuzzy
 msgctxt "hour 7"
 msgid "seven"
 msgstr "일곱"
 
-#: src/human_readable/times.py:146
+#: src/human_readable/times.py:170
 #, fuzzy
 msgctxt "hour 8"
 msgid "eight"
 msgstr "여덟"
 
-#: src/human_readable/times.py:147
+#: src/human_readable/times.py:171
 #, fuzzy
 msgctxt "hour 9"
 msgid "nine"
 msgstr "아홉"
 
-#: src/human_readable/times.py:148
+#: src/human_readable/times.py:172
 msgctxt "hour 10"
 msgid "ten"
 msgstr ""
 
-#: src/human_readable/times.py:149
+#: src/human_readable/times.py:173
 #, fuzzy
 msgctxt "hour 11"
 msgid "eleven"
 msgstr "일곱"
 
-#: src/human_readable/times.py:150
+#: src/human_readable/times.py:174
 msgctxt "hour 12"
 msgid "twelve"
 msgstr ""
 
-#: src/human_readable/times.py:151
+#: src/human_readable/times.py:175
 #, fuzzy
 msgctxt "hour 13"
 msgid "one"
 msgstr "하나"
 
-#: src/human_readable/times.py:152
+#: src/human_readable/times.py:176
 #, fuzzy
 msgctxt "hour 14"
 msgid "two"
 msgstr "둘"
 
-#: src/human_readable/times.py:153
+#: src/human_readable/times.py:177
 #, fuzzy
 msgctxt "hour 15"
 msgid "three"
 msgstr "셋"
 
-#: src/human_readable/times.py:154
+#: src/human_readable/times.py:178
 #, fuzzy
 msgctxt "hour 16"
 msgid "four"
 msgstr "넷"
 
-#: src/human_readable/times.py:155
+#: src/human_readable/times.py:179
 #, fuzzy
 msgctxt "hour 17"
 msgid "five"
 msgstr "다섯"
 
-#: src/human_readable/times.py:156
+#: src/human_readable/times.py:180
 #, fuzzy
 msgctxt "hour 18"
 msgid "six"
 msgstr "여섯"
 
-#: src/human_readable/times.py:157
+#: src/human_readable/times.py:181
 #, fuzzy
 msgctxt "hour 19"
 msgid "seven"
 msgstr "일곱"
 
-#: src/human_readable/times.py:158
+#: src/human_readable/times.py:182
 #, fuzzy
 msgctxt "hour 20"
 msgid "eight"
 msgstr "여덟"
 
-#: src/human_readable/times.py:159
+#: src/human_readable/times.py:183
 #, fuzzy
 msgctxt "hour 21"
 msgid "nine"
 msgstr "아홉"
 
-#: src/human_readable/times.py:160
+#: src/human_readable/times.py:184
 msgctxt "hour 22"
 msgid "ten"
 msgstr ""
 
-#: src/human_readable/times.py:161
+#: src/human_readable/times.py:185
 #, fuzzy
 msgctxt "hour 23"
 msgid "eleven"
 msgstr "일곱"
 
-#: src/human_readable/times.py:165
+#: src/human_readable/times.py:189
 msgctxt "minute 0"
 msgid "zero"
 msgstr ""
 
-#: src/human_readable/times.py:166
+#: src/human_readable/times.py:190
 #, fuzzy
 msgctxt "minute 1"
 msgid "one"
 msgstr "하나"
 
-#: src/human_readable/times.py:167
+#: src/human_readable/times.py:191
 #, fuzzy
 msgctxt "minute 2"
 msgid "two"
 msgstr "둘"
 
-#: src/human_readable/times.py:168
+#: src/human_readable/times.py:192
 #, fuzzy
 msgctxt "minute 3"
 msgid "three"
 msgstr "셋"
 
-#: src/human_readable/times.py:169
+#: src/human_readable/times.py:193
 #, fuzzy
 msgctxt "minute 4"
 msgid "four"
 msgstr "넷"
 
-#: src/human_readable/times.py:170
+#: src/human_readable/times.py:194
 #, fuzzy
 msgctxt "minute 5"
 msgid "five"
 msgstr "다섯"
 
-#: src/human_readable/times.py:171
+#: src/human_readable/times.py:195
 #, fuzzy
 msgctxt "minute 6"
 msgid "six"
 msgstr "여섯"
 
-#: src/human_readable/times.py:172
+#: src/human_readable/times.py:196
 #, fuzzy
 msgctxt "minute 7"
 msgid "seven"
 msgstr "일곱"
 
-#: src/human_readable/times.py:173
+#: src/human_readable/times.py:197
 #, fuzzy
 msgctxt "minute 8"
 msgid "eight"
 msgstr "여덟"
 
-#: src/human_readable/times.py:174
+#: src/human_readable/times.py:198
 #, fuzzy
 msgctxt "minute 9"
 msgid "nine"
 msgstr "아홉"
 
-#: src/human_readable/times.py:175
+#: src/human_readable/times.py:199
 msgctxt "minute 10"
 msgid "ten"
 msgstr ""
 
-#: src/human_readable/times.py:176
+#: src/human_readable/times.py:200
 #, fuzzy
 msgctxt "minute 11"
 msgid "eleven"
 msgstr "일곱"
 
-#: src/human_readable/times.py:177
+#: src/human_readable/times.py:201
 msgctxt "minute 12"
 msgid "twelve"
 msgstr ""
 
-#: src/human_readable/times.py:178
+#: src/human_readable/times.py:202
 msgctxt "minute 13"
 msgid "thirteen"
 msgstr ""
 
-#: src/human_readable/times.py:179
+#: src/human_readable/times.py:203
 #, fuzzy
 msgctxt "minute 14"
 msgid "fourteen"
 msgstr "넷"
 
-#: src/human_readable/times.py:180
+#: src/human_readable/times.py:204
 msgctxt "minute 15"
 msgid "fifteen"
 msgstr ""
 
-#: src/human_readable/times.py:181
+#: src/human_readable/times.py:205
 msgctxt "minute 16"
 msgid "sixteen"
 msgstr ""
 
-#: src/human_readable/times.py:182
+#: src/human_readable/times.py:206
 #, fuzzy
 msgctxt "minute 17"
 msgid "seventeen"
 msgstr "일곱"
 
-#: src/human_readable/times.py:183
+#: src/human_readable/times.py:207
 #, fuzzy
 msgctxt "minute 18"
 msgid "eighteen"
 msgstr "여덟"
 
-#: src/human_readable/times.py:184
+#: src/human_readable/times.py:208
 #, fuzzy
 msgctxt "minute 19"
 msgid "nineteen"
 msgstr "아홉"
 
-#: src/human_readable/times.py:185
+#: src/human_readable/times.py:209
 msgctxt "minute 20"
 msgid "twenty"
 msgstr ""
 
-#: src/human_readable/times.py:186
+#: src/human_readable/times.py:210
 msgctxt "minute 21"
 msgid "twenty one"
 msgstr ""
 
-#: src/human_readable/times.py:187
+#: src/human_readable/times.py:211
 msgctxt "minute 22"
 msgid "twenty two"
 msgstr ""
 
-#: src/human_readable/times.py:188
+#: src/human_readable/times.py:212
 msgctxt "minute 23"
 msgid "twenty three"
 msgstr ""
 
-#: src/human_readable/times.py:189
+#: src/human_readable/times.py:213
 msgctxt "minute 24"
 msgid "twenty four"
 msgstr ""
 
-#: src/human_readable/times.py:190
+#: src/human_readable/times.py:214
 msgctxt "minute 25"
 msgid "twenty five"
 msgstr ""
 
-#: src/human_readable/times.py:191
+#: src/human_readable/times.py:215
 msgctxt "minute 26"
 msgid "twenty six"
 msgstr ""
 
-#: src/human_readable/times.py:192
+#: src/human_readable/times.py:216
 msgctxt "minute 27"
 msgid "twenty seven"
 msgstr ""
 
-#: src/human_readable/times.py:193
+#: src/human_readable/times.py:217
 msgctxt "minute 28"
 msgid "twenty eight"
 msgstr ""
 
-#: src/human_readable/times.py:194
+#: src/human_readable/times.py:218
 msgctxt "minute 29"
 msgid "twenty nine"
 msgstr ""
 
-#: src/human_readable/times.py:195
+#: src/human_readable/times.py:219
 msgctxt "minute 30"
 msgid "thirty"
 msgstr ""
 
-#: src/human_readable/times.py:196
+#: src/human_readable/times.py:220
 msgctxt "minute 31"
 msgid "thirty one"
 msgstr ""
 
-#: src/human_readable/times.py:197
+#: src/human_readable/times.py:221
 msgctxt "minute 32"
 msgid "thirty two"
 msgstr ""
 
-#: src/human_readable/times.py:198
+#: src/human_readable/times.py:222
 msgctxt "minute 33"
 msgid "thirty three"
 msgstr ""
 
-#: src/human_readable/times.py:199
+#: src/human_readable/times.py:223
 msgctxt "minute 34"
 msgid "thirty four"
 msgstr ""
 
-#: src/human_readable/times.py:200
+#: src/human_readable/times.py:224
 msgctxt "minute 35"
 msgid "thirty five"
 msgstr ""
 
-#: src/human_readable/times.py:201
+#: src/human_readable/times.py:225
 msgctxt "minute 36"
 msgid "thirty six"
 msgstr ""
 
-#: src/human_readable/times.py:202
+#: src/human_readable/times.py:226
 msgctxt "minute 37"
 msgid "thirty seven"
 msgstr ""
 
-#: src/human_readable/times.py:203
+#: src/human_readable/times.py:227
 msgctxt "minute 38"
 msgid "thirty eight"
 msgstr ""
 
-#: src/human_readable/times.py:204
+#: src/human_readable/times.py:228
 msgctxt "minute 39"
 msgid "thirty nine"
 msgstr ""
 
-#: src/human_readable/times.py:205
+#: src/human_readable/times.py:229
 msgctxt "minute 40"
 msgid "forty"
 msgstr ""
 
-#: src/human_readable/times.py:206
+#: src/human_readable/times.py:230
 msgctxt "minute 41"
 msgid "forty one"
 msgstr ""
 
-#: src/human_readable/times.py:207
+#: src/human_readable/times.py:231
 msgctxt "minute 42"
 msgid "forty two"
 msgstr ""
 
-#: src/human_readable/times.py:208
+#: src/human_readable/times.py:232
 #, fuzzy
 msgctxt "minute 43"
 msgid "forty three"
 msgstr "셋"
 
-#: src/human_readable/times.py:209
+#: src/human_readable/times.py:233
 msgctxt "minute 44"
 msgid "forty four"
 msgstr ""
 
-#: src/human_readable/times.py:210
+#: src/human_readable/times.py:234
 msgctxt "minute 45"
 msgid "forty five"
 msgstr ""
 
-#: src/human_readable/times.py:211
+#: src/human_readable/times.py:235
 msgctxt "minute 46"
 msgid "forty six"
 msgstr ""
 
-#: src/human_readable/times.py:212
+#: src/human_readable/times.py:236
 #, fuzzy
 msgctxt "minute 47"
 msgid "forty seven"
 msgstr "일곱"
 
-#: src/human_readable/times.py:213
+#: src/human_readable/times.py:237
 #, fuzzy
 msgctxt "minute 48"
 msgid "forty eight"
 msgstr "여덟"
 
-#: src/human_readable/times.py:214
+#: src/human_readable/times.py:238
 msgctxt "minute 49"
 msgid "forty nine"
 msgstr ""
 
-#: src/human_readable/times.py:215
+#: src/human_readable/times.py:239
 msgctxt "minute 50"
 msgid "fifty"
 msgstr ""
 
-#: src/human_readable/times.py:216
+#: src/human_readable/times.py:240
 msgctxt "minute 51"
 msgid "fifty one"
 msgstr ""
 
-#: src/human_readable/times.py:217
+#: src/human_readable/times.py:241
 msgctxt "minute 52"
 msgid "fifty two"
 msgstr ""
 
-#: src/human_readable/times.py:218
+#: src/human_readable/times.py:242
 #, fuzzy
 msgctxt "minute 53"
 msgid "fifty three"
 msgstr "셋"
 
-#: src/human_readable/times.py:219
+#: src/human_readable/times.py:243
 msgctxt "minute 54"
 msgid "fifty four"
 msgstr ""
 
-#: src/human_readable/times.py:220
+#: src/human_readable/times.py:244
 msgctxt "minute 55"
 msgid "fifty five"
 msgstr ""
 
-#: src/human_readable/times.py:221
+#: src/human_readable/times.py:245
 msgctxt "minute 56"
 msgid "fifty six"
 msgstr ""
 
-#: src/human_readable/times.py:222
+#: src/human_readable/times.py:246
 #, fuzzy
 msgctxt "minute 57"
 msgid "fifty seven"
 msgstr "일곱"
 
-#: src/human_readable/times.py:223
+#: src/human_readable/times.py:247
 #, fuzzy
 msgctxt "minute 58"
 msgid "fifty eight"
 msgstr "여덟"
 
-#: src/human_readable/times.py:224
+#: src/human_readable/times.py:248
 msgctxt "minute 59"
 msgid "fifty nine"
 msgstr ""
 
-#: src/human_readable/times.py:242
-#, python-brace-format
-msgid "{clock} in the {period}"
-msgstr ""
-
-#: src/human_readable/times.py:287
+#: src/human_readable/times.py:307
 #, python-format
 msgid "%d microsecond"
 msgid_plural "%d microseconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/human_readable/times.py:296
+#: src/human_readable/times.py:316
 #, python-format
 msgid "%d millisecond"
 msgid_plural "%d milliseconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/human_readable/times.py:299 src/human_readable/times.py:443
+#: src/human_readable/times.py:319 src/human_readable/times.py:463
 msgid "a moment"
 msgstr "잠깐"
 
-#: src/human_readable/times.py:301
+#: src/human_readable/times.py:321
 msgid "a second"
 msgstr "1초"
 
-#: src/human_readable/times.py:303
+#: src/human_readable/times.py:323
 #, python-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] "%d초"
 msgstr[1] "%d초"
 
-#: src/human_readable/times.py:305
+#: src/human_readable/times.py:325
 msgid "a minute"
 msgstr "1분"
 
-#: src/human_readable/times.py:308
+#: src/human_readable/times.py:328
 #, python-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d분"
 msgstr[1] "%d분"
 
-#: src/human_readable/times.py:310
+#: src/human_readable/times.py:330
 msgid "an hour"
 msgstr "1시간"
 
-#: src/human_readable/times.py:313
+#: src/human_readable/times.py:333
 #, python-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d heure"
 msgstr[1] "%d시간"
 
-#: src/human_readable/times.py:319
+#: src/human_readable/times.py:339
 msgid "a day"
 msgstr "하루"
 
-#: src/human_readable/times.py:321 src/human_readable/times.py:324
+#: src/human_readable/times.py:341 src/human_readable/times.py:344
 #, python-format
 msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] "%d jour"
 msgstr[1] "%d일"
 
-#: src/human_readable/times.py:326
+#: src/human_readable/times.py:346
 msgid "a month"
 msgstr "한달"
 
-#: src/human_readable/times.py:328
+#: src/human_readable/times.py:348
 #, python-format
 msgid "%d month"
 msgid_plural "%d months"
 msgstr[0] "%d mois"
 msgstr[1] "%d개월"
 
-#: src/human_readable/times.py:333
+#: src/human_readable/times.py:353
 msgid "a year"
 msgstr "1년"
 
-#: src/human_readable/times.py:335 src/human_readable/times.py:344
+#: src/human_readable/times.py:355 src/human_readable/times.py:364
 #, python-format
 msgid "1 year, %d day"
 msgid_plural "1 year, %d days"
 msgstr[0] "1년 %d일"
 msgstr[1] "1년 %d일"
 
-#: src/human_readable/times.py:338
+#: src/human_readable/times.py:358
 msgid "1 year, 1 month"
 msgstr "1년, 1개월"
 
-#: src/human_readable/times.py:341
+#: src/human_readable/times.py:361
 #, python-format
 msgid "1 year, %d month"
 msgid_plural "1 year, %d months"
 msgstr[0] "1년, %d개월"
 msgstr[1] "1년, %d개월"
 
-#: src/human_readable/times.py:404
+#: src/human_readable/times.py:424
 #, python-format
 msgid "%d year"
 msgid_plural "%d years"
 msgstr[0] "%d 년"
 msgstr[1] "%d ans"
 
-#: src/human_readable/times.py:444
+#: src/human_readable/times.py:464
 msgid "now"
 msgstr "방금"
 
-#: src/human_readable/times.py:447
+#: src/human_readable/times.py:467
 #, python-format
 msgid "%s from now"
 msgstr "%s 후"
 
-#: src/human_readable/times.py:449
+#: src/human_readable/times.py:469
 #, python-format
 msgid "%s ago"
 msgstr "%s 전"
 
-#: src/human_readable/times.py:468
+#: src/human_readable/times.py:488
 msgid "today"
 msgstr "오늘"
 
-#: src/human_readable/times.py:470
+#: src/human_readable/times.py:490
 msgid "tomorrow"
 msgstr "내일"
 
-#: src/human_readable/times.py:472
+#: src/human_readable/times.py:492
 msgid "yesterday"
 msgstr "어제"
 
-#: src/human_readable/times.py:491
+#: src/human_readable/times.py:511
 #, fuzzy
 msgid "this year"
 msgstr "1년"
 
-#: src/human_readable/times.py:493
+#: src/human_readable/times.py:513
 #, fuzzy
 msgid "next year"
 msgstr "1년"
 
-#: src/human_readable/times.py:495
+#: src/human_readable/times.py:515
 #, fuzzy
 msgid "last year"
 msgstr "1년"
 
-#: src/human_readable/times.py:830
+#: src/human_readable/times.py:850
 #, python-brace-format
 msgid "{head} and {tail}"
 msgstr "{head} {tail}"

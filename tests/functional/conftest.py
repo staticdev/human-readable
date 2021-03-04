@@ -6,6 +6,14 @@ import human_readable.i18n as i18n
 
 
 @pytest.fixture(scope="module")
+def activate_en_abbr() -> MockerFixture:
+    """Activate abbreviated English."""
+    i18n.activate("en_ABBR")
+    yield None
+    i18n.deactivate()
+
+
+@pytest.fixture(scope="module")
 def activate_fr_fr() -> MockerFixture:
     """Activate French."""
     i18n.activate("fr_FR")
