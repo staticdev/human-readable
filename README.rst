@@ -294,7 +294,7 @@ please `file an issue`_ along with a detailed description.
 Credits
 -------
 
-This lib is based on original humanize_ with some added features such as listing, improved naming, documentation, some more testing, bug fixes and better Portuguese support.
+This lib is based on original humanize_ with some added features such as listing, improved naming, documentation, functional tests, type-annotations, bug fixes and better localization.
 
 This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter`_ template.
 
