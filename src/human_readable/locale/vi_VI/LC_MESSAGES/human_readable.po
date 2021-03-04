@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-04 08:36+0100\n"
+"POT-Creation-Date: 2021-03-04 14:51+0100\n"
 "PO-Revision-Date: 2021-03-01 17:10+0100\n"
 "Last-Translator: Olivier Cortès <oc@1flow.io>\n"
 "Language-Team: vi_VI <sapd@vccloud.vn>\n"
@@ -725,7 +725,7 @@ msgid_plural "%d milliseconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/human_readable/times.py:319 src/human_readable/times.py:463
+#: src/human_readable/times.py:319 src/human_readable/times.py:464
 msgid "a moment"
 msgstr "ngay lúc này"
 
@@ -806,55 +806,55 @@ msgid_plural "1 year, %d months"
 msgstr[0] "1 năm %d tháng"
 msgstr[1] "un an et %d mois"
 
-#: src/human_readable/times.py:424
+#: src/human_readable/times.py:425
 #, python-format
 msgid "%d year"
 msgid_plural "%d years"
 msgstr[0] "%d năm"
 msgstr[1] "%d năm"
 
-#: src/human_readable/times.py:464
+#: src/human_readable/times.py:465
 msgid "now"
 msgstr "ngay bây giờ"
 
-#: src/human_readable/times.py:467
+#: src/human_readable/times.py:468
 #, python-format
 msgid "%s from now"
 msgstr "%s ngày tới"
 
-#: src/human_readable/times.py:469
+#: src/human_readable/times.py:470
 #, python-format
 msgid "%s ago"
 msgstr "%s trước"
 
-#: src/human_readable/times.py:488
+#: src/human_readable/times.py:489
 msgid "today"
 msgstr "hôm nay"
 
-#: src/human_readable/times.py:490
+#: src/human_readable/times.py:491
 msgid "tomorrow"
 msgstr "ngày mai"
 
-#: src/human_readable/times.py:492
+#: src/human_readable/times.py:493
 msgid "yesterday"
 msgstr "ngày hôm qua"
 
-#: src/human_readable/times.py:511
+#: src/human_readable/times.py:530
 #, fuzzy
 msgid "this year"
 msgstr "một năm"
 
-#: src/human_readable/times.py:513
+#: src/human_readable/times.py:532
 #, fuzzy
 msgid "next year"
 msgstr "một năm"
 
-#: src/human_readable/times.py:515
+#: src/human_readable/times.py:534
 #, fuzzy
 msgid "last year"
 msgstr "một năm"
 
-#: src/human_readable/times.py:850
+#: src/human_readable/times.py:852
 #, python-brace-format
 msgid "{head} and {tail}"
 msgstr "{head} và {tail}"

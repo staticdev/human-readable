@@ -54,7 +54,7 @@ def activate(
             "folder. You need to pass the path explicitly."
         )
     if locale not in _TRANSLATIONS:
-        translation = gettext_module.translation("humanize", path, [locale])
+        translation = gettext_module.translation("human_readable", path, [locale])
         _TRANSLATIONS[locale] = translation
     _CURRENT.locale = locale
     return _TRANSLATIONS[locale]

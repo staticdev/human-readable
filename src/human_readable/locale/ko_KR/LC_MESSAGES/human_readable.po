@@ -1,117 +1,136 @@
-# German translation for humanize.
-# Copyright (C) 2016 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the humanize package.
-# Christian Klein <chris@5711.org>, 2016.
+# Korean (Korea) translations for humanize.
+# Copyright (C) 2013
+# This file is distributed under the same license as the humanize project.
+# @youngrok, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: humanize\n"
+"Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-04 08:36+0100\n"
-"PO-Revision-Date: 2021-03-01 17:12+0100\n"
-"Last-Translator: Christian Klein <chris@5711.org>\n"
-"Language-Team: German\n"
-"Language: de\n"
+"POT-Creation-Date: 2021-03-04 14:51+0100\n"
+"PO-Revision-Date: 2021-03-01 16:57+0100\n"
+"Last-Translator: @youngrok\n"
+"Language-Team: ko_KR <LL@li.org>\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: Christian Klein\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 0.9.6\n"
 "X-Generator: Poedit 2.4.1\n"
 
 #: src/human_readable/numbers.py:46
+#, fuzzy
 msgctxt "0"
 msgid "th"
-msgstr "."
+msgstr "번째"
 
 #: src/human_readable/numbers.py:47
+#, fuzzy
 msgctxt "1"
 msgid "st"
-msgstr "اولین"
+msgstr "번째"
 
 #: src/human_readable/numbers.py:48
+#, fuzzy
 msgctxt "2"
 msgid "nd"
-msgstr "دومین"
+msgstr "번째"
 
 #: src/human_readable/numbers.py:49
+#, fuzzy
 msgctxt "3"
 msgid "rd"
-msgstr "سومین"
+msgstr "번째"
 
 #: src/human_readable/numbers.py:50
+#, fuzzy
 msgctxt "4"
 msgid "th"
-msgstr "چهارمین"
+msgstr "번째"
 
 #: src/human_readable/numbers.py:51
+#, fuzzy
 msgctxt "5"
 msgid "th"
-msgstr "پنجمین"
+msgstr "번째"
 
 #: src/human_readable/numbers.py:52
+#, fuzzy
 msgctxt "6"
 msgid "th"
-msgstr "ششمین"
+msgstr "번째"
 
 #: src/human_readable/numbers.py:53
+#, fuzzy
 msgctxt "7"
 msgid "th"
-msgstr "هفتمین"
+msgstr "번째"
 
 #: src/human_readable/numbers.py:54
+#, fuzzy
 msgctxt "8"
 msgid "th"
-msgstr "هشتمین"
+msgstr "번째"
 
 #: src/human_readable/numbers.py:55
+#, fuzzy
 msgctxt "9"
 msgid "th"
-msgstr "نهمین"
+msgstr "번째"
 
 #: src/human_readable/numbers.py:90
 msgid "million"
-msgstr "میلیون"
+msgstr "%(value)s million"
 
 #: src/human_readable/numbers.py:91
 msgid "billion"
-msgstr "میلیارد"
+msgstr "milliard"
 
 #: src/human_readable/numbers.py:92
+#, fuzzy
 msgid "trillion"
-msgstr "ترلیون"
+msgstr "%(value)s billion"
 
 #: src/human_readable/numbers.py:93
+#, fuzzy
 msgid "quadrillion"
-msgstr "کوادریلیون"
+msgstr "%(value)s quadrillion"
 
 #: src/human_readable/numbers.py:94
+#, fuzzy
 msgid "quintillion"
-msgstr "کوانتیلیون"
+msgstr "%(value)s quintillion"
 
 #: src/human_readable/numbers.py:95
+#, fuzzy
 msgid "sextillion"
-msgstr "سکستیلیون"
+msgstr "%(value)s sextillion"
 
 #: src/human_readable/numbers.py:96
+#, fuzzy
 msgid "septillion"
-msgstr "سپتیلیون"
+msgstr "%(value)s septillion"
 
 #: src/human_readable/numbers.py:97
+#, fuzzy
 msgid "octillion"
-msgstr "اوکتیلیون"
+msgstr "%(value)s octillion"
 
 #: src/human_readable/numbers.py:98
+#, fuzzy
 msgid "nonillion"
-msgstr "نونیلیون"
+msgstr "%(value)s nonillion"
 
 #: src/human_readable/numbers.py:99
+#, fuzzy
 msgid "decillion"
-msgstr "دسیلیون"
+msgstr "%(value)s décillion"
 
 #: src/human_readable/numbers.py:100
+#, fuzzy
 msgid "googol"
-msgstr "گوگول"
+msgstr "%(value)s gogol"
 
 #: src/human_readable/numbers.py:151
 msgid "zero"
@@ -119,39 +138,39 @@ msgstr ""
 
 #: src/human_readable/numbers.py:152
 msgid "one"
-msgstr "یک"
+msgstr "하나"
 
 #: src/human_readable/numbers.py:153
 msgid "two"
-msgstr "دو"
+msgstr "둘"
 
 #: src/human_readable/numbers.py:154
 msgid "three"
-msgstr "سه"
+msgstr "셋"
 
 #: src/human_readable/numbers.py:155
 msgid "four"
-msgstr "چهار"
+msgstr "넷"
 
 #: src/human_readable/numbers.py:156
 msgid "five"
-msgstr "پنج"
+msgstr "다섯"
 
 #: src/human_readable/numbers.py:157
 msgid "six"
-msgstr "شش"
+msgstr "여섯"
 
 #: src/human_readable/numbers.py:158
 msgid "seven"
-msgstr "هفت"
+msgstr "일곱"
 
 #: src/human_readable/numbers.py:159
 msgid "eight"
-msgstr "هشت"
+msgstr "여덟"
 
 #: src/human_readable/numbers.py:160
 msgid "nine"
-msgstr "نه"
+msgstr "아홉"
 
 #: src/human_readable/times.py:44
 msgid "morning"
@@ -164,7 +183,7 @@ msgstr ""
 #: src/human_readable/times.py:48
 #, fuzzy
 msgid "evening"
-msgstr "هفت"
+msgstr "일곱"
 
 #: src/human_readable/times.py:60 src/human_readable/times.py:74
 #, python-brace-format
@@ -197,7 +216,7 @@ msgstr[1] ""
 #: src/human_readable/times.py:86
 #, fuzzy
 msgid "midnight"
-msgstr "هشت"
+msgstr "여덟"
 
 #: src/human_readable/times.py:88
 msgid "noon"
@@ -253,55 +272,55 @@ msgstr ""
 #, fuzzy
 msgctxt "hour 1"
 msgid "one"
-msgstr "یک"
+msgstr "하나"
 
 #: src/human_readable/times.py:164
 #, fuzzy
 msgctxt "hour 2"
 msgid "two"
-msgstr "دو"
+msgstr "둘"
 
 #: src/human_readable/times.py:165
 #, fuzzy
 msgctxt "hour 3"
 msgid "three"
-msgstr "سه"
+msgstr "셋"
 
 #: src/human_readable/times.py:166
 #, fuzzy
 msgctxt "hour 4"
 msgid "four"
-msgstr "چهار"
+msgstr "넷"
 
 #: src/human_readable/times.py:167
 #, fuzzy
 msgctxt "hour 5"
 msgid "five"
-msgstr "پنج"
+msgstr "다섯"
 
 #: src/human_readable/times.py:168
 #, fuzzy
 msgctxt "hour 6"
 msgid "six"
-msgstr "شش"
+msgstr "여섯"
 
 #: src/human_readable/times.py:169
 #, fuzzy
 msgctxt "hour 7"
 msgid "seven"
-msgstr "هفت"
+msgstr "일곱"
 
 #: src/human_readable/times.py:170
 #, fuzzy
 msgctxt "hour 8"
 msgid "eight"
-msgstr "هشت"
+msgstr "여덟"
 
 #: src/human_readable/times.py:171
 #, fuzzy
 msgctxt "hour 9"
 msgid "nine"
-msgstr "نه"
+msgstr "아홉"
 
 #: src/human_readable/times.py:172
 msgctxt "hour 10"
@@ -312,7 +331,7 @@ msgstr ""
 #, fuzzy
 msgctxt "hour 11"
 msgid "eleven"
-msgstr "هفت"
+msgstr "일곱"
 
 #: src/human_readable/times.py:174
 msgctxt "hour 12"
@@ -323,55 +342,55 @@ msgstr ""
 #, fuzzy
 msgctxt "hour 13"
 msgid "one"
-msgstr "یک"
+msgstr "하나"
 
 #: src/human_readable/times.py:176
 #, fuzzy
 msgctxt "hour 14"
 msgid "two"
-msgstr "دو"
+msgstr "둘"
 
 #: src/human_readable/times.py:177
 #, fuzzy
 msgctxt "hour 15"
 msgid "three"
-msgstr "سه"
+msgstr "셋"
 
 #: src/human_readable/times.py:178
 #, fuzzy
 msgctxt "hour 16"
 msgid "four"
-msgstr "چهار"
+msgstr "넷"
 
 #: src/human_readable/times.py:179
 #, fuzzy
 msgctxt "hour 17"
 msgid "five"
-msgstr "پنج"
+msgstr "다섯"
 
 #: src/human_readable/times.py:180
 #, fuzzy
 msgctxt "hour 18"
 msgid "six"
-msgstr "شش"
+msgstr "여섯"
 
 #: src/human_readable/times.py:181
 #, fuzzy
 msgctxt "hour 19"
 msgid "seven"
-msgstr "هفت"
+msgstr "일곱"
 
 #: src/human_readable/times.py:182
 #, fuzzy
 msgctxt "hour 20"
 msgid "eight"
-msgstr "هشت"
+msgstr "여덟"
 
 #: src/human_readable/times.py:183
 #, fuzzy
 msgctxt "hour 21"
 msgid "nine"
-msgstr "نه"
+msgstr "아홉"
 
 #: src/human_readable/times.py:184
 msgctxt "hour 22"
@@ -382,7 +401,7 @@ msgstr ""
 #, fuzzy
 msgctxt "hour 23"
 msgid "eleven"
-msgstr "هفت"
+msgstr "일곱"
 
 #: src/human_readable/times.py:189
 msgctxt "minute 0"
@@ -393,55 +412,55 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 1"
 msgid "one"
-msgstr "یک"
+msgstr "하나"
 
 #: src/human_readable/times.py:191
 #, fuzzy
 msgctxt "minute 2"
 msgid "two"
-msgstr "دو"
+msgstr "둘"
 
 #: src/human_readable/times.py:192
 #, fuzzy
 msgctxt "minute 3"
 msgid "three"
-msgstr "سه"
+msgstr "셋"
 
 #: src/human_readable/times.py:193
 #, fuzzy
 msgctxt "minute 4"
 msgid "four"
-msgstr "چهار"
+msgstr "넷"
 
 #: src/human_readable/times.py:194
 #, fuzzy
 msgctxt "minute 5"
 msgid "five"
-msgstr "پنج"
+msgstr "다섯"
 
 #: src/human_readable/times.py:195
 #, fuzzy
 msgctxt "minute 6"
 msgid "six"
-msgstr "شش"
+msgstr "여섯"
 
 #: src/human_readable/times.py:196
 #, fuzzy
 msgctxt "minute 7"
 msgid "seven"
-msgstr "هفت"
+msgstr "일곱"
 
 #: src/human_readable/times.py:197
 #, fuzzy
 msgctxt "minute 8"
 msgid "eight"
-msgstr "هشت"
+msgstr "여덟"
 
 #: src/human_readable/times.py:198
 #, fuzzy
 msgctxt "minute 9"
 msgid "nine"
-msgstr "نه"
+msgstr "아홉"
 
 #: src/human_readable/times.py:199
 msgctxt "minute 10"
@@ -452,7 +471,7 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 11"
 msgid "eleven"
-msgstr "هفت"
+msgstr "일곱"
 
 #: src/human_readable/times.py:201
 msgctxt "minute 12"
@@ -468,7 +487,7 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 14"
 msgid "fourteen"
-msgstr "چهار"
+msgstr "넷"
 
 #: src/human_readable/times.py:204
 msgctxt "minute 15"
@@ -484,19 +503,19 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 17"
 msgid "seventeen"
-msgstr "هفت"
+msgstr "일곱"
 
 #: src/human_readable/times.py:207
 #, fuzzy
 msgctxt "minute 18"
 msgid "eighteen"
-msgstr "هشت"
+msgstr "여덟"
 
 #: src/human_readable/times.py:208
 #, fuzzy
 msgctxt "minute 19"
 msgid "nineteen"
-msgstr "نه"
+msgstr "아홉"
 
 #: src/human_readable/times.py:209
 msgctxt "minute 20"
@@ -617,7 +636,7 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 43"
 msgid "forty three"
-msgstr "سه"
+msgstr "셋"
 
 #: src/human_readable/times.py:233
 msgctxt "minute 44"
@@ -638,13 +657,13 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 47"
 msgid "forty seven"
-msgstr "هفت"
+msgstr "일곱"
 
 #: src/human_readable/times.py:237
 #, fuzzy
 msgctxt "minute 48"
 msgid "forty eight"
-msgstr "هشت"
+msgstr "여덟"
 
 #: src/human_readable/times.py:238
 msgctxt "minute 49"
@@ -670,7 +689,7 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 53"
 msgid "fifty three"
-msgstr "سه"
+msgstr "셋"
 
 #: src/human_readable/times.py:243
 msgctxt "minute 54"
@@ -691,13 +710,13 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 57"
 msgid "fifty seven"
-msgstr "هفت"
+msgstr "일곱"
 
 #: src/human_readable/times.py:247
 #, fuzzy
 msgctxt "minute 58"
 msgid "fifty eight"
-msgstr "هشت"
+msgstr "여덟"
 
 #: src/human_readable/times.py:248
 msgctxt "minute 59"
@@ -718,351 +737,351 @@ msgid_plural "%d milliseconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/human_readable/times.py:319 src/human_readable/times.py:463
+#: src/human_readable/times.py:319 src/human_readable/times.py:464
 msgid "a moment"
-msgstr "یک لحظه"
+msgstr "잠깐"
 
 #: src/human_readable/times.py:321
 msgid "a second"
-msgstr "یک ثانیه"
+msgstr "1초"
 
 #: src/human_readable/times.py:323
 #, python-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d ثانیه"
-msgstr[1] "%d ثانیه"
+msgstr[0] "%d초"
+msgstr[1] "%d초"
 
 #: src/human_readable/times.py:325
 msgid "a minute"
-msgstr "یک دقیقه"
+msgstr "1분"
 
 #: src/human_readable/times.py:328
 #, python-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d دقیقه"
-msgstr[1] "%d دقیقه"
+msgstr[0] "%d분"
+msgstr[1] "%d분"
 
 #: src/human_readable/times.py:330
 msgid "an hour"
-msgstr "یک ساعت"
+msgstr "1시간"
 
 #: src/human_readable/times.py:333
 #, python-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d ساعت"
-msgstr[1] "%d ساعت"
+msgstr[0] "%d heure"
+msgstr[1] "%d시간"
 
 #: src/human_readable/times.py:339
 msgid "a day"
-msgstr "یک روز"
+msgstr "하루"
 
 #: src/human_readable/times.py:341 src/human_readable/times.py:344
 #, python-format
 msgid "%d day"
 msgid_plural "%d days"
-msgstr[0] "%d روز"
-msgstr[1] "%d روز"
+msgstr[0] "%d jour"
+msgstr[1] "%d일"
 
 #: src/human_readable/times.py:346
 msgid "a month"
-msgstr "یک ماه"
+msgstr "한달"
 
 #: src/human_readable/times.py:348
 #, python-format
 msgid "%d month"
 msgid_plural "%d months"
-msgstr[0] "%d ماه"
-msgstr[1] "%d ماه"
+msgstr[0] "%d mois"
+msgstr[1] "%d개월"
 
 #: src/human_readable/times.py:353
 msgid "a year"
-msgstr "یک سال"
+msgstr "1년"
 
 #: src/human_readable/times.py:355 src/human_readable/times.py:364
 #, python-format
 msgid "1 year, %d day"
 msgid_plural "1 year, %d days"
-msgstr[0] "۱ سال و %d روز"
-msgstr[1] "۱ سال و %d روز"
+msgstr[0] "1년 %d일"
+msgstr[1] "1년 %d일"
 
 #: src/human_readable/times.py:358
 msgid "1 year, 1 month"
-msgstr "۱ سال و ۱ ماه"
+msgstr "1년, 1개월"
 
 #: src/human_readable/times.py:361
 #, python-format
 msgid "1 year, %d month"
 msgid_plural "1 year, %d months"
-msgstr[0] "۱ سال و %d ماه"
-msgstr[1] "۱ سال و %d ماه"
+msgstr[0] "1년, %d개월"
+msgstr[1] "1년, %d개월"
 
-#: src/human_readable/times.py:424
+#: src/human_readable/times.py:425
 #, python-format
 msgid "%d year"
 msgid_plural "%d years"
-msgstr[0] "%d سال"
-msgstr[1] "%d سال"
+msgstr[0] "%d 년"
+msgstr[1] "%d ans"
 
-#: src/human_readable/times.py:464
+#: src/human_readable/times.py:465
 msgid "now"
-msgstr "اکنون"
+msgstr "방금"
 
-#: src/human_readable/times.py:467
+#: src/human_readable/times.py:468
 #, python-format
 msgid "%s from now"
-msgstr "%s تا به اکنون"
+msgstr "%s 후"
 
-#: src/human_readable/times.py:469
+#: src/human_readable/times.py:470
 #, python-format
 msgid "%s ago"
-msgstr "%s پیش"
+msgstr "%s 전"
 
-#: src/human_readable/times.py:488
+#: src/human_readable/times.py:489
 msgid "today"
-msgstr "امروز"
+msgstr "오늘"
 
-#: src/human_readable/times.py:490
+#: src/human_readable/times.py:491
 msgid "tomorrow"
-msgstr "فردا"
+msgstr "내일"
 
-#: src/human_readable/times.py:492
+#: src/human_readable/times.py:493
 msgid "yesterday"
-msgstr "دیروز"
+msgstr "어제"
 
-#: src/human_readable/times.py:511
+#: src/human_readable/times.py:530
 #, fuzzy
 msgid "this year"
-msgstr "یک سال"
+msgstr "1년"
 
-#: src/human_readable/times.py:513
+#: src/human_readable/times.py:532
 #, fuzzy
 msgid "next year"
-msgstr "یک سال"
+msgstr "1년"
 
-#: src/human_readable/times.py:515
+#: src/human_readable/times.py:534
 #, fuzzy
 msgid "last year"
-msgstr "یک سال"
+msgstr "1년"
 
-#: src/human_readable/times.py:850
+#: src/human_readable/times.py:852
 #, python-brace-format
 msgid "{head} and {tail}"
-msgstr ""
+msgstr "{head} {tail}"
 
 #, fuzzy
 #~ msgctxt "hour|1"
 #~ msgid "one"
-#~ msgstr "یک"
+#~ msgstr "하나"
 
 #, fuzzy
 #~ msgctxt "hour|2"
 #~ msgid "two"
-#~ msgstr "دو"
+#~ msgstr "둘"
 
 #, fuzzy
 #~ msgctxt "hour|3"
 #~ msgid "three"
-#~ msgstr "سه"
+#~ msgstr "셋"
 
 #, fuzzy
 #~ msgctxt "hour|4"
 #~ msgid "four"
-#~ msgstr "چهار"
+#~ msgstr "넷"
 
 #, fuzzy
 #~ msgctxt "hour|5"
 #~ msgid "five"
-#~ msgstr "پنج"
+#~ msgstr "다섯"
 
 #, fuzzy
 #~ msgctxt "hour|6"
 #~ msgid "six"
-#~ msgstr "شش"
+#~ msgstr "여섯"
 
 #, fuzzy
 #~ msgctxt "hour|7"
 #~ msgid "seven"
-#~ msgstr "هفت"
+#~ msgstr "일곱"
 
 #, fuzzy
 #~ msgctxt "hour|8"
 #~ msgid "eight"
-#~ msgstr "هشت"
+#~ msgstr "여덟"
 
 #, fuzzy
 #~ msgctxt "hour|9"
 #~ msgid "nine"
-#~ msgstr "نه"
+#~ msgstr "아홉"
 
 #, fuzzy
 #~ msgctxt "hour|13"
 #~ msgid "one"
-#~ msgstr "یک"
+#~ msgstr "하나"
 
 #, fuzzy
 #~ msgctxt "hour|14"
 #~ msgid "two"
-#~ msgstr "دو"
+#~ msgstr "둘"
 
 #, fuzzy
 #~ msgctxt "hour|15"
 #~ msgid "three"
-#~ msgstr "سه"
+#~ msgstr "셋"
 
 #, fuzzy
 #~ msgctxt "hour|16"
 #~ msgid "four"
-#~ msgstr "چهار"
+#~ msgstr "넷"
 
 #, fuzzy
 #~ msgctxt "hour|17"
 #~ msgid "five"
-#~ msgstr "پنج"
+#~ msgstr "다섯"
 
 #, fuzzy
 #~ msgctxt "hour|18"
 #~ msgid "six"
-#~ msgstr "شش"
+#~ msgstr "여섯"
 
 #, fuzzy
 #~ msgctxt "hour|19"
 #~ msgid "seven"
-#~ msgstr "هفت"
+#~ msgstr "일곱"
 
 #, fuzzy
 #~ msgctxt "hour|20"
 #~ msgid "eight"
-#~ msgstr "هشت"
+#~ msgstr "여덟"
 
 #, fuzzy
 #~ msgctxt "hour|21"
 #~ msgid "nine"
-#~ msgstr "نه"
+#~ msgstr "아홉"
 
 #, fuzzy
 #~ msgctxt "hour|23"
 #~ msgid "eleven"
-#~ msgstr "هفت"
+#~ msgstr "일곱"
 
 #, fuzzy
 #~ msgctxt "0"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "1"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "2"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "3"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "4"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "5"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "6"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "7"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "8"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "9"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "10"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "11"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "12"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "13"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "14"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "15"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "16"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "17"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "18"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "19"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "20"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "21"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "22"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"
 
 #, fuzzy
 #~ msgctxt "23"
 #~ msgid "hour"
-#~ msgstr "یک ساعت"
+#~ msgstr "1시간"

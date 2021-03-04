@@ -5,7 +5,7 @@ import human_readable.i18n as i18n
 import human_readable.numbers as numbers
 
 
-DOMAIN_NAME = "humanize"
+DOMAIN_NAME = "human_readable"
 EXPECTED_MSG = (
     "Human readable cannot determinate the default location of the"
     " 'locale' folder. You need to pass the path explicitly."

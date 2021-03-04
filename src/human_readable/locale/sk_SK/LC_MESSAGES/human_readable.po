@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: humanize\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-04 08:36+0100\n"
+"POT-Creation-Date: 2021-03-04 14:51+0100\n"
 "PO-Revision-Date: 2021-03-01 17:02+0100\n"
 "Last-Translator: Jose Riha <jose1711 gmail com>\n"
 "Language-Team: sk <LL@li.org>\n"
@@ -726,7 +726,7 @@ msgstr[0] "%d milisekundu"
 msgstr[1] "%d milisekundy"
 msgstr[2] "%d milisekúnd"
 
-#: src/human_readable/times.py:319 src/human_readable/times.py:463
+#: src/human_readable/times.py:319 src/human_readable/times.py:464
 msgid "a moment"
 msgstr "chvíľku"
 
@@ -814,7 +814,7 @@ msgstr[0] "1 rok, %d mesiac"
 msgstr[1] "1 rok, %d mesiace"
 msgstr[2] "1 rok, %d mesiacov"
 
-#: src/human_readable/times.py:424
+#: src/human_readable/times.py:425
 #, python-format
 msgid "%d year"
 msgid_plural "%d years"
@@ -822,48 +822,48 @@ msgstr[0] "%d rok"
 msgstr[1] "%d roky"
 msgstr[2] "%d rokov"
 
-#: src/human_readable/times.py:464
+#: src/human_readable/times.py:465
 msgid "now"
 msgstr "teraz"
 
-#: src/human_readable/times.py:467
+#: src/human_readable/times.py:468
 #, python-format
 msgid "%s from now"
 msgstr "o %s"
 
-#: src/human_readable/times.py:469
+#: src/human_readable/times.py:470
 #, python-format
 msgid "%s ago"
 msgstr "%s naspäť"
 
-#: src/human_readable/times.py:488
+#: src/human_readable/times.py:489
 msgid "today"
 msgstr "dnes"
 
-#: src/human_readable/times.py:490
+#: src/human_readable/times.py:491
 msgid "tomorrow"
 msgstr "zajtra"
 
-#: src/human_readable/times.py:492
+#: src/human_readable/times.py:493
 msgid "yesterday"
 msgstr "včera"
 
-#: src/human_readable/times.py:511
+#: src/human_readable/times.py:530
 #, fuzzy
 msgid "this year"
 msgstr "rok"
 
-#: src/human_readable/times.py:513
+#: src/human_readable/times.py:532
 #, fuzzy
 msgid "next year"
 msgstr "rok"
 
-#: src/human_readable/times.py:515
+#: src/human_readable/times.py:534
 #, fuzzy
 msgid "last year"
 msgstr "rok"
 
-#: src/human_readable/times.py:850
+#: src/human_readable/times.py:852
 #, python-brace-format
 msgid "{head} and {tail}"
 msgstr "{head} a {tail}"

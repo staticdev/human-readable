@@ -1,177 +1,156 @@
-# French (France) translations for PROJECT.
-# Copyright (C) 2013 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+# Finnish translations for humanize package
+# Copyright (C) 2017 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the humanize package.
+# Ville Skyttä <ville.skytta@iki.fi>, 2017.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
+"Project-Id-Version: humanize\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-04 08:36+0100\n"
-"PO-Revision-Date: 2021-03-01 16:25+0100\n"
-"Last-Translator: Olivier Cortès <oc@1flow.io>\n"
-"Language-Team: fr_FR <LL@li.org>\n"
-"Language: fr\n"
+"POT-Creation-Date: 2021-03-04 14:51+0100\n"
+"PO-Revision-Date: 2021-03-01 16:24+0100\n"
+"Last-Translator: Ville Skyttä <ville.skytta@iki.fi>\n"
+"Language-Team: Finnish\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Generated-By: Babel 0.9.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.4.1\n"
 
 #: src/human_readable/numbers.py:46
-#, fuzzy
 msgctxt "0"
 msgid "th"
-msgstr "e"
+msgstr "."
 
 #: src/human_readable/numbers.py:47
-#, fuzzy
 msgctxt "1"
 msgid "st"
-msgstr "er"
+msgstr "."
 
 #: src/human_readable/numbers.py:48
-#, fuzzy
 msgctxt "2"
 msgid "nd"
-msgstr "e"
+msgstr "."
 
 #: src/human_readable/numbers.py:49
-#, fuzzy
 msgctxt "3"
 msgid "rd"
-msgstr "e"
+msgstr "."
 
 #: src/human_readable/numbers.py:50
-#, fuzzy
 msgctxt "4"
 msgid "th"
-msgstr "e"
+msgstr "."
 
 #: src/human_readable/numbers.py:51
-#, fuzzy
 msgctxt "5"
 msgid "th"
-msgstr "e"
+msgstr "."
 
 #: src/human_readable/numbers.py:52
-#, fuzzy
 msgctxt "6"
 msgid "th"
-msgstr "e"
+msgstr "."
 
 #: src/human_readable/numbers.py:53
-#, fuzzy
 msgctxt "7"
 msgid "th"
-msgstr "e"
+msgstr "."
 
 #: src/human_readable/numbers.py:54
-#, fuzzy
 msgctxt "8"
 msgid "th"
-msgstr "e"
+msgstr "."
 
 #: src/human_readable/numbers.py:55
-#, fuzzy
 msgctxt "9"
 msgid "th"
-msgstr "e"
+msgstr "."
 
 #: src/human_readable/numbers.py:90
-#, fuzzy
 msgid "million"
-msgstr "%(value)s million"
+msgstr "miljoonaa"
 
 #: src/human_readable/numbers.py:91
 msgid "billion"
-msgstr "milliard"
+msgstr "miljardia"
 
 #: src/human_readable/numbers.py:92
-#, fuzzy
 msgid "trillion"
-msgstr "%(value)s billion"
+msgstr "biljoonaa"
 
 #: src/human_readable/numbers.py:93
-#, fuzzy
 msgid "quadrillion"
-msgstr "%(value)s billiard"
+msgstr "kvadriljoonaa"
 
 #: src/human_readable/numbers.py:94
-#, fuzzy
 msgid "quintillion"
-msgstr "%(value)s trillion"
+msgstr "kvintiljoonaa"
 
 #: src/human_readable/numbers.py:95
-#, fuzzy
 msgid "sextillion"
-msgstr "%(value)s trilliard"
+msgstr "sekstiljoonaa"
 
 #: src/human_readable/numbers.py:96
-#, fuzzy
 msgid "septillion"
-msgstr "%(value)s quatrillion"
+msgstr "septiljoonaa"
 
 #: src/human_readable/numbers.py:97
-#, fuzzy
 msgid "octillion"
-msgstr "%(value)s quadrilliard"
+msgstr "oktiljoonaa"
 
 #: src/human_readable/numbers.py:98
-#, fuzzy
 msgid "nonillion"
-msgstr "%(value)s quintillion"
+msgstr "noniljoonaa"
 
 #: src/human_readable/numbers.py:99
-#, fuzzy
 msgid "decillion"
-msgstr "%(value)s quintilliard"
+msgstr "dekiljoonaa"
 
 #: src/human_readable/numbers.py:100
-#, fuzzy
 msgid "googol"
-msgstr "%(value)s gogol"
+msgstr "googol"
 
 #: src/human_readable/numbers.py:151
 msgid "zero"
-msgstr "zéro"
+msgstr "nolla"
 
 #: src/human_readable/numbers.py:152
 msgid "one"
-msgstr "un"
+msgstr "yksi"
 
 #: src/human_readable/numbers.py:153
 msgid "two"
-msgstr "deux"
+msgstr "kaksi"
 
 #: src/human_readable/numbers.py:154
 msgid "three"
-msgstr "trois"
+msgstr "kolme"
 
 #: src/human_readable/numbers.py:155
 msgid "four"
-msgstr "quatre"
+msgstr "neljä"
 
 #: src/human_readable/numbers.py:156
 msgid "five"
-msgstr "cinq"
+msgstr "viisi"
 
 #: src/human_readable/numbers.py:157
 msgid "six"
-msgstr "six"
+msgstr "kuusi"
 
 #: src/human_readable/numbers.py:158
 msgid "seven"
-msgstr "sept"
+msgstr "seitsemän"
 
 #: src/human_readable/numbers.py:159
 msgid "eight"
-msgstr "huit"
+msgstr "kahdeksan"
 
 #: src/human_readable/numbers.py:160
 msgid "nine"
-msgstr "neuf"
+msgstr "yhdeksän"
 
 #: src/human_readable/times.py:44
 msgid "morning"
@@ -184,7 +163,7 @@ msgstr ""
 #: src/human_readable/times.py:48
 #, fuzzy
 msgid "evening"
-msgstr "sept"
+msgstr "seitsemän"
 
 #: src/human_readable/times.py:60 src/human_readable/times.py:74
 #, python-brace-format
@@ -217,7 +196,7 @@ msgstr[1] ""
 #: src/human_readable/times.py:86
 #, fuzzy
 msgid "midnight"
-msgstr "huit"
+msgstr "kahdeksan"
 
 #: src/human_readable/times.py:88
 msgid "noon"
@@ -268,61 +247,61 @@ msgstr ""
 #, fuzzy
 msgctxt "hour 0"
 msgid "zero"
-msgstr "zéro"
+msgstr "nolla"
 
 #: src/human_readable/times.py:163
 #, fuzzy
 msgctxt "hour 1"
 msgid "one"
-msgstr "un"
+msgstr "yksi"
 
 #: src/human_readable/times.py:164
 #, fuzzy
 msgctxt "hour 2"
 msgid "two"
-msgstr "deux"
+msgstr "kaksi"
 
 #: src/human_readable/times.py:165
 #, fuzzy
 msgctxt "hour 3"
 msgid "three"
-msgstr "trois"
+msgstr "kolme"
 
 #: src/human_readable/times.py:166
 #, fuzzy
 msgctxt "hour 4"
 msgid "four"
-msgstr "quatre"
+msgstr "neljä"
 
 #: src/human_readable/times.py:167
 #, fuzzy
 msgctxt "hour 5"
 msgid "five"
-msgstr "cinq"
+msgstr "viisi"
 
 #: src/human_readable/times.py:168
 #, fuzzy
 msgctxt "hour 6"
 msgid "six"
-msgstr "six"
+msgstr "kuusi"
 
 #: src/human_readable/times.py:169
 #, fuzzy
 msgctxt "hour 7"
 msgid "seven"
-msgstr "sept"
+msgstr "seitsemän"
 
 #: src/human_readable/times.py:170
 #, fuzzy
 msgctxt "hour 8"
 msgid "eight"
-msgstr "huit"
+msgstr "kahdeksan"
 
 #: src/human_readable/times.py:171
 #, fuzzy
 msgctxt "hour 9"
 msgid "nine"
-msgstr "neuf"
+msgstr "yhdeksän"
 
 #: src/human_readable/times.py:172
 msgctxt "hour 10"
@@ -333,7 +312,7 @@ msgstr ""
 #, fuzzy
 msgctxt "hour 11"
 msgid "eleven"
-msgstr "sept"
+msgstr "seitsemän"
 
 #: src/human_readable/times.py:174
 msgctxt "hour 12"
@@ -344,55 +323,55 @@ msgstr ""
 #, fuzzy
 msgctxt "hour 13"
 msgid "one"
-msgstr "un"
+msgstr "yksi"
 
 #: src/human_readable/times.py:176
 #, fuzzy
 msgctxt "hour 14"
 msgid "two"
-msgstr "deux"
+msgstr "kaksi"
 
 #: src/human_readable/times.py:177
 #, fuzzy
 msgctxt "hour 15"
 msgid "three"
-msgstr "trois"
+msgstr "kolme"
 
 #: src/human_readable/times.py:178
 #, fuzzy
 msgctxt "hour 16"
 msgid "four"
-msgstr "quatre"
+msgstr "neljä"
 
 #: src/human_readable/times.py:179
 #, fuzzy
 msgctxt "hour 17"
 msgid "five"
-msgstr "cinq"
+msgstr "viisi"
 
 #: src/human_readable/times.py:180
 #, fuzzy
 msgctxt "hour 18"
 msgid "six"
-msgstr "six"
+msgstr "kuusi"
 
 #: src/human_readable/times.py:181
 #, fuzzy
 msgctxt "hour 19"
 msgid "seven"
-msgstr "sept"
+msgstr "seitsemän"
 
 #: src/human_readable/times.py:182
 #, fuzzy
 msgctxt "hour 20"
 msgid "eight"
-msgstr "huit"
+msgstr "kahdeksan"
 
 #: src/human_readable/times.py:183
 #, fuzzy
 msgctxt "hour 21"
 msgid "nine"
-msgstr "neuf"
+msgstr "yhdeksän"
 
 #: src/human_readable/times.py:184
 msgctxt "hour 22"
@@ -403,67 +382,67 @@ msgstr ""
 #, fuzzy
 msgctxt "hour 23"
 msgid "eleven"
-msgstr "sept"
+msgstr "seitsemän"
 
 #: src/human_readable/times.py:189
 #, fuzzy
 msgctxt "minute 0"
 msgid "zero"
-msgstr "zéro"
+msgstr "nolla"
 
 #: src/human_readable/times.py:190
 #, fuzzy
 msgctxt "minute 1"
 msgid "one"
-msgstr "un"
+msgstr "yksi"
 
 #: src/human_readable/times.py:191
 #, fuzzy
 msgctxt "minute 2"
 msgid "two"
-msgstr "deux"
+msgstr "kaksi"
 
 #: src/human_readable/times.py:192
 #, fuzzy
 msgctxt "minute 3"
 msgid "three"
-msgstr "trois"
+msgstr "kolme"
 
 #: src/human_readable/times.py:193
 #, fuzzy
 msgctxt "minute 4"
 msgid "four"
-msgstr "quatre"
+msgstr "neljä"
 
 #: src/human_readable/times.py:194
 #, fuzzy
 msgctxt "minute 5"
 msgid "five"
-msgstr "cinq"
+msgstr "viisi"
 
 #: src/human_readable/times.py:195
 #, fuzzy
 msgctxt "minute 6"
 msgid "six"
-msgstr "six"
+msgstr "kuusi"
 
 #: src/human_readable/times.py:196
 #, fuzzy
 msgctxt "minute 7"
 msgid "seven"
-msgstr "sept"
+msgstr "seitsemän"
 
 #: src/human_readable/times.py:197
 #, fuzzy
 msgctxt "minute 8"
 msgid "eight"
-msgstr "huit"
+msgstr "kahdeksan"
 
 #: src/human_readable/times.py:198
 #, fuzzy
 msgctxt "minute 9"
 msgid "nine"
-msgstr "neuf"
+msgstr "yhdeksän"
 
 #: src/human_readable/times.py:199
 msgctxt "minute 10"
@@ -474,7 +453,7 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 11"
 msgid "eleven"
-msgstr "sept"
+msgstr "seitsemän"
 
 #: src/human_readable/times.py:201
 msgctxt "minute 12"
@@ -490,7 +469,7 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 14"
 msgid "fourteen"
-msgstr "quatre"
+msgstr "neljä"
 
 #: src/human_readable/times.py:204
 msgctxt "minute 15"
@@ -506,19 +485,19 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 17"
 msgid "seventeen"
-msgstr "sept"
+msgstr "seitsemän"
 
 #: src/human_readable/times.py:207
 #, fuzzy
 msgctxt "minute 18"
 msgid "eighteen"
-msgstr "huit"
+msgstr "kahdeksan"
 
 #: src/human_readable/times.py:208
 #, fuzzy
 msgctxt "minute 19"
 msgid "nineteen"
-msgstr "neuf"
+msgstr "yhdeksän"
 
 #: src/human_readable/times.py:209
 msgctxt "minute 20"
@@ -639,7 +618,7 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 43"
 msgid "forty three"
-msgstr "trois"
+msgstr "kolme"
 
 #: src/human_readable/times.py:233
 msgctxt "minute 44"
@@ -660,13 +639,13 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 47"
 msgid "forty seven"
-msgstr "sept"
+msgstr "seitsemän"
 
 #: src/human_readable/times.py:237
 #, fuzzy
 msgctxt "minute 48"
 msgid "forty eight"
-msgstr "huit"
+msgstr "kahdeksan"
 
 #: src/human_readable/times.py:238
 msgctxt "minute 49"
@@ -692,7 +671,7 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 53"
 msgid "fifty three"
-msgstr "trois"
+msgstr "kolme"
 
 #: src/human_readable/times.py:243
 msgctxt "minute 54"
@@ -713,13 +692,13 @@ msgstr ""
 #, fuzzy
 msgctxt "minute 57"
 msgid "fifty seven"
-msgstr "sept"
+msgstr "seitsemän"
 
 #: src/human_readable/times.py:247
 #, fuzzy
 msgctxt "minute 58"
 msgid "fifty eight"
-msgstr "huit"
+msgstr "kahdeksan"
 
 #: src/human_readable/times.py:248
 msgctxt "minute 59"
@@ -730,366 +709,366 @@ msgstr ""
 #, python-format
 msgid "%d microsecond"
 msgid_plural "%d microseconds"
-msgstr[0] "%d microseconde"
-msgstr[1] "%d microsecondes"
+msgstr[0] "%d mikrosekunti"
+msgstr[1] "%d mikrosekuntia"
 
 #: src/human_readable/times.py:316
 #, python-format
 msgid "%d millisecond"
 msgid_plural "%d milliseconds"
-msgstr[0] "%d milliseconde"
-msgstr[1] "%d millisecondes"
+msgstr[0] "%d millisekunti"
+msgstr[1] "%d millisekuntia"
 
-#: src/human_readable/times.py:319 src/human_readable/times.py:463
+#: src/human_readable/times.py:319 src/human_readable/times.py:464
 msgid "a moment"
-msgstr "un moment"
+msgstr "hetki"
 
 #: src/human_readable/times.py:321
 msgid "a second"
-msgstr "une seconde"
+msgstr "sekunti"
 
 #: src/human_readable/times.py:323
 #, python-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d seconde"
-msgstr[1] "%d secondes"
+msgstr[0] "%d sekunti"
+msgstr[1] "%d sekuntia"
 
 #: src/human_readable/times.py:325
 msgid "a minute"
-msgstr "une minute"
+msgstr "minuutti"
 
 #: src/human_readable/times.py:328
 #, python-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minute"
-msgstr[1] "%d minutes"
+msgstr[0] "%d minuutti"
+msgstr[1] "%d minuuttia"
 
 #: src/human_readable/times.py:330
 msgid "an hour"
-msgstr "une heure"
+msgstr "tunti"
 
 #: src/human_readable/times.py:333
 #, python-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d heure"
-msgstr[1] "%d heures"
+msgstr[0] "%d tunti"
+msgstr[1] "%d tuntia"
 
 #: src/human_readable/times.py:339
 msgid "a day"
-msgstr "un jour"
+msgstr "päivä"
 
 #: src/human_readable/times.py:341 src/human_readable/times.py:344
 #, python-format
 msgid "%d day"
 msgid_plural "%d days"
-msgstr[0] "%d jour"
-msgstr[1] "%d jours"
+msgstr[0] "%d päivä"
+msgstr[1] "%d päivää"
 
 #: src/human_readable/times.py:346
 msgid "a month"
-msgstr "un mois"
+msgstr "kuukausi"
 
 #: src/human_readable/times.py:348
 #, python-format
 msgid "%d month"
 msgid_plural "%d months"
-msgstr[0] "%d mois"
-msgstr[1] "%d mois"
+msgstr[0] "%d kuukausi"
+msgstr[1] "%d kuukautta"
 
 #: src/human_readable/times.py:353
 msgid "a year"
-msgstr "un an"
+msgstr "vuosi"
 
 #: src/human_readable/times.py:355 src/human_readable/times.py:364
 #, python-format
 msgid "1 year, %d day"
 msgid_plural "1 year, %d days"
-msgstr[0] "un an et %d jour"
-msgstr[1] "un an et %d jours"
+msgstr[0] "1 vuosi, %d päivä"
+msgstr[1] "1 vuosi, %d päivää"
 
 #: src/human_readable/times.py:358
 msgid "1 year, 1 month"
-msgstr "un an et un mois"
+msgstr "1 vuosi, 1 kuukausi"
 
 #: src/human_readable/times.py:361
 #, python-format
 msgid "1 year, %d month"
 msgid_plural "1 year, %d months"
-msgstr[0] "un an et %d mois"
-msgstr[1] "un an et %d mois"
+msgstr[0] "1 vuosi, %d kuukausi"
+msgstr[1] "1 vuosi, %d kuukautta"
 
-#: src/human_readable/times.py:424
+#: src/human_readable/times.py:425
 #, python-format
 msgid "%d year"
 msgid_plural "%d years"
-msgstr[0] "%d an"
-msgstr[1] "%d ans"
+msgstr[0] "%d vuosi"
+msgstr[1] "%d vuotta"
 
-#: src/human_readable/times.py:464
+#: src/human_readable/times.py:465
 msgid "now"
-msgstr "maintenant"
+msgstr "nyt"
 
-#: src/human_readable/times.py:467
+#: src/human_readable/times.py:468
 #, python-format
 msgid "%s from now"
-msgstr "dans %s"
+msgstr "%s tästä"
 
-#: src/human_readable/times.py:469
+#: src/human_readable/times.py:470
 #, python-format
 msgid "%s ago"
-msgstr "il y a %s"
+msgstr "%s sitten"
 
-#: src/human_readable/times.py:488
+#: src/human_readable/times.py:489
 msgid "today"
-msgstr "aujourd'hui"
+msgstr "tänään"
 
-#: src/human_readable/times.py:490
+#: src/human_readable/times.py:491
 msgid "tomorrow"
-msgstr "demain"
+msgstr "huomenna"
 
-#: src/human_readable/times.py:492
+#: src/human_readable/times.py:493
 msgid "yesterday"
-msgstr "hier"
+msgstr "eilen"
 
-#: src/human_readable/times.py:511
+#: src/human_readable/times.py:530
 #, fuzzy
 msgid "this year"
-msgstr "un an"
+msgstr "vuosi"
 
-#: src/human_readable/times.py:513
+#: src/human_readable/times.py:532
 #, fuzzy
 msgid "next year"
-msgstr "un an"
+msgstr "vuosi"
 
-#: src/human_readable/times.py:515
+#: src/human_readable/times.py:534
 #, fuzzy
 msgid "last year"
-msgstr "un an"
+msgstr "vuosi"
 
-#: src/human_readable/times.py:850
+#: src/human_readable/times.py:852
 #, python-brace-format
 msgid "{head} and {tail}"
-msgstr "{head} et {tail}"
+msgstr "{head} ja {tail}"
 
 #, fuzzy
 #~ msgctxt "hour|0"
 #~ msgid "zero"
-#~ msgstr "zéro"
+#~ msgstr "nolla"
 
 #, fuzzy
 #~ msgctxt "hour|1"
 #~ msgid "one"
-#~ msgstr "un"
+#~ msgstr "yksi"
 
 #, fuzzy
 #~ msgctxt "hour|2"
 #~ msgid "two"
-#~ msgstr "deux"
+#~ msgstr "kaksi"
 
 #, fuzzy
 #~ msgctxt "hour|3"
 #~ msgid "three"
-#~ msgstr "trois"
+#~ msgstr "kolme"
 
 #, fuzzy
 #~ msgctxt "hour|4"
 #~ msgid "four"
-#~ msgstr "quatre"
+#~ msgstr "neljä"
 
 #, fuzzy
 #~ msgctxt "hour|5"
 #~ msgid "five"
-#~ msgstr "cinq"
+#~ msgstr "viisi"
 
 #, fuzzy
 #~ msgctxt "hour|6"
 #~ msgid "six"
-#~ msgstr "six"
+#~ msgstr "kuusi"
 
 #, fuzzy
 #~ msgctxt "hour|7"
 #~ msgid "seven"
-#~ msgstr "sept"
+#~ msgstr "seitsemän"
 
 #, fuzzy
 #~ msgctxt "hour|8"
 #~ msgid "eight"
-#~ msgstr "huit"
+#~ msgstr "kahdeksan"
 
 #, fuzzy
 #~ msgctxt "hour|9"
 #~ msgid "nine"
-#~ msgstr "neuf"
+#~ msgstr "yhdeksän"
 
 #, fuzzy
 #~ msgctxt "hour|13"
 #~ msgid "one"
-#~ msgstr "un"
+#~ msgstr "yksi"
 
 #, fuzzy
 #~ msgctxt "hour|14"
 #~ msgid "two"
-#~ msgstr "deux"
+#~ msgstr "kaksi"
 
 #, fuzzy
 #~ msgctxt "hour|15"
 #~ msgid "three"
-#~ msgstr "trois"
+#~ msgstr "kolme"
 
 #, fuzzy
 #~ msgctxt "hour|16"
 #~ msgid "four"
-#~ msgstr "quatre"
+#~ msgstr "neljä"
 
 #, fuzzy
 #~ msgctxt "hour|17"
 #~ msgid "five"
-#~ msgstr "cinq"
+#~ msgstr "viisi"
 
 #, fuzzy
 #~ msgctxt "hour|18"
 #~ msgid "six"
-#~ msgstr "six"
+#~ msgstr "kuusi"
 
 #, fuzzy
 #~ msgctxt "hour|19"
 #~ msgid "seven"
-#~ msgstr "sept"
+#~ msgstr "seitsemän"
 
 #, fuzzy
 #~ msgctxt "hour|20"
 #~ msgid "eight"
-#~ msgstr "huit"
+#~ msgstr "kahdeksan"
 
 #, fuzzy
 #~ msgctxt "hour|21"
 #~ msgid "nine"
-#~ msgstr "neuf"
+#~ msgstr "yhdeksän"
 
 #, fuzzy
 #~ msgctxt "hour|23"
 #~ msgid "eleven"
-#~ msgstr "sept"
+#~ msgstr "seitsemän"
 
 #, fuzzy
 #~ msgctxt "0"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "1"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "2"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "3"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "4"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "5"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "6"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "7"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "8"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "9"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "10"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "11"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "12"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "13"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "14"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "15"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "16"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "17"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "18"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "19"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "20"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "21"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "22"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
 
 #, fuzzy
 #~ msgctxt "23"
 #~ msgid "hour"
-#~ msgstr "une heure"
+#~ msgstr "tunti"
