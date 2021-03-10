@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "human-readable"
-version = "0.3.0"
+version = "1.0.0"
 description = "Human Readable"
 authors = ["Thiago Carvalho D'Ávila <thiagocavila@gmail.com>"]
 license = "MIT"
