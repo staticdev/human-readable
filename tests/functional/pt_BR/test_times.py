@@ -46,14 +46,6 @@ def assert_equal_timedelta(td1: dt.timedelta, td2: dt.timedelta) -> None:
     assert td1.seconds == td2.seconds
 
 
-class FakeTime:
-    """Test helper class to fake time."""
-
-    def __init__(self, hour: int, minute: int, second: int) -> None:
-        """Initializes fake time."""
-        self.hour, self.minute, self.second = hour, minute, second
-
-
 @pytest.mark.parametrize(
     "hour, expected",
     [
@@ -71,6 +63,70 @@ class FakeTime:
 def test_time_of_day(activate_pt_br: MockerFixture, hour: int, expected: str) -> None:
     """It returns period of the day."""
     assert times.time_of_day(hour) == expected
+
+
+@pytest.mark.parametrize(
+    "value, expected",
+    [
+        (0, "um momento"),
+        (dt.timedelta(seconds=1), "um segundo"),
+        (30, "30 segundos"),
+        (dt.timedelta(minutes=1, seconds=30), "um minuto"),
+        (dt.timedelta(minutes=2), "2 minutos"),
+        (dt.timedelta(hours=1, minutes=30, seconds=30), "uma hora"),
+        (dt.timedelta(hours=23, minutes=50, seconds=50), "23 horas"),
+        (dt.timedelta(days=1), "um dia"),
+        (dt.timedelta(days=9), "9 dias"),
+        (dt.timedelta(days=35), "um mês"),
+        (dt.timedelta(days=65), "2 meses"),
+        (dt.timedelta(days=365), "um ano"),
+        (dt.timedelta(days=365 + 4), "1 ano e 4 dias"),
+        (dt.timedelta(days=365 + 35), "1 ano e 1 mês"),
+        (dt.timedelta(days=500), "1 ano e 4 meses"),
+        (dt.timedelta(days=365 * 2 + 35), "2 anos"),
+        (dt.timedelta(days=10000), "27 anos"),
+    ],
+)
+def test_time_delta(
+    activate_pt_br: MockerFixture, value: Union[dt.timedelta, int], expected: str
+) -> None:
+    """It returns delta in words."""
+    assert times.time_delta(value) == expected
+
+
+@freezegun.freeze_time("2020-02-02")
+@pytest.mark.parametrize(
+    "value, expected",
+    [
+        (NOW, "agora"),
+        (NOW - dt.timedelta(seconds=1), "há um segundo"),
+        (NOW - dt.timedelta(seconds=30), "há 30 segundos"),
+        (NOW - dt.timedelta(minutes=1, seconds=30), "há um minuto"),
+        (NOW - dt.timedelta(minutes=2), "há 2 minutos"),
+        (NOW - dt.timedelta(hours=1, minutes=30, seconds=30), "há uma hora"),
+        (NOW - dt.timedelta(hours=23, minutes=50, seconds=50), "há 23 horas"),
+        (NOW - dt.timedelta(days=1), "há um dia"),
+        (NOW - dt.timedelta(days=500), "há 1 ano e 4 meses"),
+        (NOW - dt.timedelta(days=365 * 2 + 35), "há 2 anos"),
+        (NOW + dt.timedelta(seconds=1), "em um segundo"),
+        (NOW + dt.timedelta(seconds=30), "em 30 segundos"),
+        (NOW + dt.timedelta(minutes=1, seconds=30), "em um minuto"),
+        (NOW + dt.timedelta(minutes=2), "em 2 minutos"),
+        (NOW + dt.timedelta(hours=1, minutes=30, seconds=30), "em uma hora"),
+        (NOW + dt.timedelta(hours=23, minutes=50, seconds=50), "em 23 horas"),
+        (NOW + dt.timedelta(days=1), "em um dia"),
+        (NOW + dt.timedelta(days=500), "em 1 ano e 4 meses"),
+        (NOW + dt.timedelta(days=365 * 2 + 35), "em 2 anos"),
+        (NOW + dt.timedelta(days=10000), "em 27 anos"),
+    ],
+)
+def test_date_time(
+    activate_pt_br: MockerFixture,
+    value: Union[dt.timedelta, int, dt.datetime],
+    expected: str,
+) -> None:
+    """It returns relative time."""
+    assert times.date_time(value) == expected
 
 
 @pytest.mark.parametrize(
@@ -139,48 +195,48 @@ def test_year(activate_pt_br: MockerFixture, date: dt.date, expected: str) -> No
         (
             dt.timedelta(microseconds=1001),
             "milliseconds",
-            "%0.4f",
+            "0.4f",
             "1.0010 milissegundos",
         ),
         (
             dt.timedelta(microseconds=2002),
             "milliseconds",
-            "%0.4f",
+            "0.4f",
             "2.0020 milissegundos",
         ),
         (
             dt.timedelta(microseconds=2002),
             "milliseconds",
-            "%0.2f",
+            "0.2f",
             "2.00 milissegundos",
         ),
         (
             dt.timedelta(seconds=1, microseconds=230000),
             "seconds",
-            "%0.2f",
+            "0.2f",
             "1.23 segundos",
         ),
         (
             dt.timedelta(hours=4, seconds=3, microseconds=200000),
             "seconds",
-            "%0.2f",
+            "0.2f",
             "4 horas e 3.20 segundos",
         ),
         (
             dt.timedelta(days=5, hours=4, seconds=30 * 60),
             "seconds",
-            "%0.2f",
+            "0.2f",
             "5 dias, 4 horas e 30 minutos",
         ),
         (
             dt.timedelta(days=5, hours=4, seconds=30 * 60),
             "hours",
-            "%0.2f",
+            "0.2f",
             "5 dias e 4.50 horas",
         ),
-        (dt.timedelta(days=5, hours=4, seconds=30 * 60), "days", "%0.2f", "5.19 dias"),
-        (dt.timedelta(days=120), "months", "%0.2f", "3.93 meses"),
-        (dt.timedelta(days=183), "years", "%0.1f", "0.5 ano"),
+        (dt.timedelta(days=5, hours=4, seconds=30 * 60), "days", "0.2f", "5.19 dias"),
+        (dt.timedelta(days=120), "months", "0.2f", "3.93 meses"),
+        (dt.timedelta(days=183), "years", "0.1f", "0.5 ano"),
     ],
 )
 def test_precise_delta_custom_format(

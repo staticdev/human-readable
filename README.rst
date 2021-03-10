@@ -1,15 +1,12 @@
 Human Readable
 ==============
 
-|Status| |PyPI| |Python Version| |License|
+|PyPI| |Python Version| |License|
 
 |Read the Docs| |Tests| |Codecov|
 
 |pre-commit| |Black|
 
-.. |Status| image:: https://badgen.net/badge/status/beta/orange
-   :target: https://badgen.net/badge/status/beta/orange
-   :alt: Project Status
 .. |PyPI| image:: https://img.shields.io/pypi/v/human-readable.svg
    :target: https://pypi.org/project/human-readable/
    :alt: PyPI
@@ -138,7 +135,7 @@ Precise time delta examples:
    human_readable.precise_delta(delta, minimum_unit="microseconds")
    "2 days, 1 hour, 33 seconds and 123 milliseconds"
 
-   human_readable.precise_delta(delta, suppress=["days"], format="%0.4f")
+   human_readable.precise_delta(delta, suppress=["days"], format="0.4f")
    "49 hours and 33.1230 seconds"
 
 

@@ -7,6 +7,8 @@ import human_readable.i18n as i18n
 
 
 _ = i18n.gettext
+# BEWARE: by some convention this has to be N_ to be detected
+# but this is not ngettext as it seems
 N_ = i18n.gettext_noop
 P_ = i18n.pgettext
 

@@ -46,14 +46,6 @@ def assert_equal_timedelta(td1: dt.timedelta, td2: dt.timedelta) -> None:
     assert td1.seconds == td2.seconds
 
 
-class FakeTime:
-    """Test helper class to fake time."""
-
-    def __init__(self, hour: int, minute: int, second: int) -> None:
-        """Initializes fake time."""
-        self.hour, self.minute, self.second = hour, minute, second
-
-
 # These are not considered "public" interfaces, but require tests anyway."""
 
 
@@ -135,31 +127,23 @@ def test_timing_informal(time: dt.time, expected: str) -> None:
     "value, expected",
     [
         (0, "a moment"),
-        (1, "a second"),
+        (dt.timedelta(seconds=1), "a second"),
         (30, "30 seconds"),
         (dt.timedelta(minutes=1, seconds=30), "a minute"),
         (dt.timedelta(minutes=2), "2 minutes"),
         (dt.timedelta(hours=1, minutes=30, seconds=30), "an hour"),
         (dt.timedelta(hours=23, minutes=50, seconds=50), "23 hours"),
         (dt.timedelta(days=1), "a day"),
-        (dt.timedelta(days=500), "1 year, 4 months"),
-        (dt.timedelta(days=365 * 2 + 35), "2 years"),
-        (dt.timedelta(seconds=1), "a second"),
-        (dt.timedelta(seconds=30), "30 seconds"),
-        (dt.timedelta(minutes=1, seconds=30), "a minute"),
-        (dt.timedelta(minutes=2), "2 minutes"),
-        (dt.timedelta(hours=1, minutes=30, seconds=30), "an hour"),
-        (dt.timedelta(hours=23, minutes=50, seconds=50), "23 hours"),
-        (dt.timedelta(days=500), "1 year, 4 months"),
-        (dt.timedelta(days=365 * 2 + 35), "2 years"),
-        (dt.timedelta(days=10000), "27 years"),
-        (dt.timedelta(days=365 + 35), "1 year, 1 month"),
-        (dt.timedelta(days=365 * 2 + 65), "2 years"),
-        (dt.timedelta(days=365 + 4), "1 year, 4 days"),
+        (dt.timedelta(days=9), "9 days"),
         (dt.timedelta(days=35), "a month"),
         (dt.timedelta(days=65), "2 months"),
-        (dt.timedelta(days=9), "9 days"),
         (dt.timedelta(days=365), "a year"),
+        (dt.timedelta(days=365 + 4), "1 year, 4 days"),
+        (dt.timedelta(days=365 + 35), "1 year, 1 month"),
+        (dt.timedelta(days=500), "1 year, 4 months"),
+        (dt.timedelta(days=365 * 2 + 35), "2 years"),
+        (dt.timedelta(seconds=30), "30 seconds"),
+        (dt.timedelta(days=10000), "27 years"),
     ],
 )
 def test_time_delta(value: Union[dt.timedelta, int], expected: str) -> None:
@@ -290,7 +274,7 @@ def test_time_delta_high_minimum_unit() -> None:
         (NOW - dt.timedelta(days=365 + 4), "1 year, 4 days ago"),
     ],
 )
-def test_time(value: Union[dt.timedelta, int, dt.datetime], expected: str) -> None:
+def test_date_time(value: Union[dt.timedelta, int, dt.datetime], expected: str) -> None:
     """It returns relative time."""
     assert times.date_time(value) == expected
 
@@ -516,43 +500,43 @@ def test_precise_delta_combined_units(
         (
             dt.timedelta(microseconds=1001),
             "milliseconds",
-            "%0.4f",
+            "0.4f",
             "1.0010 milliseconds",
         ),
         (
             dt.timedelta(microseconds=2002),
             "milliseconds",
-            "%0.4f",
+            "0.4f",
             "2.0020 milliseconds",
         ),
-        (dt.timedelta(microseconds=2002), "milliseconds", "%0.2f", "2.00 milliseconds"),
+        (dt.timedelta(microseconds=2002), "milliseconds", "0.2f", "2.00 milliseconds"),
         (
             dt.timedelta(seconds=1, microseconds=230000),
             "seconds",
-            "%0.2f",
+            "0.2f",
             "1.23 seconds",
         ),
         (
             dt.timedelta(hours=4, seconds=3, microseconds=200000),
             "seconds",
-            "%0.2f",
+            "0.2f",
             "4 hours and 3.20 seconds",
         ),
         (
             dt.timedelta(days=5, hours=4, seconds=30 * 60),
             "seconds",
-            "%0.2f",
+            "0.2f",
             "5 days, 4 hours and 30 minutes",
         ),
         (
             dt.timedelta(days=5, hours=4, seconds=30 * 60),
             "hours",
-            "%0.2f",
+            "0.2f",
             "5 days and 4.50 hours",
         ),
-        (dt.timedelta(days=5, hours=4, seconds=30 * 60), "days", "%0.2f", "5.19 days"),
-        (dt.timedelta(days=120), "months", "%0.2f", "3.93 months"),
-        (dt.timedelta(days=183), "years", "%0.1f", "0.5 years"),
+        (dt.timedelta(days=5, hours=4, seconds=30 * 60), "days", "0.2f", "5.19 days"),
+        (dt.timedelta(days=120), "months", "0.2f", "3.93 months"),
+        (dt.timedelta(days=183), "years", "0.1f", "0.5 years"),
     ],
 )
 def test_precise_delta_custom_format(
@@ -646,3 +630,11 @@ def test_precise_delta_suppress_minimum_unit() -> None:
     """It raises ValueError."""
     with pytest.raises(ValueError):
         times.precise_delta(1, minimum_unit="years", suppress=["years"])
+
+
+def test_unit_lt() -> None:
+    """It compares two units."""
+    years, minutes = times.Unit["YEARS"], times.Unit["MINUTES"]
+    assert minutes < years
+    assert years > minutes
+    assert minutes == minutes

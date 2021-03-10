@@ -150,7 +150,7 @@ Eg.:
 Precise delta humanization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**precise_delta(value: Union[dt.timedelta, int], minimum_unit: str = "seconds", suppress: Optional[List[str]] = None, formatting: str = "%.2f") -> str**
+**precise_delta(value: Union[dt.timedelta, int], minimum_unit: str = "seconds", suppress: Optional[List[str]] = None, formatting: str = ".2f") -> str**
 
 Return a precise representation of a timedelta.
 
@@ -175,7 +175,7 @@ Eg.:
 
 .. code-block:: python
 
-   human_readable.precise_delta(delta, formatting="%.4f")
+   human_readable.precise_delta(delta, formatting=".4f")
    "2 days, 1 hour and 33.1230 seconds"
 
 Instead, the `minimum_unit` can be changed to have a better resolution;
