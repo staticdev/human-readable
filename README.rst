@@ -22,7 +22,7 @@ Human Readable
 .. |Tests| image:: https://github.com/staticdev/human-readable/workflows/Tests/badge.svg
    :target: https://github.com/staticdev/human-readable/actions?workflow=Tests
    :alt: Tests
-.. |Codecov| image:: https://codecov.io/gh/staticdev/human-readable/branch/master/graph/badge.svg
+.. |Codecov| image:: https://codecov.io/gh/staticdev/human-readable/branch/main/graph/badge.svg
    :target: https://codecov.io/gh/staticdev/human-readable
    :alt: Codecov
 .. |pre-commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
