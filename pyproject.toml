@@ -22,7 +22,7 @@ Changelog = "https://github.com/staticdev/human-readable/releases"
 python = "^3.7.0"
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.2.2"
+pytest = "^6.2.3"
 coverage = {extras = ["toml"], version = "^5.5"}
 safety = "^1.10.3"
 mypy = "^0.812"
