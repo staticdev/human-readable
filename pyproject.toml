@@ -44,7 +44,7 @@ pre-commit-hooks = "^3.4.0"
 sphinx-rtd-theme = "^0.5.2"
 Pygments = "^2.8.1"
 freezegun = "^1.1.0"
-pytest-mock = "^3.5.1"
+pytest-mock = "^3.6.0"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
