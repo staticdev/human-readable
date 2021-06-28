@@ -2,7 +2,7 @@
 name = "human-readable"
 version = "1.0.0"
 description = "Human Readable"
-authors = ["Thiago Carvalho D'Ávila <thiagocavila@gmail.com>"]
+authors = ["staticdev <staticdev-support@protonmail.com>"]
 license = "MIT"
 readme = "README.rst"
 homepage = "https://github.com/staticdev/human-readable"
