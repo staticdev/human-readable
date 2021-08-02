@@ -23,7 +23,7 @@ python = "^3.7.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"
-coverage = {extras = ["toml"], version = "^5.5"}
+coverage = "6.0b1"
 safety = "^1.10.3"
 mypy = "^0.910"
 typeguard = "^2.12.1"
