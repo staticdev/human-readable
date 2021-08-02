@@ -23,7 +23,6 @@ python = "^3.7.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"
-coverage = "6.0b1"
 safety = "^1.10.3"
 mypy = "^0.910"
 typeguard = "^2.12.1"
@@ -46,6 +45,7 @@ Pygments = "^2.9.0"
 freezegun = "^1.1.0"
 pytest-mock = "^3.6.1"
 types-freezegun = "^0.1.4"
+coverage = {version = "6.0b1", extras = ["toml"]}
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
