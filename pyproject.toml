@@ -44,7 +44,7 @@ sphinx-rtd-theme = "^0.5.2"
 Pygments = "^2.9.0"
 freezegun = "^1.1.0"
 pytest-mock = "^3.6.1"
-types-freezegun = "^0.1.4"
+types-freezegun = "^1.1.0"
 coverage = {version = "6.0b1", extras = ["toml"]}
 
 [tool.coverage.paths]
