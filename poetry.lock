@@ -942,7 +942,7 @@ test = ["pytest", "typing-extensions", "mypy"]
 
 [[package]]
 name = "types-freezegun"
-version = "0.1.4"
+version = "1.1.0"
 description = "Typing stubs for freezegun"
 category = "dev"
 optional = false
@@ -1023,7 +1023,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.0"
-content-hash = "3a9f06edb08b38e2a18f814163d3e7d32b97302c4b4d234776b9666fc24a25c4"
+content-hash = "342be106dc83fb056baedf7d83073c608823c0d80669118eab024295ebfccbc5"
 
 [metadata.files]
 alabaster = [
@@ -1621,8 +1621,8 @@ typeguard = [
     {file = "typeguard-2.12.1.tar.gz", hash = "sha256:c2af8b9bdd7657f4bd27b45336e7930171aead796711bc4cfc99b4731bb9d051"},
 ]
 types-freezegun = [
-    {file = "types-freezegun-0.1.4.tar.gz", hash = "sha256:4b4a391598af0c5695d56f6af7ac36faf2a757e3f50046a2e95b3a01ba889fcd"},
-    {file = "types_freezegun-0.1.4-py2.py3-none-any.whl", hash = "sha256:e90a30b16daf3ca0758c2bce53f47ea7d2e8520f14c28a3dc6108bcb67bb7525"},
+    {file = "types-freezegun-1.1.0.tar.gz", hash = "sha256:723d6c002c3c08c2ea87cf24e1eb64d887f5f580bcb517bd9d91d05418c740b9"},
+    {file = "types_freezegun-1.1.0-py3-none-any.whl", hash = "sha256:213d4a0bce6eddd38aaa6fd50a9caef16a89076cf33fa87b69af414716e4928f"},
 ]
 typing-extensions = [
     {file = "typing_extensions-3.7.4.3-py2-none-any.whl", hash = "sha256:dafc7639cde7f1b6e1acc0f457842a83e722ccca8eef5270af2d74792619a89f"},
