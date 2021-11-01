@@ -45,7 +45,7 @@ Pygments = "^2.10.0"
 freezegun = "^1.1.0"
 pytest-mock = "^3.6.1"
 types-freezegun = "^1.1.2"
-coverage = {version = "6.0.2", extras = ["toml"]}
+coverage = {version = "6.1.1", extras = ["toml"]}
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
