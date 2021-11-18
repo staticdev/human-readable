@@ -75,7 +75,7 @@ stevedore = ">=1.20.0"
 
 [[package]]
 name = "black"
-version = "21.10b0"
+version = "21.11b0"
 description = "The uncompromising code formatter."
 category = "dev"
 optional = false
@@ -88,7 +88,7 @@ pathspec = ">=0.9.0,<1"
 platformdirs = ">=2"
 regex = ">=2020.1.8"
 tomli = ">=0.2.6,<2.0.0"
-typed-ast = {version = ">=1.4.2", markers = "python_version < \"3.8\""}
+typed-ast = {version = ">=1.4.2", markers = "python_version < \"3.8\" and implementation_name == \"cpython\""}
 typing-extensions = [
     {version = ">=3.10.0.0", markers = "python_version < \"3.10\""},
     {version = "!=3.10.0.1", markers = "python_version >= \"3.10\""},
@@ -1039,7 +1039,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.0"
-content-hash = "3b794590e7562a5187eab7abafa1713d6c82b48ccd107bc8eca21fb61b92d93a"
+content-hash = "0bd086da47f2f49015be24bbf62bdb0e5bc5784db3af2184e378346f55b08ee1"
 
 [metadata.files]
 alabaster = [
@@ -1071,8 +1071,8 @@ bandit = [
     {file = "bandit-1.7.0.tar.gz", hash = "sha256:8a4c7415254d75df8ff3c3b15cfe9042ecee628a1e40b44c15a98890fbfc2608"},
 ]
 black = [
-    {file = "black-21.10b0-py3-none-any.whl", hash = "sha256:6eb7448da9143ee65b856a5f3676b7dda98ad9abe0f87fce8c59291f15e82a5b"},
-    {file = "black-21.10b0.tar.gz", hash = "sha256:a9952229092e325fe5f3dae56d81f639b23f7131eb840781947e4b2886030f33"},
+    {file = "black-21.11b0-py3-none-any.whl", hash = "sha256:0b1f66cbfadcd332ceeaeecf6373d9991d451868d2e2219ad0ac1213fb701117"},
+    {file = "black-21.11b0.tar.gz", hash = "sha256:83f3852301c8dcb229e9c444dd79f573c8d31c7c2dad9bbaaa94c808630e32aa"},
 ]
 cached-property = [
     {file = "cached-property-1.5.2.tar.gz", hash = "sha256:9fa5755838eecbb2d234c3aa390bd80fbd3ac6b6869109bfc1b499f7bd89a130"},
