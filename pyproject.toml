@@ -51,10 +51,11 @@ pyupgrade = "^2.29.1"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
+tests = ["tests", "*/tests"]
 
 [tool.coverage.run]
 branch = true
-source = ["human_readable"]
+source = ["human_readable", "tests"]
 
 [tool.coverage.report]
 show_missing = true
