@@ -46,7 +46,7 @@ Pygments = "^2.10.0"
 freezegun = "^1.1.0"
 pytest-mock = "^3.6.1"
 types-freezegun = "^1.1.3"
-coverage = {version = "6.1.2", extras = ["toml"]}
+coverage = {version = "6.2", extras = ["toml"]}
 pyupgrade = "^2.29.1"
 
 [tool.coverage.paths]
