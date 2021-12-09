@@ -306,4 +306,4 @@ This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter
 .. _pip: https://pip.pypa.io/
 .. _human-readable.readthedocs.io: https://human-readable.readthedocs.io
 .. github-only
-.. _Contributor Guide: CONTRIBUTING.rst
+.. _Contributor Guide: https://human-readable.readthedocs.io/en/latest/contributing.html
