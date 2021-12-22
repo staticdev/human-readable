@@ -1,7 +1,8 @@
 """Tests for time humanizing."""
+from __future__ import annotations
+
 import datetime as dt
-from typing import List
-from typing import Union
+from typing import cast
 
 import freezegun
 import pytest
@@ -58,9 +59,9 @@ def test_date_and_delta() -> None:
     td_tests = [tdelta(seconds=x) for x in int_tests]
     results = [(now - tdelta(seconds=x), tdelta(seconds=x)) for x in int_tests]
     for test in (int_tests, date_tests, td_tests):
-        # Watch: https://github.com/staticdev/humanizer-portugues/issues/137
-        for arg, result in zip(test, results):  # type: ignore
-            dtime, delta = times.date_and_delta(arg)
+        for arg, result in zip(test, results):
+            int_arg = cast(int, arg)
+            dtime, delta = times.date_and_delta(int_arg)
             assert_equal_datetime(dtime, result[0])
             assert_equal_timedelta(delta, result[1])
 
@@ -146,7 +147,7 @@ def test_timing_informal(time: dt.time, expected: str) -> None:
         (dt.timedelta(days=10000), "27 years"),
     ],
 )
-def test_time_delta(value: Union[dt.timedelta, int], expected: str) -> None:
+def test_time_delta(value: dt.timedelta | int, expected: str) -> None:
     """It returns delta in words."""
     assert times.time_delta(value) == expected
 
@@ -274,7 +275,7 @@ def test_time_delta_high_minimum_unit() -> None:
         (NOW - dt.timedelta(days=365 + 4), "1 year, 4 days ago"),
     ],
 )
-def test_date_time(value: Union[dt.timedelta, int, dt.datetime], expected: str) -> None:
+def test_date_time(value: dt.timedelta | int | dt.datetime, expected: str) -> None:
     """It returns relative time."""
     assert times.date_time(value) == expected
 
@@ -312,7 +313,7 @@ def test_date_time(value: Union[dt.timedelta, int, dt.datetime], expected: str) 
     ],
 )
 def test_date_time_no_months(
-    value: Union[dt.timedelta, int, dt.datetime], expected: str
+    value: dt.timedelta | int | dt.datetime, expected: str
 ) -> None:
     """It returns relative time with no months."""
     assert times.date_time(value, use_months=False) == expected
@@ -413,9 +414,7 @@ def test_year(date: dt.date, expected: str) -> None:
         (3600 * 24 * 365 * 2, "2 years"),
     ],
 )
-def test_precise_delta_min_seconds(
-    value: Union[dt.timedelta, int], expected: str
-) -> None:
+def test_precise_delta_min_seconds(value: dt.timedelta | int, expected: str) -> None:
     """It returns delta with minimum_unit default to second."""
     assert times.precise_delta(value) == expected
 
@@ -431,7 +430,7 @@ def test_precise_delta_min_seconds(
     ],
 )
 def test_precise_delta_minimum_unit(
-    value: Union[dt.timedelta, int], min_unit: str, expected: str
+    value: dt.timedelta | int, min_unit: str, expected: str
 ) -> None:
     """It returns delta considering minimum unit."""
     assert times.precise_delta(value, minimum_unit=min_unit) == expected
@@ -488,7 +487,7 @@ def test_precise_delta_minimum_unit(
     ],
 )
 def test_precise_delta_combined_units(
-    value: Union[dt.timedelta, int], min_unit: str, expected: str
+    value: dt.timedelta | int, min_unit: str, expected: str
 ) -> None:
     """It returns delta with combined units."""
     assert times.precise_delta(value, minimum_unit=min_unit) == expected
@@ -540,7 +539,7 @@ def test_precise_delta_combined_units(
     ],
 )
 def test_precise_delta_custom_format(
-    value: Union[dt.timedelta, int], min_unit: str, fmt: str, expected: str
+    value: dt.timedelta | int, min_unit: str, fmt: str, expected: str
 ) -> None:
     """It returns custom formatted delta."""
     assert times.precise_delta(value, minimum_unit=min_unit, formatting=fmt) == expected
@@ -618,7 +617,7 @@ def test_precise_delta_custom_format(
     ],
 )
 def test_precise_delta_suppress_units(
-    value: Union[dt.timedelta, int], min_unit: str, suppress: List[str], expected: str
+    value: dt.timedelta | int, min_unit: str, suppress: list[str], expected: str
 ) -> None:
     """It returns delta with supressed units."""
     assert (

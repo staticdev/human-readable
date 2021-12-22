@@ -1,10 +1,10 @@
 """Tests for lists humanization."""
-from typing import List
+from __future__ import annotations
 
 __all__ = ["listing"]
 
 
-def listing(items: List[str], separator: str, conjunction: str = "") -> str:
+def listing(items: list[str], separator: str, conjunction: str = "") -> str:
     """Return human readable list separated by separator.
 
     Optional argument is conjuntion that substitutes the last separator.

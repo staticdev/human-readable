@@ -1,9 +1,10 @@
 """Activate, get and deactivate translations."""
+from __future__ import annotations
+
 import gettext as gettext_module
 import os.path
 import sys
 import threading
-from typing import Optional
 
 
 __all__ = ["activate", "deactivate", "gettext", "ngettext"]
@@ -12,7 +13,7 @@ _TRANSLATIONS = {"": gettext_module.NullTranslations()}
 _CURRENT = threading.local()
 
 
-def _get_default_locale_path() -> Optional[str]:
+def _get_default_locale_path() -> str | None:
     try:
         if not __file__:
             return None
@@ -28,9 +29,7 @@ def get_translation() -> gettext_module.NullTranslations:
         return _TRANSLATIONS[""]
 
 
-def activate(
-    locale: str, path: Optional[str] = None
-) -> gettext_module.NullTranslations:
+def activate(locale: str, path: str | None = None) -> gettext_module.NullTranslations:
     """Activate internationalisation.
 
     Set `locale` as current locale. Search for locale in directory `path`.

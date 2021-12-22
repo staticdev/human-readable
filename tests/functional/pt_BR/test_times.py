@@ -1,6 +1,7 @@
 """Tests for pt_BR time humanizing."""
+from __future__ import annotations
+
 import datetime as dt
-from typing import Union
 
 import freezegun
 import pytest
@@ -76,7 +77,7 @@ def test_time_of_day(activate_pt_br: MockerFixture, hour: int, expected: str) ->
     ],
 )
 def test_time_delta(
-    activate_pt_br: MockerFixture, value: Union[dt.timedelta, int], expected: str
+    activate_pt_br: MockerFixture, value: dt.timedelta | int, expected: str
 ) -> None:
     """It returns delta in words."""
     assert times.time_delta(value) == expected
@@ -110,7 +111,7 @@ def test_time_delta(
 )
 def test_date_time(
     activate_pt_br: MockerFixture,
-    value: Union[dt.timedelta, int, dt.datetime],
+    value: dt.timedelta | int | dt.datetime,
     expected: str,
 ) -> None:
     """It returns relative time."""
@@ -229,7 +230,7 @@ def test_year(activate_pt_br: MockerFixture, date: dt.date, expected: str) -> No
 )
 def test_precise_delta_custom_format(
     activate_pt_br: MockerFixture,
-    value: Union[dt.timedelta, int],
+    value: dt.timedelta | int,
     min_unit: str,
     fmt: str,
     expected: str,

@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 project = "Human Readable"
-author = "Thiago Carvalho D'Ávila"
+author = "staticdev"
 copyright = f"{datetime.now().year}, {author}"
 extensions = [
     "sphinx.ext.autodoc",

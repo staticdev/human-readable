@@ -1,5 +1,5 @@
 """Tests for file size humanization."""
-from typing import Tuple
+from __future__ import annotations
 
 import pytest
 
@@ -31,7 +31,7 @@ def test_file_size(params: int, expected: str) -> None:
         ((10 ** 26 * 30, True), "2481.5 YiB"),  # giant number
     ],
 )
-def test_file_size_binary(params: Tuple[int, bool], expected: str) -> None:
+def test_file_size_binary(params: tuple[int, bool], expected: str) -> None:
     """File size binary format."""
     assert files.file_size(*params) == expected
 
@@ -46,7 +46,7 @@ def test_file_size_binary(params: Tuple[int, bool], expected: str) -> None:
         ((10 ** 26 * 30, False, True), "2481.5Y"),  # giant number
     ],
 )
-def test_file_size_gnu(params: Tuple[int, bool, bool], expected: str) -> None:
+def test_file_size_gnu(params: tuple[int, bool, bool], expected: str) -> None:
     """File size GNU format."""
     assert files.file_size(*params) == expected
 
@@ -65,7 +65,7 @@ def test_file_size_gnu(params: Tuple[int, bool, bool], expected: str) -> None:
     ],
 )
 def test_file_size_formatted(
-    params: Tuple[int, bool, bool, str], expected: str
+    params: tuple[int, bool, bool, str], expected: str
 ) -> None:
     """File size with formatting."""
     assert files.file_size(*params) == expected

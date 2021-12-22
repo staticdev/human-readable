@@ -44,7 +44,7 @@ You can also specify formal=False, then it won't consider 24h time and instead t
    human_readable.timing(dt.time(21, 0, 40), formal=False)
    "nine in the evening"
 
-**time_delta(value: Union[dt.timedelta, int, dt.datetime], use_months: bool = True, minimum_unit: str = "seconds", when: Optional[dt.datetime] = None) -> str**
+**time_delta(value: dt.timedelta | int | dt.datetime, use_months: bool = True, minimum_unit: str = "seconds", when: dt.datetime | None = None) -> str**
 
 Return human-readable time difference. Given a timedelta or a number of seconds, return a natural representation of the amount of time elapsed. This is similar to ``date_time``, but does not add tense to the result. If ``use_months`` is True, then a number of months (based on 30.5 days) will be used for fuzziness between years. Eg.:
 
@@ -74,7 +74,7 @@ Egs.:
     human_readable.time_delta(dt.datetime.now(), when=dt.datetime.now())
     "a moment"
 
-**date_time(value: Union[dt.timedelta, int, dt.datetime], future: bool = False, use_months: bool = True, minimum_unit: str = "seconds", when: Optional[dt.datetime] = None) -> str**
+**date_time(value: dt.timedelta | int | dt.datetime, future: bool = False, use_months: bool = True, minimum_unit: str = "seconds", when: dt.datetime | None = None) -> str**
 
 Return human-readable time. Given a datetime or a number of seconds, return a natural representation of that time in a resolution that makes sense. This is more or less compatible with Django's ``natural_time`` filter. ``future`` is ignored for datetimes, where the tense is always figured out based on the current time. If an integer is passed, the return value will be past tense by default, unless ``future`` is set to True.
 
@@ -150,7 +150,7 @@ Eg.:
 Precise delta humanization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**precise_delta(value: Union[dt.timedelta, int], minimum_unit: str = "seconds", suppress: Optional[List[str]] = None, formatting: str = ".2f") -> str**
+**precise_delta(value: dt.timedelta | int, minimum_unit: str = "seconds", suppress: list[str] | None = None, formatting: str = ".2f") -> str**
 
 Return a precise representation of a timedelta.
 
@@ -258,7 +258,7 @@ You can also specify formatting in standard Python such as ".3f" (default: ".1f"
 List humanization
 ~~~~~~~~~~~~~~~~~
 
-**listing(items: List[str], separator: str, conjunction: str = "") -> str**
+**listing(items: list[str], separator: str, conjunction: str = "") -> str**
 
 Return human readable list separated by separator.
 
