@@ -1,6 +1,5 @@
 """Tests for listing humanization."""
-from typing import List
-from typing import Tuple
+from __future__ import annotations
 
 import pytest
 
@@ -16,7 +15,7 @@ import human_readable.lists as lists
         ((["jorbas", "maria"], ""), "jorbas maria"),  # empty separator
     ],
 )
-def test_listing(params: Tuple[List[str], str], expected: str) -> None:
+def test_listing(params: tuple[list[str], str], expected: str) -> None:
     """Listing with separator."""
     assert lists.listing(*params) == expected
 
@@ -34,7 +33,7 @@ def test_listing(params: Tuple[List[str], str], expected: str) -> None:
     ],
 )
 def test_listing_with_conjunction(
-    params: Tuple[List[str], str, str], expected: str
+    params: tuple[list[str], str, str], expected: str
 ) -> None:
     """Listing with separator and conjunction."""
     assert lists.listing(*params) == expected

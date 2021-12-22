@@ -1,13 +1,11 @@
 """Time humanizing functions."""
+from __future__ import annotations
+
 import datetime as dt
 import enum
 import functools
 import math
 from typing import Any
-from typing import List
-from typing import Optional
-from typing import Tuple
-from typing import Union
 
 import human_readable.i18n as i18n
 
@@ -51,7 +49,7 @@ def time_of_day(hour: int) -> str:
 
 
 def _formal_time(
-    value: dt.time, hour: int, count_hours: List[str], count_minutes: List[str]
+    value: dt.time, hour: int, count_hours: list[str], count_minutes: list[str]
 ) -> str:
     """Return formal timing."""
     hour_count = count_hours[hour]
@@ -81,7 +79,7 @@ def _formal_time(
         ).format(hour_count=hour_count, minute_translation=minute_translation)
 
 
-def _informal_hour_count(hour: int, count_hours: List[str]) -> str:
+def _informal_hour_count(hour: int, count_hours: list[str]) -> str:
     """Return word hour used in informal timing."""
     if hour == 0:
         hour_count = _("midnight")
@@ -95,7 +93,7 @@ def _informal_hour_count(hour: int, count_hours: List[str]) -> str:
 
 
 def _informal_minute_count(
-    value: dt.time, hour: int, hour_count: str, count_minutes: List[str]
+    value: dt.time, hour: int, hour_count: str, count_minutes: list[str]
 ) -> str:
     """Return messsage format informal timing based on minute count."""
     if value.minute == 0:
@@ -132,7 +130,7 @@ def _informal_minute_count(
 
 
 def _informal_time(
-    value: dt.time, hour: int, count_hours: List[str], count_minutes: List[str]
+    value: dt.time, hour: int, count_hours: list[str], count_minutes: list[str]
 ) -> str:
     """Return informal timing."""
     period = time_of_day(hour)
@@ -281,10 +279,10 @@ def _abs_timedelta(delta: dt.timedelta) -> dt.timedelta:
 
 
 def date_and_delta(
-    value: Union[str, int, dt.datetime, dt.timedelta],
+    value: str | int | dt.datetime | dt.timedelta,
     *,
-    now: Optional[dt.datetime] = None,
-) -> Tuple[dt.datetime, dt.timedelta]:
+    now: dt.datetime | None = None,
+) -> tuple[dt.datetime, dt.timedelta]:
     """Turn a value into a date and a timedelta which represents how long ago it was."""
     if not now:
         now = _now()
@@ -377,10 +375,10 @@ def _one_year(days: int, months: int, use_months: bool) -> str:
 
 
 def time_delta(
-    value: Union[dt.timedelta, int, dt.datetime],
+    value: dt.timedelta | int | dt.datetime,
     use_months: bool = True,
     minimum_unit: str = "seconds",
-    when: Optional[dt.datetime] = None,
+    when: dt.datetime | None = None,
 ) -> str:
     """Return human-readable time difference.
 
@@ -437,11 +435,11 @@ def time_delta(
 
 
 def date_time(
-    value: Union[dt.timedelta, int, dt.datetime],
+    value: dt.timedelta | int | dt.datetime,
     future: bool = False,
     use_months: bool = True,
     minimum_unit: str = "seconds",
-    when: Optional[dt.datetime] = None,
+    when: dt.datetime | None = None,
 ) -> str:
     """Return human-readable time.
 
@@ -546,8 +544,8 @@ def year(date: dt.date) -> str:
 
 
 def _quotient_and_remainder(
-    value: float, divisor: float, unit: Unit, minimum_unit: Unit, suppress: List[Unit]
-) -> Tuple[float, float]:
+    value: float, divisor: float, unit: Unit, minimum_unit: Unit, suppress: list[Unit]
+) -> tuple[float, float]:
     """Divide `value` by `divisor` returning the quotient and remainder.
 
     If `unit` is `minimum_unit`, makes the quotient a float number and the remainder
@@ -597,8 +595,8 @@ def _carry(
     ratio: float,
     unit: Unit,
     min_unit: Unit,
-    suppress: List[Unit],
-) -> Tuple[float, float]:
+    suppress: list[Unit],
+) -> tuple[float, float]:
     """Return a tuple with two values.
 
     If the unit is in `suppress`, multiply `value1` by `ratio` and add it to `value2`
@@ -637,7 +635,7 @@ def _carry(
         return (value1, value2)
 
 
-def _suitable_minimum_unit(minimum_unit: Unit, suppress: List[Unit]) -> Unit:
+def _suitable_minimum_unit(minimum_unit: Unit, suppress: list[Unit]) -> Unit:
     """Return a minimum unit suitable that is not suppressed.
 
     If not suppressed, return the same unit:
@@ -674,7 +672,7 @@ def _suitable_minimum_unit(minimum_unit: Unit, suppress: List[Unit]) -> Unit:
     return minimum_unit
 
 
-def _suppress_lower_units(min_unit: Unit, suppress: List[Unit]) -> List[Unit]:
+def _suppress_lower_units(min_unit: Unit, suppress: list[Unit]) -> list[Unit]:
     """Extend suppressed units (if any) with all units lower than the minimum unit.
 
     >>> from human_readable.times import _suppress_lower_units, Unit
@@ -698,9 +696,9 @@ def _suppress_lower_units(min_unit: Unit, suppress: List[Unit]) -> List[Unit]:
 
 
 def precise_delta(
-    value: Union[dt.timedelta, int],
+    value: dt.timedelta | int,
     minimum_unit: str = "seconds",
-    suppress: Optional[List[str]] = None,
+    suppress: list[str] | None = None,
     formatting: str = ".2f",
 ) -> str:
     """Return a precise representation of a timedelta.
@@ -846,7 +844,7 @@ def precise_delta(
         (N_("{amount} microsecond", "{amount} microseconds", int_usecs), usecs),
     ]
 
-    texts: List[str] = []
+    texts: list[str] = []
     for unit, fmt in zip(reversed(Unit), translations):  # pragma: no branch
         translation, amount = fmt
         if amount > 0 or (not texts and unit == min_unit):

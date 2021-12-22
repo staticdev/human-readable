@@ -1,7 +1,8 @@
 """Humanizing functions for numbers."""
+from __future__ import annotations
+
 import fractions
 import re
-from typing import Union
 
 import human_readable.i18n as i18n
 
@@ -31,7 +32,7 @@ def _thousands_separator() -> str:
     return sep
 
 
-def ordinal(value: Union[int, str]) -> str:
+def ordinal(value: int | str) -> str:
     """Convert an integer to its ordinal as a string.
 
     1 is '1º', 2 is '2º', 3 is '3º', etc.
@@ -62,7 +63,7 @@ def ordinal(value: Union[int, str]) -> str:
     return f"{value}{suffixes[value % 10]}"
 
 
-def int_comma(value: Union[str, float]) -> str:
+def int_comma(value: str | float) -> str:
     """Convert an integer to a string containing commas every three digits.
 
     For example, 3000 becomes '3,000' and 45000 becomes '45,000'.  To maintain
@@ -135,7 +136,7 @@ def int_word(value: float, formatting: str = ".1f") -> str:
     return str(value)
 
 
-def ap_number(value: Union[float, str]) -> Union[str, float]:
+def ap_number(value: float | str) -> str | float:
     """For numbers 1-9, returns the number spelled out. Otherwise, returns the number.
 
     This follows Associated Press style.
@@ -163,7 +164,7 @@ def ap_number(value: Union[float, str]) -> Union[str, float]:
     )[value]
 
 
-def fractional(value: Union[str, float]) -> str:
+def fractional(value: str | float) -> str:
     """Return a human readable fractional number.
 
     The return can be in the form of fractions and mixed fractions.
@@ -208,7 +209,7 @@ def fractional(value: Union[str, float]) -> str:
         return f"{whole_number:.0f} {numerator:.0f}/{denominator:.0f}"
 
 
-def scientific_notation(value: Union[float, str], precision: int = 2) -> str:
+def scientific_notation(value: float | str, precision: int = 2) -> str:
     """Return number in string scientific notation z.wq x 10ⁿ.
 
     Examples:

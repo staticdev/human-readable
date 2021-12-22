@@ -1,6 +1,5 @@
 """Tests for numbers humanizing."""
-from typing import Tuple
-from typing import Union
+from __future__ import annotations
 
 import pytest
 
@@ -97,7 +96,7 @@ def test_fractional(params: int, expected: str) -> None:
         (-(10 ** 30), "1.00 x 10⁻³⁰"),  # big negative number
     ],
 )
-def test_scientific_notation(params: Union[float, str], expected: str) -> None:
+def test_scientific_notation(params: float | str, expected: str) -> None:
     """Scientific notation tests."""
     assert numbers.scientific_notation(params) == expected
 
@@ -129,7 +128,7 @@ def test_scientific_notation(params: Union[float, str], expected: str) -> None:
     ],
 )
 def test_scientific_notation_with_precision(
-    params: Tuple[Union[float, str], int], expected: str
+    params: tuple[float | str, int], expected: str
 ) -> None:
     """Scientific notation tests with specified precision."""
     assert numbers.scientific_notation(*params) == expected
