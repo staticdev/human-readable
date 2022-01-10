@@ -44,7 +44,7 @@ pre-commit-hooks = "^4.1.0"
 Pygments = "^2.11.2"
 freezegun = "^1.1.0"
 pytest-mock = "^3.6.1"
-types-freezegun = "^1.1.4"
+types-freezegun = "^1.1.6"
 coverage = {version = "6.2", extras = ["toml"]}
 pyupgrade = "^2.31.0"
 furo = ">=2021.11.12"
