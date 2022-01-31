@@ -40,7 +40,7 @@ def test_ordinal(activate_pt_br: MockerFixture, params: int, expected: str) -> N
         (100, "100"),  # simple number
         (1200000, "1.2 milhão"),  # million number
         (8100000000000000000000000000000000, "8.1 decilhão"),  # decillion number
-        (10 ** 101, "1" + "0" * 101),  # very big number without suffix
+        (10**101, "1" + "0" * 101),  # very big number without suffix
         (999999999, "1.0 bilhão"),  # rounded up suffix
     ],
 )

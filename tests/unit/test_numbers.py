@@ -40,7 +40,7 @@ def test_int_comma(params: int, expected: str) -> None:
         (100, "100"),  # simple number
         (1200000, "1.2 million"),  # million number
         (8100000000000000000000000000000000, "8.1 decillion"),  # decillion number
-        (10 ** 101, "1" + "0" * 101),  # very big number without suffix
+        (10**101, "1" + "0" * 101),  # very big number without suffix
         (999999999, "1.0 billion"),  # rounded up suffix
     ],
 )
@@ -92,8 +92,8 @@ def test_fractional(params: int, expected: str) -> None:
         (0.3, "3.00 x 10⁻¹"),  # between 0 and 1
         (5.5, "5.50 x 10⁰"),  # grater precision
         (5781651000, "5.78 x 10⁹"),  # smaller precision
-        (10 ** 30, "1.00 x 10³⁰"),  # big number
-        (-(10 ** 30), "1.00 x 10⁻³⁰"),  # big negative number
+        (10**30, "1.00 x 10³⁰"),  # big number
+        (-(10**30), "1.00 x 10⁻³⁰"),  # big negative number
     ],
 )
 def test_scientific_notation(params: float | str, expected: str) -> None:

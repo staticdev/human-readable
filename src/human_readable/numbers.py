@@ -82,13 +82,13 @@ def int_comma(value: str | float) -> str:
     else:
         float(value)
     orig = str(value)
-    new = re.sub(r"^(-?\d+)(\d{3})", fr"\g<1>{sep}\g<2>", orig)
+    new = re.sub(r"^(-?\d+)(\d{3})", rf"\g<1>{sep}\g<2>", orig)
     if orig == new:
         return new
     return int_comma(new)
 
 
-POWERS = [10 ** x for x in (6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 100)]
+POWERS = [10**x for x in (6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 100)]
 HUMAN_POWERS = (
     N_("million"),
     N_("billion"),
@@ -128,7 +128,7 @@ def int_word(value: float, formatting: str = ".1f") -> str:
     for ordinal, power in enumerate(POWERS[1:], 1):
         if value < power:
             chopped = value / float(POWERS[ordinal - 1])
-            if float(f"{chopped:{formatting}}") == float(10 ** 3):
+            if float(f"{chopped:{formatting}}") == float(10**3):
                 chopped = value / float(POWERS[ordinal])
                 return f"{chopped:{formatting}} {_(HUMAN_POWERS[ordinal])}"
             else:
