@@ -13,7 +13,7 @@ import human_readable.files as files
         (300, "300.0 Bytes"),  # hundreds number
         (2900000, "2.9 MB"),  # millions number
         (2000000000, "2.0 GB"),  # billions number
-        (10 ** 26 * 30, "3000.0 YB"),  # giant number
+        (10**26 * 30, "3000.0 YB"),  # giant number
     ],
 )
 def test_file_size(params: int, expected: str) -> None:
@@ -28,7 +28,7 @@ def test_file_size(params: int, expected: str) -> None:
         ((300, True), "300.0 Bytes"),  # hundreds number
         ((2900000, True), "2.8 MiB"),  # millions number
         ((2000000000, True), "1.9 GiB"),  # billions number
-        ((10 ** 26 * 30, True), "2481.5 YiB"),  # giant number
+        ((10**26 * 30, True), "2481.5 YiB"),  # giant number
     ],
 )
 def test_file_size_binary(params: tuple[int, bool], expected: str) -> None:
@@ -43,7 +43,7 @@ def test_file_size_binary(params: tuple[int, bool], expected: str) -> None:
         ((300, False, True), "300.0B"),  # hundreds number
         ((2900000, False, True), "2.8M"),  # millions number
         ((2000000000, False, True), "1.9G"),  # billions number
-        ((10 ** 26 * 30, False, True), "2481.5Y"),  # giant number
+        ((10**26 * 30, False, True), "2481.5Y"),  # giant number
     ],
 )
 def test_file_size_gnu(params: tuple[int, bool, bool], expected: str) -> None:
@@ -61,7 +61,7 @@ def test_file_size_gnu(params: tuple[int, bool, bool], expected: str) -> None:
             (2000000000, True, False, ".3f"),
             "1.863 GiB",
         ),  # billions number
-        ((10 ** 26 * 30, False, True, ".3f"), "2481.542Y"),  # giant number
+        ((10**26 * 30, False, True, ".3f"), "2481.542Y"),  # giant number
     ],
 )
 def test_file_size_formatted(
