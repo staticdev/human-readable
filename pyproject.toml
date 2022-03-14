@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "human-readable"
-version = "1.1.0"
+version = "1.2.0"
 description = "Human Readable"
 authors = ["staticdev <staticdev-support@protonmail.com>"]
 license = "MIT"
