@@ -24,11 +24,11 @@ python = "^3.7"
 
 [tool.poetry.dev-dependencies]
 Pygments = ">=2.11.2"
+bandit = ">=1.7.4"
 black = ">=22.1"
 coverage = {extras = ["toml"], version = ">=6.3.2"}
 darglint = ">=1.8.1"
-flake8 = ">=4.0.1"
-flake8-bandit = ">=3.0.0"
+flake8 = ">=5.0.4"
 flake8-bugbear = ">=21.9.2"
 flake8-docstrings = ">=1.6.0"
 flake8-rst-docstrings = ">=0.2.5"
