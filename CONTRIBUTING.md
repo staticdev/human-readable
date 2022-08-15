@@ -11,6 +11,11 @@ Here is a list of important resources for contributors:
 - [Issue Tracker]
 - [Code of Conduct]
 
+[mit license]: https://opensource.org/licenses/MIT
+[source code]: https://github.com/staticdev/human-readable
+[documentation]: https://human-readable.readthedocs.io/
+[issue tracker]: https://github.com/staticdev/human-readable/issues
+
 ## How to report a bug
 
 Report bugs on the [Issue Tracker].
@@ -44,13 +49,16 @@ Install the package with development requirements:
 $ poetry install
 ```
 
-You can now run an interactive Python session,
-or the command-line interface:
+You can now run an interactive Python session:
 
 ```console
 $ poetry run python
-$ poetry run human-readable
+import human_readable
 ```
+
+[poetry]: https://python-poetry.org/
+[nox]: https://nox.thea.codes/
+[nox-poetry]: https://nox-poetry.readthedocs.io/
 
 ## How to test the project
 
@@ -120,15 +128,9 @@ $ nox --session=pre-commit -- install
 It is recommended to open an issue before starting work on anything.
 This will allow a chance to talk it over with the owners and validate your approach.
 
+[pull request]: https://github.com/staticdev/human-readable/pulls
+[pytest]: https://pytest.readthedocs.io/
+
 <!-- github-only -->
 
 [code of conduct]: CODE_OF_CONDUCT.md
-[documentation]: https://human-readable.readthedocs.io/
-[issue tracker]: https://github.com/staticdev/human-readable/issues
-[mit license]: https://opensource.org/licenses/MIT
-[nox]: https://nox.thea.codes/
-[nox-poetry]: https://nox-poetry.readthedocs.io/
-[poetry]: https://python-poetry.org/
-[pull request]: https://github.com/staticdev/human-readable/pulls
-[pytest]: https://pytest.readthedocs.io/
-[source code]: https://github.com/staticdev/human-readable

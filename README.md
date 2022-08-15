@@ -65,7 +65,7 @@ You can install _Human Readable_ via [pip] from [PyPI]:
 $ pip install human-readable
 ```
 
-% basic-usage
+<!-- basic-usage -->
 
 ## Basic usage
 
@@ -181,7 +181,7 @@ human_readable.scientific_notation(5781651000, precision=4)
 "5.7817 x 10⁹"
 ```
 
-% end-basic-usage
+<!-- end-basic-usage -->
 
 Complete instructions can be found at [human-readable.readthedocs.io].
 
