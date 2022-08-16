@@ -246,7 +246,7 @@ To learn more, see the [Contributor Guide].
 
 ## License
 
-Distributed under the terms of the [MIT] license,
+Distributed under the terms of the [MIT license][license],
 _Human Readable_ is free and open source software.
 
 ## Issues
@@ -268,6 +268,7 @@ This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter]
 
 <!-- github-only -->
 
+[license]: https://github.com/staticdev/human-readable/blob/main/LICENSE
 [contributor guide]: https://github.com/staticdev/human-readable/blob/main/CONTRIBUTING.md
 [cookiecutter]: https://github.com/audreyr/cookiecutter
 [human-readable.readthedocs.io]: https://human-readable.readthedocs.io
