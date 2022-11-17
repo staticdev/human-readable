@@ -1,4 +1,6 @@
 """Activate, get and deactivate translations."""
+from __future__ import annotations
+
 import gettext as gettext_module
 import os.path
 import threading
