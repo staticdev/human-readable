@@ -1,9 +1,6 @@
 """Activate, get and deactivate translations."""
-from __future__ import annotations
-
 import gettext as gettext_module
 import os.path
-import sys
 import threading
 
 
@@ -91,14 +88,7 @@ def pgettext(msgctxt: str, message: str) -> str:
     """
     # This GNU gettext function was added in Python 3.8, so for older versions we
     # reimplement it. It works by joining `msgctx` and `message` by '4' byte.
-    # Python 3.8+
-    if sys.version_info >= (3, 8):
-        return get_translation().pgettext(msgctxt, message)
-    # Python 3.7 and older
-    else:
-        key = msgctxt + "\x04" + message
-        translation = get_translation().gettext(key)
-        return message if translation == key else translation
+    return get_translation().pgettext(msgctxt, message)
 
 
 def ngettext(message: str, plural: str, num: int) -> str:
