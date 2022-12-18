@@ -76,7 +76,7 @@ def gettext(message: str) -> str:
 
 
 def pgettext(msgctxt: str, message: str) -> str:
-    """Fetches a particular translation.
+    """Fetch a particular translation.
 
     It works with `msgctxt` .po modifiers and allows duplicate keys with different
     translations.

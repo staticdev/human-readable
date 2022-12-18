@@ -36,13 +36,13 @@ with freezegun.freeze_time("2020-02-02"):
 
 
 def assert_equal_datetime(dt1: dt.datetime, dt2: dt.datetime) -> None:
-    """Helper method to check if two datetimes are the same."""
+    """Help to check if two datetimes are the same."""
     td = dt1 - dt2
     assert td.seconds == 0
 
 
 def assert_equal_timedelta(td1: dt.timedelta, td2: dt.timedelta) -> None:
-    """Helper method to check if two timedeltas are the same."""
+    """Help to check if two timedeltas are the same."""
     assert td1.days == td2.days
     assert td1.seconds == td2.seconds
 
