@@ -21,14 +21,12 @@ exclude = ["src/human_readable/locale/**/*.po"]
 Changelog = "https://github.com/staticdev/human-readable/releases"
 
 [tool.poetry.dependencies]
-# <4 removal pending new release of isort https://github.com/PyCQA/isort/issues/1986
-python = ">=3.8,<4"
+python = ">=3.8"
 
 [tool.poetry.dev-dependencies]
 bandit = ">=1.7.4"
 black = ">=22.1"
 coverage = {extras = ["toml"], version = ">=6.3.2"}
-darglint = ">=1.8.1"
 flake8 = ">=5.0.4"
 flake8-bugbear = ">=21.9.2"
 flake8-docstrings = ">=1.6.0"
