@@ -78,29 +78,29 @@ import human_readable
 Date and time humanization examples:
 
 ```python
-human_readable.time_of_day(17)
+human_readable.times.time_of_day(17)
 "afternoon"
 
 import datetime as dt
-human_readable.timing(dt.time(6, 59, 0))
+human_readable.times.timing(dt.time(6, 59, 0))
 "one minute to seven hours"
 
-human_readable.timing(dt.time(21, 0, 40), formal=False)
+human_readable.times.timing(dt.time(21, 0, 40), formal=False)
 "nine in the evening"
 
-human_readable.time_delta(dt.timedelta(days=65))
+human_readable.times.time_delta(dt.timedelta(days=65))
 "2 months"
 
-human_readable.date_time(dt.datetime.now() - dt.timedelta(minutes=2))
+human_readable.times.date_time(dt.datetime.now() - dt.timedelta(minutes=2))
 "2 minutes ago"
 
-human_readable.day(dt.date.today() - dt.timedelta(days=1))
+human_readable.times.day(dt.date.today() - dt.timedelta(days=1))
 "yesterday"
 
-human_readable.date(dt.date(2019, 7, 2))
+human_readable.times.date(dt.date(2019, 7, 2))
 "Jul 02 2019"
 
-human_readable.year(dt.date.today() + dt.timedelta(days=365))
+human_readable.times.year(dt.date.today() + dt.timedelta(days=365))
 "next year"
 ```
 
@@ -109,13 +109,13 @@ Precise time delta examples:
 ```python
 import datetime as dt
 delta = dt.timedelta(seconds=3633, days=2, microseconds=123000)
-human_readable.precise_delta(delta)
+human_readable.times.precise_delta(delta)
 "2 days, 1 hour and 33.12 seconds"
 
-human_readable.precise_delta(delta, minimum_unit="microseconds")
+human_readable.times.precise_delta(delta, minimum_unit="microseconds")
 "2 days, 1 hour, 33 seconds and 123 milliseconds"
 
-human_readable.precise_delta(delta, suppress=["days"], format="0.4f")
+human_readable.times.precise_delta(delta, suppress=["days"], format="0.4f")
 "49 hours and 33.1230 seconds"
 ```
 
@@ -191,15 +191,15 @@ How to change locale at runtime:
 
 ```python
 import datetime as dt
-human_readable.date_time(dt.timedelta(seconds=3))
+human_readable.times.date_time(dt.timedelta(seconds=3))
 '3 seconds ago'
 
 _t = human_readable.i18n.activate("ru_RU")
-human_readable.date_time(dt.timedelta(seconds=3))
+human_readable.times.date_time(dt.timedelta(seconds=3))
 '3 секунды назад'
 
 human_readable.i18n.deactivate()
-human_readable.date_time(dt.timedelta(seconds=3))
+human_readable.times.date_time(dt.timedelta(seconds=3))
 '3 seconds ago'
 ```
 
@@ -219,23 +219,23 @@ You can see how to add a new locale on the [Contributor Guide].
 A special locale, `en_ABBR`, renderes abbreviated versions of output:
 
 ```python
-human_readable.date_time(datetime.timedelta(seconds=3))
+human_readable.times.date_time(datetime.timedelta(seconds=3))
 3 seconds ago
 
 human_readable.int_word(12345591313)
 12.3 billion
 
-human_readable.date_time(datetime.timedelta(seconds=86400*476))
+human_readable.times.date_time(datetime.timedelta(seconds=86400*476))
 1 year, 3 months ago
 
 human_readable.i18n.activate('en_ABBR')
-human_readable.date_time(datetime.timedelta(seconds=3))
+human_readable.times.date_time(datetime.timedelta(seconds=3))
 3s
 
 human_readable.int_word(12345591313)
 12.3 B
 
-human_readable.date_time(datetime.timedelta(seconds=86400*476))
+human_readable.times.date_time(datetime.timedelta(seconds=86400*476))
 1y 3M
 ```
 

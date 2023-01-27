@@ -22,7 +22,7 @@ import human_readable
 Given current hour, returns time of the day.
 
 ```python
-human_readable.time_of_day(17)
+human_readable.times.time_of_day(17)
 "afternoon"
 ```
 
@@ -31,14 +31,14 @@ human_readable.time_of_day(17)
 Return human-readable time. Compares time values to present time returns representing readable of time with the given day period.
 
 ```python
-human_readable.timing(dt.time(6, 59, 0))
+human_readable.times.timing(dt.time(6, 59, 0))
 "one minute to seven hours"
 ```
 
 You can also specify formal=False, then it won't consider 24h time and instead tell the period of the day. Eg.:
 
 ```python
-human_readable.timing(dt.time(21, 0, 40), formal=False)
+human_readable.times.timing(dt.time(21, 0, 40), formal=False)
 "nine in the evening"
 ```
 
@@ -47,7 +47,7 @@ human_readable.timing(dt.time(21, 0, 40), formal=False)
 Return human-readable time difference. Given a timedelta or a number of seconds, return a natural representation of the amount of time elapsed. This is similar to `date_time`, but does not add tense to the result. If `use_months` is True, then a number of months (based on 30.5 days) will be used for fuzziness between years. Eg.:
 
 ```python
-human_readable.time_delta(dt.timedelta(days=65))
+human_readable.times.time_delta(dt.timedelta(days=65))
 "2 months"
 ```
 
@@ -61,13 +61,13 @@ when: Point in time relative to which \_value\_ is interpreted. Defaults to the 
 Egs.:
 
 ```python
-human_readable.time_delta(dt.timedelta(hours=4, seconds=3, microseconds=2), minimum_unit="microseconds")
+human_readable.times.time_delta(dt.timedelta(hours=4, seconds=3, microseconds=2), minimum_unit="microseconds")
 "2 months"
 
-human_readable.time_delta(dt.timedelta(hours=4, seconds=30, microseconds=200), minimum_unit="microseconds", suppress=["hours"])
+human_readable.times.time_delta(dt.timedelta(hours=4, seconds=30, microseconds=200), minimum_unit="microseconds", suppress=["hours"])
 "240 minutes, 30 seconds and 200 microseconds"
 
-human_readable.time_delta(dt.datetime.now(), when=dt.datetime.now())
+human_readable.times.time_delta(dt.datetime.now(), when=dt.datetime.now())
 "a moment"
 ```
 
@@ -78,7 +78,7 @@ Return human-readable time. Given a datetime or a number of seconds, return a na
 Eg.:
 
 ```python
-human_readable.date_time(dt.datetime.now() - dt.timedelta(minutes=2))
+human_readable.times.date_time(dt.datetime.now() - dt.timedelta(minutes=2))
 "2 minutes ago"
 ```
 
@@ -106,7 +106,7 @@ Return human-readable day. For date values that are tomorrow, today or yesterday
 Eg.:
 
 ```python
-human_readable.day(dt.date.today() - dt.timedelta(days=1))
+human_readable.times.day(dt.date.today() - dt.timedelta(days=1))
 "yesterday"
 ```
 
@@ -115,7 +115,7 @@ Otherwise, returns a string formatted according to `formatting`.
 Eg.:
 
 ```python
-human_readable.day(dt.date(1982, 6, 27), "%Y.%m.%d")
+human_readable.times.day(dt.date(1982, 6, 27), "%Y.%m.%d")
 "1982.06.27"
 ```
 
@@ -126,7 +126,7 @@ Return human-readable date. Like `day()`, but will append a year for dates that 
 Eg.:
 
 ```python
-human_readable.date(dt.date(2019, 7, 2))
+human_readable.times.date(dt.date(2019, 7, 2))
 "Jul 02 2019"
 ```
 
@@ -137,10 +137,10 @@ Return human-readable year. For date values that are last year, this year or nex
 Eg.:
 
 ```python
-human_readable.year(dt.date.today() + dt.timedelta(days=365))
+human_readable.times.year(dt.date.today() + dt.timedelta(days=365))
 "next year"
 
-human_readable.year(dt.date(1988, 11, 12))
+human_readable.times.year(dt.date(1988, 11, 12))
 "1988"
 ```
 
@@ -161,7 +161,7 @@ Eg.:
 
 ```python
 delta = dt.timedelta(seconds=3633, days=2, microseconds=123000)
-human_readable.precise_delta(delta)
+human_readable.times.precise_delta(delta)
 "2 days, 1 hour and 33.12 seconds"
 ```
 
@@ -171,7 +171,7 @@ is represented:
 Eg.:
 
 ```python
-human_readable.precise_delta(delta, formatting=".4f")
+human_readable.times.precise_delta(delta, formatting=".4f")
 "2 days, 1 hour and 33.1230 seconds"
 ```
 
@@ -183,7 +183,7 @@ For example setting microseconds but still representing the date with millisecon
 Eg.:
 
 ```python
-human_readable.precise_delta(delta, minimum_unit="microseconds")
+human_readable.times.precise_delta(delta, minimum_unit="microseconds")
 "2 days, 1 hour, 33 seconds and 123 milliseconds"
 ```
 
@@ -193,7 +193,7 @@ time of the other units will be adjusted to keep representing the same timedelta
 Eg.:
 
 ```python
-human_readable.precise_delta(delta, suppress=['days'])
+human_readable.times.precise_delta(delta, suppress=['days'])
 "49 hours and 33.12 seconds"
 ```
 
@@ -204,7 +204,7 @@ Eg.:
 
 ```python
 delta = dt.timedelta(seconds=90, microseconds=100)
-human_readable.precise_delta(delta, suppress=['seconds', 'milliseconds', 'microseconds'])
+human_readable.times.precise_delta(delta, suppress=['seconds', 'milliseconds', 'microseconds'])
 "1.50 minutes"
 ```
 
@@ -215,11 +215,11 @@ Egs.:
 
 ```python
 delta = dt.timedelta(seconds=1)
-human_readable.precise_delta(delta, minimum_unit="minutes")
+human_readable.times.precise_delta(delta, minimum_unit="minutes")
 "0.02 minutes"
 
 delta = dt.timedelta(seconds=0.1)
-human_readable.precise_delta(delta, minimum_unit="minutes")
+human_readable.times.precise_delta(delta, minimum_unit="minutes")
 "0 minutes"
 ```
 
