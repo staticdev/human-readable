@@ -39,46 +39,42 @@ Request features on the [Issue Tracker].
 
 You need Python 3.8+ and the following tools:
 
-- [Poetry]
-- [Nox]
-- [nox-poetry]
+- [Hatch]
 
 Install the package with development requirements:
 
 ```console
-$ poetry install
+$ hatch env create
 ```
 
 You can now run an interactive Python session:
 
 ```console
-$ poetry run python
+$ hatch shell
 import human_readable
 ```
 
-[poetry]: https://python-poetry.org/
-[nox]: https://nox.thea.codes/
-[nox-poetry]: https://nox-poetry.readthedocs.io/
+[hatch]: https://hatch.pypa.io/
 
 ## How to test the project
 
 Run the full test suite:
 
 ```console
-$ nox
+$ hatch run all
 ```
 
-List the available Nox sessions:
+List the available Hatch env scripts:
 
 ```console
-$ nox --list-sessions
+$ hatch env show
 ```
 
-You can also run a specific Nox session.
+You can run a specific Hatch env script.
 For example, invoke the unit test suite like this:
 
 ```console
-$ nox --session=tests
+$ hatch run tests:run
 ```
 
 Unit tests are located in the `tests` directory,
