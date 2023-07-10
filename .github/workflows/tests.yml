@@ -28,9 +28,6 @@ jobs:
           - { python: "3.11", os: "ubuntu-latest", session: "xdoctest" }
           - { python: "3.11", os: "ubuntu-latest", session: "docs-build" }
 
-    env:
-      NOXSESSION: ${{ matrix.session }}
-
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
@@ -45,16 +42,10 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt pip
           pip --version
 
-      - name: Install Poetry
+      - name: Install Hatch
         run: |
-          pipx install --pip-args=--constraint=.github/workflows/poetry-constraints.txt poetry
-          poetry --version
-
-      - name: Install Nox
-        run: |
-          pipx install --pip-args=--constraint=.github/workflows/constraints.txt nox
-          pipx inject --pip-args=--constraint=.github/workflows/constraints.txt nox nox-poetry
-          nox --version
+          pipx install --pip-args=--constraint=.github/workflows/hatch-constraints.txt hatch
+          hatch --version
 
       - name: Compute pre-commit cache key
         if: matrix.session == 'pre-commit'
@@ -80,12 +71,12 @@ jobs:
           restore-keys: |
             ${{ steps.pre-commit-cache.outputs.result }}-
 
-      - name: Run Nox
+      - name: Run Hatch
         run: |
-          nox --force-color --python=${{ matrix.python }}
+          hatch run +python=${{ matrix.python }} sessions:run-${{ matrix.session }}
 
       - name: Upload coverage data
-        if: always() && matrix.session == 'tests'
+        if: always() && matrix.session == 'tests' && matrix.os == 'ubuntu-latest'
         uses: "actions/upload-artifact@v3"
         with:
           name: coverage-data
@@ -115,16 +106,10 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt pip
           pip --version
 
-      - name: Install Poetry
+      - name: Install Hatch
         run: |
-          pipx install --pip-args=--constraint=.github/workflows/poetry-constraints.txt poetry
-          poetry --version
-
-      - name: Install Nox
-        run: |
-          pipx install --pip-args=--constraint=.github/workflows/constraints.txt nox
-          pipx inject --pip-args=--constraint=.github/workflows/constraints.txt nox nox-poetry
-          nox --version
+          pipx install --pip-args=--constraint=.github/workflows/hatch-constraints.txt hatch
+          hatch --version
 
       - name: Download coverage data
         uses: actions/download-artifact@v3
@@ -133,11 +118,11 @@ jobs:
 
       - name: Combine coverage data and display human readable report
         run: |
-          nox --force-color --session=coverage
+          hatch run coverage:run
 
       - name: Create coverage report
         run: |
-          nox --force-color --session=coverage -- xml
+          hatch run coverage:run-xml
 
       - name: Upload coverage report
         uses: codecov/codecov-action@v3

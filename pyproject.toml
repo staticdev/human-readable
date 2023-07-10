@@ -1,13 +1,12 @@
-[tool.poetry]
+[project]
 name = "human-readable"
 version = "1.3.2"
 description = "Human Readable"
-authors = ["staticdev <staticdev-support@proton.me>"]
+authors = [
+  { name = "staticdev", email = "staticdev-support@proton.me"}
+]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/staticdev/human-readable"
-repository = "https://github.com/staticdev/human-readable"
-documentation = "https://human-readable.readthedocs.io"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python :: 3.8",
@@ -15,37 +14,155 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
 ]
-exclude = ["src/human_readable/locale/**/*.po"]
+requires-python = ">=3.8"
+dependencies = []
 
-[tool.poetry.urls]
-Changelog = "https://github.com/staticdev/human-readable/releases"
+[project.urls]
+homepage = "https://github.com/staticdev/human-readable"
+repository = "https://github.com/staticdev/human-readable"
+documentation = "https://human-readable.readthedocs.io"
+changelog = "https://github.com/staticdev/human-readable/releases"
 
-[tool.poetry.dependencies]
-python = ">=3.8"
+[tool.hatch.envs.default]
+dependencies = [
+  "pytest",
+  "pytest-mock",
+  "freezegun",
+]
 
-[tool.poetry.dev-dependencies]
-bandit = ">=1.7.4"
-black = ">=22.1"
-coverage = {extras = ["toml"], version = ">=6.3.2"}
-flake8 = ">=5.0.4"
-flake8-bugbear = ">=21.9.2"
-flake8-docstrings = ">=1.6.0"
-freezegun = ">=1.2.2"
-furo = ">=2021.11.12"
-isort = ">=5.10.1"
-mypy = ">=0.991"
-pep8-naming = ">=0.12.1"
-pre-commit = ">=2.17.0"
-pre-commit-hooks = ">=4.1.0"
-pygments = ">=2.11.2"
-pytest = ">=7.1.0"
-pytest-mock = ">=3.7.0"
-pyupgrade = ">=2.31.1"
-safety = ">=2.1.0"
-sphinx = ">=4.3.2"
-sphinx-autobuild = ">=2021.3.14"
-typeguard = ">=2.13.3"
-xdoctest = {extras = ["colors"], version = ">=0.15.10"}
+[tool.hatch.envs.default.scripts]
+all = [
+  "hatch run pre-commit:run",
+  "hatch run safety:run",
+  "hatch run mypy:run",
+  "hatch run tests:run",
+  "hatch run coverage:run",
+  "hatch run typeguard:run",
+  "hatch run xdoctest:run"
+]
+
+[tool.hatch.envs.sessions.scripts]
+run-pre-commit = [ "hatch run pre-commit:run" ]
+run-safety = [ "hatch run safety:run" ]
+run-mypy = [ "hatch run mypy:run" ]
+run-tests = [ "hatch run tests:run" ]
+run-typeguard = [ "hatch run typeguard:run" ]
+run-xdoctest = [ "hatch run xdoctest:run" ]
+run-docs-build = [ "hatch run docs-build:run" ]
+
+[[tool.hatch.envs.sessions.matrix]]
+python = ["3.8", "3.9", "3.10", "3.11"]
+
+[tool.hatch.envs.pre-commit]
+dependencies = [
+  "bandit",
+  "black",
+  "flake8",
+  "flake8-bugbear == 22.*",
+  "flake8-docstrings",
+  "isort",
+  "pep8-naming",
+  "pre-commit",
+  "pre-commit-hooks",
+  "pyupgrade",
+]
+[tool.hatch.envs.pre-commit.scripts]
+run = [
+  "pre-commit run --all-files --show-diff-on-failure",
+]
+
+[tool.hatch.envs.safety]
+dependencies = [
+  "safety",
+]
+[tool.hatch.envs.safety.scripts]
+run = [
+  "hatch dep show requirements -p | safety check --stdin --bare"
+]
+
+[tool.hatch.envs.mypy]
+dependencies = [
+  "mypy",
+  "pytest",
+  "freezegun",
+]
+[tool.hatch.envs.mypy.scripts]
+run = [
+  "mypy src/ tests/ docs/conf.py",
+]
+
+[tool.hatch.envs.tests]
+dependencies = [
+  "coverage[toml]",
+  "pytest",
+  "pytest_mock",
+  "pygments",
+  "freezegun",
+]
+[tool.hatch.envs.tests.scripts]
+run = [
+  "coverage run --parallel -m pytest"
+]
+
+[tool.hatch.envs.coverage]
+dependencies = [
+  "coverage[toml]",
+]
+[tool.hatch.envs.coverage.scripts]
+run = [
+  "- coverage combine",
+  "coverage report",
+]
+run-xml = [
+  "coverage xml"
+]
+
+[tool.hatch.envs.typeguard]
+dependencies = [
+  "pytest",
+  "pytest_mock",
+  "freezegun",
+  "typeguard",
+  "pygments",
+]
+[tool.hatch.envs.typeguard.scripts]
+run = [
+  "pytest --typeguard-packages=human_readable",
+]
+
+[tool.hatch.envs.xdoctest]
+dependencies = [
+  "xdoctest[colors]",
+]
+[tool.hatch.envs.xdoctest.scripts]
+run = [
+  "python -m xdoctest human_readable all",
+]
+
+[tool.hatch.envs.docs-build]
+dependencies = [
+  "sphinx",
+  "furo",
+  "myst-parser",
+]
+[tool.hatch.envs.docs-build.scripts]
+run = [
+  "rm -rf docs/_build",
+  "sphinx-build docs docs/_build"
+]
+
+[tool.hatch.envs.docs]
+dependencies = [
+  "sphinx",
+  "sphinx-autobuild",
+  "furo",
+  "myst-parser",
+]
+[tool.hatch.envs.docs.scripts]
+run = [
+  "rm -rf docs/_build",
+  "sphinx-autobuild --open-browser docs docs/_build",
+]
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
@@ -77,6 +194,11 @@ show_error_context = true
 module = ["pytest_mock"]
 ignore_missing_imports = true
 
+[tool.hatch.build]
+exclude = [
+  "src/human_readable/locale/**/*.po",
+]
+
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
