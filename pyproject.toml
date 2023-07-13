@@ -5,7 +5,7 @@ description = "Human Readable"
 authors = [
   { name = "staticdev", email = "staticdev-support@proton.me"}
 ]
-license = "MIT"
+license = {text = "MIT"}
 readme = "README.md"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
