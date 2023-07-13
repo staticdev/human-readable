@@ -2,19 +2,18 @@ name: Release
 
 on:
   push:
-    tags:
-      - "v[0-9]+.[0-9]+.[0-9]+"
+    branches:
+      - main
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository and set tag env
+      - name: Check out the repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -35,15 +34,9 @@ jobs:
         run: |
           hatch build
 
-      - name: Publish package on PyPI
+      - name: Publish package on TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
-          password: ${{ secrets.PYPI_TOKEN }}
-
-      - name: Publish the release notes
-        uses: release-drafter/release-drafter@v5
-        with:
-          tag: ${{ env.RELEASE_VERSION }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.TEST_PYPI_TOKEN }}
+          repository_url: https://test.pypi.org/legacy/
