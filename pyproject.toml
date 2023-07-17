@@ -20,6 +20,9 @@ dependencies = []
 [tool.hatch.version]
 source = "vcs"
 
+[tool.hatch.version.raw-options]
+local_scheme = "no-local-version"
+
 [project.urls]
 homepage = "https://github.com/staticdev/human-readable"
 repository = "https://github.com/staticdev/human-readable"
