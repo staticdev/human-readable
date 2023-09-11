@@ -1,2 +1,2 @@
 pip==23.2.1
-virtualenv==20.24.4
+virtualenv==20.24.5
