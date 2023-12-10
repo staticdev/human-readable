@@ -13,6 +13,7 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
 ]
 requires-python = ">=3.8"
 dependencies = []
@@ -57,7 +58,7 @@ run-xdoctest = [ "hatch run xdoctest:run" ]
 run-docs-build = [ "hatch run docs-build:run" ]
 
 [[tool.hatch.envs.sessions.matrix]]
-python = ["3.8", "3.9", "3.10", "3.11"]
+python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
 [tool.hatch.envs.pre-commit]
 dependencies = [
