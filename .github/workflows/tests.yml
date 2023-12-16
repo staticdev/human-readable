@@ -81,7 +81,7 @@ jobs:
         if: always() && matrix.session == 'tests' && matrix.os == 'ubuntu-latest'
         uses: "actions/upload-artifact@v4"
         with:
-          name: coverage-data
+          name: coverage-data-${{ matrix.python }}-${{ matrix.os }}
           path: ".coverage.*"
 
       - name: Upload documentation
@@ -114,12 +114,16 @@ jobs:
           hatch --version
 
       - name: Download coverage data
-        uses: actions/download-artifact@v3
-        with:
-          name: coverage-data
+        uses: actions/download-artifact@v4
 
       - name: Combine coverage data and display human readable report
         run: |
+          shopt -s dotglob
+          mv coverage-data-3.12-ubuntu-latest/* .
+          mv coverage-data-3.11-ubuntu-latest/* .
+          mv coverage-data-3.10-ubuntu-latest/* .
+          mv coverage-data-3.9-ubuntu-latest/* .
+          mv coverage-data-3.8-ubuntu-latest/* .
           hatch run coverage:run
 
       - name: Create coverage report
