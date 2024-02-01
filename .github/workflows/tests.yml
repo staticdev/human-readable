@@ -131,4 +131,4 @@ jobs:
           hatch run coverage:run-xml
 
       - name: Upload coverage report
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
