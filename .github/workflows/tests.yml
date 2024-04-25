@@ -46,7 +46,7 @@ jobs:
 
       - name: Install Hatch
         run: |
-          pipx install --pip-args=--constraint=.github/workflows/hatch-constraints.txt hatch
+          pipx install --pip-args=--constraint=./.github/workflows/hatch-constraints.txt hatch
           hatch --version
 
       - name: Compute pre-commit cache key
