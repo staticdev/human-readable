@@ -41,7 +41,7 @@ jobs:
 
       - name: Upgrade pip
         run: |
-          pip install --constraint=.github/workflows/constraints.txt pip
+          pip install --constraint=./.github/workflows/constraints.txt pip
           pip --version
 
       - name: Install Hatch
