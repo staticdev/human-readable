@@ -2,7 +2,7 @@
 
 
 def file_size(
-    value: int, binary: bool = False, gnu: bool = False, formatting: str = ".1f"
+    value: int, binary: bool = False, gnu: bool = False, formatting: str = ".1f", small_formatting: str = "",
 ) -> str:
     """Return human-readable file size.
 
@@ -12,12 +12,16 @@ def file_size(
     `10**3`.  If ``gnu`` is True, the binary argument is ignored and GNU-style
     (``ls -sh`` style) prefixes are used (K, M) with the `2**10` definition.
     Non-gnu modes are compatible with jinja2's ``filesizeformat`` filter.
+    small_formatting is used instead of formatting when the number of bytes
+    is small enough that the applied suffix is B / Byte / Bytes, since files
+    cannot have a decimal number of bytes in a file size
 
     Args:
         value: size number.
         binary: binary format. Defaults to False.
         gnu: GNU format. Defaults to False.
         formatting: format pattern. Defaults to ".1f".
+        small_formatting: format pattern for small values. Defaults to "".
 
     Returns:
         str: file size in natural language.
@@ -30,18 +34,19 @@ def file_size(
         suffixes = (" kB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB")
 
     base = 1024 if (gnu or binary) else 1000
+    fmt = small_formatting if value < base else formatting
 
     if value == 1 and not gnu:
-        return f"{1:{formatting}} Byte"
+        return f"{1:{fmt}} Byte"
     if value < base and not gnu:
-        return f"{value:{formatting}} Bytes"
+        return f"{value:{fmt}} Bytes"
     if value < base and gnu:
-        return f"{value:{formatting}}B"
+        return f"{value:{fmt}}B"
 
     byte_size = float(value)
     suffix = ""
     for i, suffix in enumerate(suffixes):
         unit = base ** (i + 2)
         if byte_size < unit:
-            return f"{base * byte_size / unit:{formatting}}{suffix}"
-    return f"{base * byte_size / unit:{formatting}}{suffix}"
+            return f"{base * byte_size / unit:{fmt}}{suffix}"
+    return f"{base * byte_size / unit:{fmt}}{suffix}"
