@@ -35,7 +35,7 @@ def file_size(
     elif binary:
         suffixes = (" KiB", " MiB", " GiB", " TiB", " PiB", " EiB", " ZiB", " YiB")
     else:
-        suffixes = (" kB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB")
+        suffixes = (" KB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB")
 
     base = 1024 if (gnu or binary) else 1000
 
