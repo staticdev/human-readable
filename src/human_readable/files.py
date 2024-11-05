@@ -2,7 +2,11 @@
 
 
 def file_size(
-    value: int, binary: bool = False, gnu: bool = False, formatting: str = ".1f", small_formatting: str = "",
+    value: int,
+    binary: bool = False,
+    gnu: bool = False,
+    formatting: str = ".1f",
+    small_formatting: str = "",
 ) -> str:
     """Return human-readable file size.
 
@@ -20,8 +24,8 @@ def file_size(
         value: size number.
         binary: binary format. Defaults to False.
         gnu: GNU format. Defaults to False.
-        formatting: format pattern. Defaults to ".1f".
-        small_formatting: format pattern for small values. Defaults to "".
+        formatting: format pattern (applied to a float). Defaults to ".1f".
+        small_formatting: format pattern for small values (applied to an int). Defaults to "".
 
     Returns:
         str: file size in natural language.
@@ -34,19 +38,18 @@ def file_size(
         suffixes = (" kB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB")
 
     base = 1024 if (gnu or binary) else 1000
-    fmt = small_formatting if value < base else formatting
 
     if value == 1 and not gnu:
-        return f"{1:{fmt}} Byte"
+        return f"{1:{small_formatting}} Byte"
     if value < base and not gnu:
-        return f"{value:{fmt}} Bytes"
+        return f"{value:{small_formatting}} Bytes"
     if value < base and gnu:
-        return f"{value:{fmt}}B"
+        return f"{value:{small_formatting}}B"
 
     byte_size = float(value)
     suffix = ""
     for i, suffix in enumerate(suffixes):
         unit = base ** (i + 2)
         if byte_size < unit:
-            return f"{base * byte_size / unit:{fmt}}{suffix}"
-    return f"{base * byte_size / unit:{fmt}}{suffix}"
+            return f"{base * byte_size / unit:{formatting}}{suffix}"
+    return f"{base * byte_size / unit:{formatting}}{suffix}"
