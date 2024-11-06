@@ -1,4 +1,5 @@
 """Tests for i18n."""
+
 import pytest
 
 import human_readable.i18n as i18n

@@ -1,4 +1,5 @@
 """Fixtures for functional tests."""
+
 import pytest
 from pytest_mock import MockerFixture
 
