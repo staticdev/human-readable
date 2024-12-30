@@ -38,3 +38,22 @@ def test_listing_with_conjunction(
 ) -> None:
     """Listing with separator and conjunction."""
     assert lists.listing(*params) == expected
+
+
+@pytest.mark.parametrize(
+    "params, expected",
+    [
+        (([], ";", "or"), ""),  # empty list
+        ((["jorbas"], ";", "or"), "jorbas"),  # one element
+        ((["jorbas", "maria"], ";", "or"), "jorbas or maria"),  # two elements
+        (
+            (["jorbas", "maria", "gustavo"], ";", "or"),
+            "jorbas; maria; or gustavo",
+        ),  # three elements
+    ],
+)
+def test_listing_with_conjunction_oxford(
+    params: tuple[list[str], str, str], expected: str
+) -> None:
+    """Listing with separator and conjunction."""
+    assert lists.listing(*params, oxford=True) == expected
