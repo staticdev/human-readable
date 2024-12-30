@@ -1,4 +1,5 @@
 """Tests for fr_FR numbers humanizing."""
+
 from pytest_mock import MockerFixture
 
 import human_readable.numbers as numbers
