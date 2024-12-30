@@ -1,6 +1,7 @@
 """Tests for lists humanization."""
 
 from __future__ import annotations
+
 from typing import TYPE_CHECKING
 
 
@@ -12,7 +13,9 @@ if TYPE_CHECKING:
 __all__ = ["listing"]
 
 
-def listing(items: Sequence[Any], separator: Any, conjunction: Any = None, oxford: bool = False) -> str:
+def listing(
+    items: Sequence[Any], separator: Any, conjunction: Any = None, oxford: bool = False
+) -> str:
     """Return human readable list separated by separator.
 
     Optional argument is conjuntion that substitutes the last separator.
