@@ -2,7 +2,11 @@
 
 
 def file_size(
-    value: int, binary: bool = False, gnu: bool = False, formatting: str = ".1f"
+    value: int,
+    binary: bool = False,
+    gnu: bool = False,
+    formatting: str = ".1f",
+    small_formatting: str = "",
 ) -> str:
     """Return human-readable file size.
 
@@ -12,12 +16,16 @@ def file_size(
     `10**3`.  If ``gnu`` is True, the binary argument is ignored and GNU-style
     (``ls -sh`` style) prefixes are used (K, M) with the `2**10` definition.
     Non-gnu modes are compatible with jinja2's ``filesizeformat`` filter.
+    small_formatting is used instead of formatting when the number of bytes
+    is small enough that the applied suffix is B / Byte / Bytes, since files
+    cannot have a decimal number of bytes in a file size
 
     Args:
         value: size number.
         binary: binary format. Defaults to False.
         gnu: GNU format. Defaults to False.
-        formatting: format pattern. Defaults to ".1f".
+        formatting: format pattern (applied to a float). Defaults to ".1f".
+        small_formatting: format pattern for small values (applied to an int). Defaults to "".
 
     Returns:
         str: file size in natural language.
@@ -27,16 +35,16 @@ def file_size(
     elif binary:
         suffixes = (" KiB", " MiB", " GiB", " TiB", " PiB", " EiB", " ZiB", " YiB")
     else:
-        suffixes = (" kB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB")
+        suffixes = (" KB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB")
 
     base = 1024 if (gnu or binary) else 1000
 
     if value == 1 and not gnu:
-        return f"{1:{formatting}} Byte"
+        return f"{1:{small_formatting}} Byte"
     if value < base and not gnu:
-        return f"{value:{formatting}} Bytes"
+        return f"{value:{small_formatting}} Bytes"
     if value < base and gnu:
-        return f"{value:{formatting}}B"
+        return f"{value:{small_formatting}}B"
 
     byte_size = float(value)
     suffix = ""
