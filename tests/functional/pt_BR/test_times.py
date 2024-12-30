@@ -1,4 +1,5 @@
 """Tests for pt_BR time humanizing."""
+
 from __future__ import annotations
 
 import datetime as dt

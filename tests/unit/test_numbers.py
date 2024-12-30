@@ -1,4 +1,5 @@
 """Tests for numbers humanizing."""
+
 from __future__ import annotations
 
 import pytest

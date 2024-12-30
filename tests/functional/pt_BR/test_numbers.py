@@ -1,4 +1,5 @@
 """Tests for pt_BR numbers humanizing."""
+
 import pytest
 from pytest_mock import MockerFixture
 

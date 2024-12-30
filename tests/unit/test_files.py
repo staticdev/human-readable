@@ -1,4 +1,5 @@
 """Tests for file size humanization."""
+
 from __future__ import annotations
 
 import pytest
