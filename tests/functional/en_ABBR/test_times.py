@@ -1,4 +1,5 @@
 """Tests for time humanizing."""
+
 import datetime as dt
 
 import pytest

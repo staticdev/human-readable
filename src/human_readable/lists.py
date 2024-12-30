@@ -1,4 +1,5 @@
 """Tests for lists humanization."""
+
 from __future__ import annotations
 
 
