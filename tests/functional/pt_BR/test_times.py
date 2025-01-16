@@ -27,7 +27,9 @@ ONE_YEAR = 365.25 * ONE_DAY
 with freezegun.freeze_time("2020-02-02"):
     NOW = dt.datetime.now()
     NOW_UTC = dt.datetime.now(tz=dt.timezone.utc)
-    NOW_UTC_PLUS_01_00 = dt.datetime.now(tz=dt.timezone(offset=dt.timedelta(hours=1)))
+    NOW_UTC_PLUS_01_00 = dt.datetime.now(
+        tz=dt.timezone(offset=dt.timedelta(hours=1))
+    )
     TODAY = dt.date.today()
     TOMORROW = TODAY + ONE_DAY_DELTA
     YESTERDAY = TODAY - ONE_DAY_DELTA
@@ -50,7 +52,9 @@ with freezegun.freeze_time("2020-02-02"):
         (23, "noite"),
     ],
 )
-def test_time_of_day(activate_pt_br: MockerFixture, hour: int, expected: str) -> None:
+def test_time_of_day(
+    activate_pt_br: MockerFixture, hour: int, expected: str
+) -> None:
     """It returns period of the day."""
     assert times.time_of_day(hour) == expected
 
@@ -172,7 +176,9 @@ def test_timing_informal(
         (SOME_YEAR, "1988"),
     ],
 )
-def test_year(activate_pt_br: MockerFixture, date: dt.date, expected: str) -> None:
+def test_year(
+    activate_pt_br: MockerFixture, date: dt.date, expected: str
+) -> None:
     """Tests year method."""
     result = times.year(date)
 
@@ -224,7 +230,12 @@ def test_year(activate_pt_br: MockerFixture, date: dt.date, expected: str) -> No
             "0.2f",
             "5 dias e 4.50 horas",
         ),
-        (dt.timedelta(days=5, hours=4, seconds=30 * 60), "days", "0.2f", "5.19 dias"),
+        (
+            dt.timedelta(days=5, hours=4, seconds=30 * 60),
+            "days",
+            "0.2f",
+            "5.19 dias",
+        ),
         (dt.timedelta(days=120), "months", "0.2f", "3.93 meses"),
         (dt.timedelta(days=183), "years", "0.1f", "0.5 ano"),
     ],
@@ -237,4 +248,7 @@ def test_precise_delta_custom_format(
     expected: str,
 ) -> None:
     """It returns custom formatted delta."""
-    assert times.precise_delta(value, minimum_unit=min_unit, formatting=fmt) == expected
+    assert (
+        times.precise_delta(value, minimum_unit=min_unit, formatting=fmt)
+        == expected
+    )

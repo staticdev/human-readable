@@ -1,7 +1,0 @@
-[flake8]
-select = B,B9,C,D,E,F,N,W
-ignore = E203,E501,W503,B905
-max-line-length = 80
-max-complexity = 10
-; TODO open upstream issue for N806 on Enum
-per-file-ignores = times.py:N806

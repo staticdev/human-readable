@@ -25,6 +25,7 @@ def _thousands_separator() -> str:
 
     Returns:
          str: Thousands separator.
+
     """
     try:
         sep = _THOUSANDS_SEPARATOR[i18n._CURRENT.locale]
@@ -45,6 +46,7 @@ def ordinal(value: int | str) -> str:
 
     Returns:
         str: ordinal string.
+
     """
     suffixes = (
         P_("0", "th"),
@@ -76,6 +78,7 @@ def int_comma(value: str | float) -> str:
 
     Returns:
         str: formatted number with commas.
+
     """
     sep = _thousands_separator()
     if isinstance(value, str):
@@ -123,6 +126,7 @@ def int_word(value: float, formatting: str = ".1f") -> str:
 
     Returns:
         str: number formatted with scale words.
+
     """
     if value < POWERS[0]:
         return str(value)
@@ -147,6 +151,7 @@ def ap_number(value: float | str) -> str | float:
 
     Returns:
         Union[str, float]: spelled 1-9 numbers or original number.
+
     """
     value = int(value)
     if not 0 <= value < 10:
@@ -194,6 +199,7 @@ def fractional(value: str | float) -> str:
 
     Returns:
         str: human readable number.
+
     """
     number = float(value)
     whole_number = int(number)
@@ -233,6 +239,7 @@ def scientific_notation(value: float | str, precision: int = 2) -> str:
 
     Returns:
         str: Number in scientific notation z.wq x 10ⁿ.
+
     """
     exponents = {
         "0": "⁰",
