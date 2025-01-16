@@ -9,13 +9,12 @@ license = {text = "MIT"}
 readme = "README.md"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dependencies = []
 
 [tool.hatch.version]
@@ -58,7 +57,7 @@ run-xdoctest = [ "hatch run xdoctest:run" ]
 run-docs-build = [ "hatch run docs-build:run" ]
 
 [[tool.hatch.envs.sessions.matrix]]
-python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
+python = ["3.9", "3.10", "3.11", "3.12"]
 
 [tool.hatch.envs.pre-commit]
 dependencies = [

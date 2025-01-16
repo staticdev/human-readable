@@ -89,8 +89,6 @@ def pgettext(msgctxt: str, message: str) -> str:
     Returns:
         Translated text.
     """
-    # This GNU gettext function was added in Python 3.8, so for older versions we
-    # reimplement it. It works by joining `msgctx` and `message` by '4' byte.
     return get_translation().pgettext(msgctxt, message)
 
 
