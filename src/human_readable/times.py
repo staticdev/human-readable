@@ -117,7 +117,10 @@ def _informal_minute_count(
                 "{reversed_minute_count} to {hour_count}",
                 "{reversed_minute_count} to {hour_count}",
                 hour,
-            ).format(reversed_minute_count=reversed_minute_count, hour_count=hour_count)
+            ).format(
+                reversed_minute_count=reversed_minute_count,
+                hour_count=hour_count,
+            )
     elif value.minute == 30:
         clock = _("half past {hour_count}").format(hour_count=hour_count)
     elif value.minute == 15:
@@ -157,6 +160,7 @@ def timing(time: dt.time, formal: bool = True) -> str:
 
     Returns:
         str: readable time or original object.
+
     """
     count_hours = [
         P_("hour 0", "zero"),
@@ -272,6 +276,7 @@ def _abs_timedelta(delta: dt.timedelta) -> dt.timedelta:
 
     Returns:
         absolute timedelta.
+
     """
     if delta.days < 0:
         now = _now()
@@ -300,11 +305,15 @@ def date_and_delta(
     return date, _abs_timedelta(delta)
 
 
-def _less_than_a_day(seconds: int, minimum_unit_type: Unit, delta: dt.timedelta) -> str:
+def _less_than_a_day(
+    seconds: int, minimum_unit_type: Unit, delta: dt.timedelta
+) -> str:
     if seconds == 0:
         if minimum_unit_type == Unit.MICROSECONDS and delta.microseconds < 1000:
             return i18n.ngettext(
-                "{amount} microsecond", "{amount} microseconds", delta.microseconds
+                "{amount} microsecond",
+                "{amount} microseconds",
+                delta.microseconds,
             ).format(amount=delta.microseconds)
         elif minimum_unit_type == Unit.MILLISECONDS or (
             minimum_unit_type == Unit.MICROSECONDS
@@ -312,22 +321,24 @@ def _less_than_a_day(seconds: int, minimum_unit_type: Unit, delta: dt.timedelta)
         ):
             milliseconds = delta.microseconds / 1000
             return i18n.ngettext(
-                "{amount} millisecond", "{amount} milliseconds", int(milliseconds)
+                "{amount} millisecond",
+                "{amount} milliseconds",
+                int(milliseconds),
             ).format(amount=int(milliseconds))
         return _("a moment")
     elif seconds == 1:
         return _("a second")
     elif seconds < 60:
-        return i18n.ngettext("{amount} second", "{amount} seconds", seconds).format(
-            amount=seconds
-        )
+        return i18n.ngettext(
+            "{amount} second", "{amount} seconds", seconds
+        ).format(amount=seconds)
     elif 60 <= seconds < 120:
         return _("a minute")
     elif 120 <= seconds < 3600:
         minutes = seconds // 60
-        return i18n.ngettext("{amount} minute", "{amount} minutes", minutes).format(
-            amount=minutes
-        )
+        return i18n.ngettext(
+            "{amount} minute", "{amount} minutes", minutes
+        ).format(amount=minutes)
     elif 3600 <= seconds < 3600 * 2:
         return _("an hour")
     else:
@@ -341,7 +352,9 @@ def _less_than_a_year(days: int, months: int, use_months: bool) -> str:
     if days == 1:
         return _("a day")
     if not use_months:
-        return i18n.ngettext("{amount} day", "{amount} days", days).format(amount=days)
+        return i18n.ngettext("{amount} day", "{amount} days", days).format(
+            amount=days
+        )
     else:
         if not months:
             return i18n.ngettext("{amount} day", "{amount} days", days).format(
@@ -350,9 +363,9 @@ def _less_than_a_year(days: int, months: int, use_months: bool) -> str:
         elif months == 1:
             return _("a month")
         else:
-            return i18n.ngettext("{amount} month", "{amount} months", months).format(
-                amount=months
-            )
+            return i18n.ngettext(
+                "{amount} month", "{amount} months", months
+            ).format(amount=months)
 
 
 def _one_year(days: int, months: int, use_months: bool) -> str:
@@ -403,6 +416,7 @@ def time_delta(
 
     Returns:
         Time representation in natural language.
+
     """
     tmp = Unit[minimum_unit.upper()]
     if tmp not in (Unit.SECONDS, Unit.MILLISECONDS, Unit.MICROSECONDS):
@@ -461,6 +475,7 @@ def date_time(
 
     Returns:
         Time in natural language.
+
     """
     now = when or _now()
     date, delta = date_and_delta(value, now=now)
@@ -492,6 +507,7 @@ def day(date: dt.date, formatting: str = "%b %d") -> str:
 
     Returns:
         str: date formatted in natural language.
+
     """
     delta = date - dt.date.today()
     if delta.days == 0:
@@ -514,6 +530,7 @@ def date(date: dt.date) -> str:
 
     Returns:
         str: date in natural language.
+
     """
     delta = _abs_timedelta(date - dt.date.today())
     if delta.days >= 5 * 365 / 12:
@@ -533,6 +550,7 @@ def year(date: dt.date) -> str:
 
     Returns:
         Year in natural language.
+
     """
     delta = date.year - dt.date.today().year
     if delta == 0:
@@ -545,7 +563,11 @@ def year(date: dt.date) -> str:
 
 
 def _quotient_and_remainder(
-    value: float, divisor: float, unit: Unit, minimum_unit: Unit, suppress: list[Unit]
+    value: float,
+    divisor: float,
+    unit: Unit,
+    minimum_unit: Unit,
+    suppress: list[Unit],
 ) -> tuple[float, float]:
     """Divide `value` by `divisor` returning the quotient and remainder.
 
@@ -581,6 +603,7 @@ def _quotient_and_remainder(
 
     Returns:
         Quotient and reminder tuple.
+
     """
     if unit == minimum_unit:
         return (value / divisor, 0)
@@ -627,6 +650,7 @@ def _carry(
 
     Returns:
         Carry left and carry right.
+
     """
     if unit == min_unit:
         return (value1 + value2 / ratio, 0)
@@ -660,6 +684,7 @@ def _suitable_minimum_unit(minimum_unit: Unit, suppress: list[Unit]) -> Unit:
 
     Returns:
         Minimum unit suitable that is not suppressed.
+
     """
     if minimum_unit in suppress:
         for unit in Unit:
@@ -686,6 +711,7 @@ def _suppress_lower_units(min_unit: Unit, suppress: list[Unit]) -> list[Unit]:
 
     Returns:
         New suppress list.
+
     """
     suppress_set = set(suppress)
     for u in Unit:  # pragma: no branch
@@ -756,6 +782,7 @@ def precise_delta(
 
     Returns:
         Humanized time delta.
+
     """
     if isinstance(value, int):
         delta = dt.timedelta(seconds=value)
@@ -782,8 +809,8 @@ def precise_delta(
     secs: float = delta.seconds
     usecs: float = delta.microseconds
 
-    MICROSECONDS, MILLISECONDS, SECONDS, MINUTES, HOURS, DAYS, MONTHS, YEARS = list(
-        Unit
+    MICROSECONDS, MILLISECONDS, SECONDS, MINUTES, HOURS, DAYS, MONTHS, YEARS = (
+        list(Unit)
     )
 
     # Given DAYS compute YEARS and the remainder of DAYS as follows:
@@ -798,8 +825,12 @@ def precise_delta(
     #       years, days = divmod(years, days)
     #
     # The same applies for months, hours, minutes and milliseconds below
-    years, days = _quotient_and_remainder(days, 365, YEARS, min_unit, ext_suppress)
-    months, days = _quotient_and_remainder(days, 30.5, MONTHS, min_unit, ext_suppress)
+    years, days = _quotient_and_remainder(
+        days, 365, YEARS, min_unit, ext_suppress
+    )
+    months, days = _quotient_and_remainder(
+        days, 30.5, MONTHS, min_unit, ext_suppress
+    )
 
     # If DAYS is not in suppress, we can represent the days but
     # if it is a suppressed unit, we need to carry it to a lower unit,
@@ -808,8 +839,12 @@ def precise_delta(
     # The same applies for secs and usecs below
     days, secs = _carry(days, secs, 24 * 3600, DAYS, min_unit, ext_suppress)
 
-    hours, secs = _quotient_and_remainder(secs, 3600, HOURS, min_unit, ext_suppress)
-    minutes, secs = _quotient_and_remainder(secs, 60, MINUTES, min_unit, ext_suppress)
+    hours, secs = _quotient_and_remainder(
+        secs, 3600, HOURS, min_unit, ext_suppress
+    )
+    minutes, secs = _quotient_and_remainder(
+        secs, 60, MINUTES, min_unit, ext_suppress
+    )
 
     secs, usecs = _carry(secs, usecs, 1e6, SECONDS, min_unit, ext_suppress)
 
@@ -821,18 +856,38 @@ def precise_delta(
     usecs, _unused = _carry(usecs, 0, 1, MICROSECONDS, min_unit, ext_suppress)
 
     # int rule for English / unfortunatelly ngettext does not support floats
-    int_years = math.ceil(years) if years > 1 else math.floor(years) if years < 1 else 1
+    int_years = (
+        math.ceil(years) if years > 1 else math.floor(years) if years < 1 else 1
+    )
     int_months = (
-        math.ceil(months) if months > 1 else math.floor(months) if months < 1 else 1
+        math.ceil(months)
+        if months > 1
+        else math.floor(months)
+        if months < 1
+        else 1
     )
-    int_days = math.ceil(days) if days > 1 else math.floor(days) if days < 1 else 1
-    int_hours = math.ceil(hours) if hours > 1 else math.floor(hours) if hours < 1 else 1
+    int_days = (
+        math.ceil(days) if days > 1 else math.floor(days) if days < 1 else 1
+    )
+    int_hours = (
+        math.ceil(hours) if hours > 1 else math.floor(hours) if hours < 1 else 1
+    )
     int_minutes = (
-        math.ceil(minutes) if minutes > 1 else math.floor(minutes) if minutes < 1 else 1
+        math.ceil(minutes)
+        if minutes > 1
+        else math.floor(minutes)
+        if minutes < 1
+        else 1
     )
-    int_secs = math.ceil(secs) if secs > 1 else math.floor(secs) if secs < 1 else 1
-    int_msecs = math.ceil(msecs) if msecs > 1 else math.floor(msecs) if msecs < 1 else 1
-    int_usecs = math.ceil(usecs) if usecs > 1 else math.floor(usecs) if usecs < 1 else 1
+    int_secs = (
+        math.ceil(secs) if secs > 1 else math.floor(secs) if secs < 1 else 1
+    )
+    int_msecs = (
+        math.ceil(msecs) if msecs > 1 else math.floor(msecs) if msecs < 1 else 1
+    )
+    int_usecs = (
+        math.ceil(usecs) if usecs > 1 else math.floor(usecs) if usecs < 1 else 1
+    )
 
     translations = [
         (N_("{amount} year", "{amount} years", int_years), years),
@@ -851,8 +906,12 @@ def precise_delta(
         if amount > 0 or (not texts and unit == min_unit):
             # apply formatting if amount of min unit is factional
             if unit == min_unit and math.modf(amount)[0] > 0:
-                txt_format = translation.replace("{amount}", "{amount:{formatting}}")
-                texts.append(txt_format.format(amount=amount, formatting=formatting))
+                txt_format = translation.replace(
+                    "{amount}", "{amount:{formatting}}"
+                )
+                texts.append(
+                    txt_format.format(amount=amount, formatting=formatting)
+                )
             else:
                 texts.append(translation.format(amount=int(amount)))
 

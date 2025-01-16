@@ -29,11 +29,21 @@ def file_size(
 
     Returns:
         str: file size in natural language.
+
     """
     if gnu:
         suffixes = ("K", "M", "G", "T", "P", "E", "Z", "Y")
     elif binary:
-        suffixes = (" KiB", " MiB", " GiB", " TiB", " PiB", " EiB", " ZiB", " YiB")
+        suffixes = (
+            " KiB",
+            " MiB",
+            " GiB",
+            " TiB",
+            " PiB",
+            " EiB",
+            " ZiB",
+            " YiB",
+        )
     else:
         suffixes = (" KB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB")
 
