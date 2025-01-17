@@ -15,7 +15,9 @@ import human_readable.numbers as numbers
         (111, "111º"),  # more than hundred
     ],
 )
-def test_ordinal(activate_pt_br: MockerFixture, params: int, expected: str) -> None:
+def test_ordinal(
+    activate_pt_br: MockerFixture, params: int, expected: str
+) -> None:
     """Ordinal tests."""
     assert numbers.ordinal(params) == expected
 
@@ -40,12 +42,17 @@ def test_ordinal(activate_pt_br: MockerFixture, params: int, expected: str) -> N
     [
         (100, "100"),  # simple number
         (1200000, "1.2 milhão"),  # million number
-        (8100000000000000000000000000000000, "8.1 decilhão"),  # decillion number
+        (
+            8100000000000000000000000000000000,
+            "8.1 decilhão",
+        ),  # decillion number
         (10**101, "1" + "0" * 101),  # very big number without suffix
         (999999999, "1.0 bilhão"),  # rounded up suffix
     ],
 )
-def test_int_word(activate_pt_br: MockerFixture, params: int, expected: str) -> None:
+def test_int_word(
+    activate_pt_br: MockerFixture, params: int, expected: str
+) -> None:
     """Int word tests."""
     assert numbers.int_word(params) == expected
 
@@ -64,6 +71,8 @@ def test_int_word_formatted(activate_pt_br: MockerFixture) -> None:
         (10, "10"),  # bigger than 9
     ],
 )
-def test_ap_number(activate_pt_br: MockerFixture, params: int, expected: str) -> None:
+def test_ap_number(
+    activate_pt_br: MockerFixture, params: int, expected: str
+) -> None:
     """AP number tests."""
     assert numbers.ap_number(params) == expected

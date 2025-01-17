@@ -27,7 +27,9 @@ ONE_YEAR = 365.25 * ONE_DAY
 with freezegun.freeze_time("2020-02-02"):
     NOW = dt.datetime.now()
     NOW_UTC = dt.datetime.now(tz=dt.timezone.utc)
-    NOW_UTC_PLUS_01_00 = dt.datetime.now(tz=dt.timezone(offset=dt.timedelta(hours=1)))
+    NOW_UTC_PLUS_01_00 = dt.datetime.now(
+        tz=dt.timezone(offset=dt.timedelta(hours=1))
+    )
     TODAY = dt.date.today()
     TOMORROW = TODAY + ONE_DAY_DELTA
     YESTERDAY = TODAY - ONE_DAY_DELTA
@@ -193,7 +195,11 @@ def test_time_delta_no_months(test_input: dt.timedelta, expected: str) -> None:
         ("microseconds", ONE_MICROSECOND, "1 microsecond"),
         ("microseconds", FOUR_MICROSECONDS, "4 microseconds"),
         ("microseconds", FOUR_MILLISECONDS, "4 milliseconds"),
-        ("microseconds", MICROSECONDS_101_943, "101 milliseconds"),  # 101,940 µs
+        (
+            "microseconds",
+            MICROSECONDS_101_943,
+            "101 milliseconds",
+        ),  # 101,940 µs
         ("microseconds", MILLISECONDS_1_337, "a second"),  # 1,337,000 µs
         ("microseconds", 2, "2 seconds"),
         ("microseconds", 4, "4 seconds"),
@@ -234,7 +240,9 @@ def test_time_delta_when_explicit(
         (NOW_UTC_PLUS_01_00, NOW),
     ],
 )
-def test_time_delta_when_missing_tzinfo(value: dt.timedelta, when: dt.datetime) -> None:
+def test_time_delta_when_missing_tzinfo(
+    value: dt.timedelta, when: dt.datetime
+) -> None:
     """It raises a TypeError."""
     with pytest.raises(TypeError):
         times.time_delta(value, when=when)
@@ -264,8 +272,14 @@ def test_time_delta_high_minimum_unit() -> None:
         (NOW + dt.timedelta(seconds=30), "30 seconds from now"),
         (NOW + dt.timedelta(minutes=1, seconds=30), "a minute from now"),
         (NOW + dt.timedelta(minutes=2), "2 minutes from now"),
-        (NOW + dt.timedelta(hours=1, minutes=30, seconds=30), "an hour from now"),
-        (NOW + dt.timedelta(hours=23, minutes=50, seconds=50), "23 hours from now"),
+        (
+            NOW + dt.timedelta(hours=1, minutes=30, seconds=30),
+            "an hour from now",
+        ),
+        (
+            NOW + dt.timedelta(hours=23, minutes=50, seconds=50),
+            "23 hours from now",
+        ),
         (NOW + dt.timedelta(days=1), "a day from now"),
         (NOW + dt.timedelta(days=500), "1 year, 4 months from now"),
         (NOW + dt.timedelta(days=365 * 2 + 35), "2 years from now"),
@@ -276,7 +290,9 @@ def test_time_delta_high_minimum_unit() -> None:
         (NOW - dt.timedelta(days=365 + 4), "1 year, 4 days ago"),
     ],
 )
-def test_date_time(value: dt.timedelta | int | dt.datetime, expected: str) -> None:
+def test_date_time(
+    value: dt.timedelta | int | dt.datetime, expected: str
+) -> None:
     """It returns relative time."""
     assert times.date_time(value) == expected
 
@@ -301,8 +317,14 @@ def test_date_time(value: dt.timedelta | int | dt.datetime, expected: str) -> No
         (NOW + dt.timedelta(seconds=30), "30 seconds from now"),
         (NOW + dt.timedelta(minutes=1, seconds=30), "a minute from now"),
         (NOW + dt.timedelta(minutes=2), "2 minutes from now"),
-        (NOW + dt.timedelta(hours=1, minutes=30, seconds=30), "an hour from now"),
-        (NOW + dt.timedelta(hours=23, minutes=50, seconds=50), "23 hours from now"),
+        (
+            NOW + dt.timedelta(hours=1, minutes=30, seconds=30),
+            "an hour from now",
+        ),
+        (
+            NOW + dt.timedelta(hours=23, minutes=50, seconds=50),
+            "23 hours from now",
+        ),
         (NOW + dt.timedelta(days=1), "a day from now"),
         (NOW + dt.timedelta(days=500), "1 year, 135 days from now"),
         (NOW + dt.timedelta(days=365 * 2 + 35), "2 years from now"),
@@ -415,7 +437,9 @@ def test_year(date: dt.date, expected: str) -> None:
         (3600 * 24 * 365 * 2, "2 years"),
     ],
 )
-def test_precise_delta_min_seconds(value: dt.timedelta | int, expected: str) -> None:
+def test_precise_delta_min_seconds(
+    value: dt.timedelta | int, expected: str
+) -> None:
     """It returns delta with minimum_unit default to second."""
     assert times.precise_delta(value) == expected
 
@@ -509,7 +533,12 @@ def test_precise_delta_combined_units(
             "0.4f",
             "2.0020 milliseconds",
         ),
-        (dt.timedelta(microseconds=2002), "milliseconds", "0.2f", "2.00 milliseconds"),
+        (
+            dt.timedelta(microseconds=2002),
+            "milliseconds",
+            "0.2f",
+            "2.00 milliseconds",
+        ),
         (
             dt.timedelta(seconds=1, microseconds=230000),
             "seconds",
@@ -534,7 +563,12 @@ def test_precise_delta_combined_units(
             "0.2f",
             "5 days and 4.50 hours",
         ),
-        (dt.timedelta(days=5, hours=4, seconds=30 * 60), "days", "0.2f", "5.19 days"),
+        (
+            dt.timedelta(days=5, hours=4, seconds=30 * 60),
+            "days",
+            "0.2f",
+            "5.19 days",
+        ),
         (dt.timedelta(days=120), "months", "0.2f", "3.93 months"),
         (dt.timedelta(days=183), "years", "0.1f", "0.5 years"),
     ],
@@ -543,7 +577,10 @@ def test_precise_delta_custom_format(
     value: dt.timedelta | int, min_unit: str, fmt: str, expected: str
 ) -> None:
     """It returns custom formatted delta."""
-    assert times.precise_delta(value, minimum_unit=min_unit, formatting=fmt) == expected
+    assert (
+        times.precise_delta(value, minimum_unit=min_unit, formatting=fmt)
+        == expected
+    )
 
 
 @pytest.mark.parametrize(
@@ -622,7 +659,8 @@ def test_precise_delta_suppress_units(
 ) -> None:
     """It returns delta with supressed units."""
     assert (
-        times.precise_delta(value, minimum_unit=min_unit, suppress=suppress) == expected
+        times.precise_delta(value, minimum_unit=min_unit, suppress=suppress)
+        == expected
     )
 
 

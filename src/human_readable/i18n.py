@@ -29,7 +29,9 @@ def get_translation() -> gettext_module.NullTranslations:
         return _TRANSLATIONS[""]
 
 
-def activate(locale: str, path: str | None = None) -> gettext_module.NullTranslations:
+def activate(
+    locale: str, path: str | None = None
+) -> gettext_module.NullTranslations:
     """Activate internationalisation.
 
     Set `locale` as current locale. Search for locale in directory `path`.
@@ -43,6 +45,7 @@ def activate(locale: str, path: str | None = None) -> gettext_module.NullTransla
 
     Raises:
         Exception: If human readable cannot find the locale folder.
+
     """
     if path is None:
         path = _get_default_locale_path()
@@ -53,7 +56,9 @@ def activate(locale: str, path: str | None = None) -> gettext_module.NullTransla
             "folder. You need to pass the path explicitly."
         )
     if locale not in _TRANSLATIONS:
-        translation = gettext_module.translation("human_readable", path, [locale])
+        translation = gettext_module.translation(
+            "human_readable", path, [locale]
+        )
         _TRANSLATIONS[locale] = translation
     _CURRENT.locale = locale
     return _TRANSLATIONS[locale]
@@ -72,6 +77,7 @@ def gettext(message: str) -> str:
 
     Returns:
         Translated text.
+
     """
     return get_translation().gettext(message)
 
@@ -88,9 +94,8 @@ def pgettext(msgctxt: str, message: str) -> str:
 
     Returns:
         Translated text.
+
     """
-    # This GNU gettext function was added in Python 3.8, so for older versions we
-    # reimplement it. It works by joining `msgctx` and `message` by '4' byte.
     return get_translation().pgettext(msgctxt, message)
 
 
@@ -105,6 +110,7 @@ def ngettext(message: str, plural: str, num: int) -> str:
 
     Returns:
         Translated text.
+
     """
     return get_translation().ngettext(message, plural, num)
 
@@ -122,5 +128,6 @@ def gettext_noop(message: str) -> str:
 
     Returns:
         Original text, unchanged.
+
     """
     return message

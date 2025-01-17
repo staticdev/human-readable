@@ -18,12 +18,10 @@ jobs:
           - { python: "3.11", os: "ubuntu-latest", session: "mypy" }
           - { python: "3.10", os: "ubuntu-latest", session: "mypy" }
           - { python: "3.9", os: "ubuntu-latest", session: "mypy" }
-          - { python: "3.8", os: "ubuntu-latest", session: "mypy" }
           - { python: "3.12", os: "ubuntu-latest", session: "tests" }
           - { python: "3.11", os: "ubuntu-latest", session: "tests" }
           - { python: "3.10", os: "ubuntu-latest", session: "tests" }
           - { python: "3.9", os: "ubuntu-latest", session: "tests" }
-          - { python: "3.8", os: "ubuntu-latest", session: "tests" }
           - { python: "3.12", os: "windows-latest", session: "tests" }
           - { python: "3.12", os: "macos-latest", session: "tests" }
           - { python: "3.12", os: "ubuntu-latest", session: "typeguard" }
@@ -124,7 +122,6 @@ jobs:
           mv coverage-data-3.11-ubuntu-latest/* .
           mv coverage-data-3.10-ubuntu-latest/* .
           mv coverage-data-3.9-ubuntu-latest/* .
-          mv coverage-data-3.8-ubuntu-latest/* .
           hatch run coverage:run
 
       - name: Create coverage report
@@ -132,4 +129,4 @@ jobs:
           hatch run coverage:run-xml
 
       - name: Upload coverage report
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5

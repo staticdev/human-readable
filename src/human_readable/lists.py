@@ -28,6 +28,7 @@ def listing(
 
     Returns:
         str: list in natural language.
+
     """
     len_items = len(items)
     if len_items == 0:

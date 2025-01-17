@@ -55,7 +55,10 @@ def test_file_size_gnu(params: tuple[int, bool, bool], expected: str) -> None:
 @pytest.mark.parametrize(
     "params, expected",
     [
-        ((1, False, True, ".3f", ".1f"), "1.0B"),  # unit number (small formatting)
+        (
+            (1, False, True, ".3f", ".1f"),
+            "1.0B",
+        ),  # unit number (small formatting)
         (
             (999, False, False, ".3f", ".1f"),
             "999.0 Bytes",
@@ -80,7 +83,10 @@ def test_file_size_gnu(params: tuple[int, bool, bool], expected: str) -> None:
             (1024, True, False, ".3f", ".1f"),
             "1.000 KiB",
         ),  # hundreds number (small formatting boundary)
-        ((2900000, False, True, ".3f"), "2.766M"),  # millions number (large formatting)
+        (
+            (2900000, False, True, ".3f"),
+            "2.766M",
+        ),  # millions number (large formatting)
         (
             (2000000000, True, False, ".3f"),
             "1.863 GiB",

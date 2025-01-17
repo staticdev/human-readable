@@ -55,7 +55,7 @@
 
 ## Requirements
 
-- It works in Python 3.8+.
+- It works in Python 3.9+.
 
 ## Installation
 

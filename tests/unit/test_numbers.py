@@ -40,7 +40,10 @@ def test_int_comma(params: int, expected: str) -> None:
     [
         (100, "100"),  # simple number
         (1200000, "1.2 million"),  # million number
-        (8100000000000000000000000000000000, "8.1 decillion"),  # decillion number
+        (
+            8100000000000000000000000000000000,
+            "8.1 decillion",
+        ),  # decillion number
         (10**101, "1" + "0" * 101),  # very big number without suffix
         (999999999, "1.0 billion"),  # rounded up suffix
     ],
