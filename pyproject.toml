@@ -1,6 +1,6 @@
 [project]
 name = "human-readable"
-version = "1.4.1"
+version = "2.0.0"
 description = "Human Readable"
 authors = [
   { name = "staticdev", email = "staticdev-support@proton.me"}
