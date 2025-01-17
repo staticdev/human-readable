@@ -1,6 +1,6 @@
 [project]
 name = "human-readable"
-version = "1.4.1"
+dynamic = ["version"]
 description = "Human Readable"
 authors = [
   { name = "staticdev", email = "staticdev-support@proton.me"}
@@ -17,6 +17,9 @@ classifiers = [
 ]
 requires-python = ">=3.9"
 dependencies = []
+
+[tool.hatch.version]
+path = "src/human_readable/__about__.py"
 
 [dependency-groups]
 dev = [

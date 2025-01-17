@@ -49,8 +49,7 @@ jobs:
       - name: Bump version for developmental release
         if: "! steps.check-version.outputs.tag"
         run: |
-          version=$(hatch version) &&
-          hatch version $version.dev.$(date +%s)
+          hatch version b
 
       - name: Install UV
         uses: astral-sh/setup-uv@v5
