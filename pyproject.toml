@@ -1,6 +1,6 @@
 [project]
 name = "human-readable"
-dynamic = ["version"]
+version = "1.4.1"
 description = "Human Readable"
 authors = [
   { name = "staticdev", email = "staticdev-support@proton.me"}
@@ -18,160 +18,16 @@ classifiers = [
 requires-python = ">=3.9"
 dependencies = []
 
-[tool.hatch.version]
-source = "vcs"
-
-[tool.hatch.version.raw-options]
-local_scheme = "no-local-version"
+[dependency-groups]
+dev = [
+    "nox>=2024.10.9",
+]
 
 [project.urls]
 homepage = "https://github.com/staticdev/human-readable"
 repository = "https://github.com/staticdev/human-readable"
 documentation = "https://human-readable.readthedocs.io"
 changelog = "https://github.com/staticdev/human-readable/releases"
-
-[tool.hatch.envs.default]
-dependencies = [
-  "pytest",
-  "pytest-mock",
-  "freezegun",
-]
-
-[tool.hatch.envs.default.scripts]
-all = [
-  "hatch run pre-commit:run",
-  "hatch run safety:run",
-  "hatch run mypy:run",
-  "hatch run tests:run",
-  "hatch run coverage:run",
-  "hatch run typeguard:run",
-  "hatch run xdoctest:run"
-]
-
-[tool.hatch.envs.sessions.scripts]
-run-pre-commit = [ "hatch run pre-commit:run" ]
-run-safety = [ "hatch run safety:run" ]
-run-mypy = [ "hatch run mypy:run" ]
-run-tests = [ "hatch run tests:run" ]
-run-typeguard = [ "hatch run typeguard:run" ]
-run-xdoctest = [ "hatch run xdoctest:run" ]
-run-docs-build = [ "hatch run docs-build:run" ]
-
-[[tool.hatch.envs.sessions.matrix]]
-python = ["3.9", "3.10", "3.11", "3.12", "3.13"]
-
-[tool.hatch.envs.pre-commit]
-dependencies = [
-  "ruff",
-  "pre-commit",
-  "pre-commit-hooks",
-]
-
-[tool.hatch.envs.pre-commit.scripts]
-run = [
-  "pre-commit run --all-files --show-diff-on-failure",
-]
-
-[tool.hatch.envs.safety]
-dependencies = [
-  "safety",
-]
-[tool.hatch.envs.safety.scripts]
-run = [
-  "hatch dep show requirements -p | safety check --stdin --bare"
-]
-
-[tool.hatch.envs.mypy]
-dependencies = [
-  "mypy",
-  "pytest",
-  "freezegun",
-]
-
-[tool.hatch.envs.mypy.scripts]
-run = [
-  "mypy src/ tests/ docs/conf.py",
-]
-
-[tool.hatch.envs.tests]
-dependencies = [
-  "coverage[toml]",
-  "pytest",
-  "pytest_mock",
-  "pygments",
-  "freezegun",
-]
-
-[tool.hatch.envs.tests.scripts]
-run = [
-  "coverage run --parallel -m pytest"
-]
-
-[tool.hatch.envs.coverage]
-dependencies = [
-  "coverage[toml]",
-]
-
-[tool.hatch.envs.coverage.scripts]
-run = [
-  "- coverage combine",
-  "coverage report",
-]
-
-run-xml = [
-  "coverage xml"
-]
-
-[tool.hatch.envs.typeguard]
-dependencies = [
-  "pytest",
-  "pytest_mock",
-  "freezegun",
-  "typeguard",
-  "pygments",
-]
-
-[tool.hatch.envs.typeguard.scripts]
-run = [
-  "pytest --typeguard-packages=human_readable",
-]
-
-[tool.hatch.envs.xdoctest]
-dependencies = [
-  "xdoctest[colors]",
-]
-
-[tool.hatch.envs.xdoctest.scripts]
-run = [
-  "python -m xdoctest human_readable all",
-]
-
-[tool.hatch.envs.docs-build]
-dependencies = [
-  "sphinx",
-  "furo",
-  "myst-parser",
-]
-
-[tool.hatch.envs.docs-build.scripts]
-run = [
-  "rm -rf docs/_build",
-  "sphinx-build docs docs/_build"
-]
-
-[tool.hatch.envs.docs]
-dependencies = [
-  "sphinx",
-  "sphinx-autobuild",
-  "furo",
-  "myst-parser",
-]
-
-[tool.hatch.envs.docs.scripts]
-run = [
-  "rm -rf docs/_build",
-  "sphinx-autobuild --open-browser docs docs/_build",
-]
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
@@ -212,11 +68,6 @@ show_error_context = true
 module = ["pytest_mock"]
 ignore_missing_imports = true
 
-[tool.hatch.build]
-exclude = [
-  "src/human_readable/locale/**/*.po",
-]
-
 [build-system]
-requires = ["hatchling", "hatch-vcs"]
+requires = ["hatchling"]
 build-backend = "hatchling.build"
