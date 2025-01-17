@@ -39,42 +39,29 @@ Request features on the [Issue Tracker].
 
 You need Python 3.9+ and the following tools:
 
-- [Hatch]
+- [UV]
 
 Install the package with development requirements:
 
-```console
-$ hatch env create
+```sh
+$ uv sync --all-extras --frozen
 ```
 
-You can now run an interactive Python session:
-
-```console
-$ hatch shell
-import human_readable
-```
-
-[hatch]: https://hatch.pypa.io/
+[uv]: https://docs.astral.sh/uv/
 
 ## How to test the project
 
 Run the full test suite:
 
-```console
-$ hatch run all
+```sh
+$ uv run nox
 ```
 
-List the available Hatch env scripts:
-
-```console
-$ hatch env show
-```
-
-You can run a specific Hatch env script.
+You can run a specific Nox session.
 For example, invoke the unit test suite like this:
 
-```console
-$ hatch run tests:run
+```sh
+$ uv run nox -s tests
 ```
 
 Unit tests are located in the `tests` directory,
@@ -84,13 +71,13 @@ and are written using the [pytest] testing framework.
 
 Make sure you have installed a PO Editor, you can easily install that on a Debian-based system with:
 
-```console
+```sh
 apt install poedit
 ```
 
 To add a new locale you need to execute:
 
-```console
+```sh
 xgettext --from-code=UTF-8 -o human_readable.pot -k'_' -k'N_' -k'P_:1c,2' -l python src/human_readable/*.py  # extract new phrases
 msginit -i human_readable.pot -o human_readable/locale/<locale name>/LC_MESSAGES/human_readable.po --locale <locale name>
 ```
@@ -99,7 +86,7 @@ Then edit your .po file in the locale folder that got created.
 
 If possible, add tests to `tests/functional/new_locale`. Run them with:
 
-```console
+```sh
 nox -s tests
 ```
 
@@ -117,7 +104,7 @@ Feel free to submit early, though—we can always iterate on this.
 
 To run linting and code formatting checks before commiting your change, you can install pre-commit as a Git hook by running the following command:
 
-```console
+```sh
 $ nox --session=pre-commit -- install
 ```
 

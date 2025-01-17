@@ -12,21 +12,22 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { python: "3.12", os: "ubuntu-latest", session: "pre-commit" }
-          - { python: "3.12", os: "ubuntu-latest", session: "safety" }
+          - { python: "3.13", os: "ubuntu-latest", session: "pre-commit" }
+          - { python: "3.13", os: "ubuntu-latest", session: "mypy" }
           - { python: "3.12", os: "ubuntu-latest", session: "mypy" }
           - { python: "3.11", os: "ubuntu-latest", session: "mypy" }
           - { python: "3.10", os: "ubuntu-latest", session: "mypy" }
           - { python: "3.9", os: "ubuntu-latest", session: "mypy" }
+          - { python: "3.13", os: "ubuntu-latest", session: "tests" }
           - { python: "3.12", os: "ubuntu-latest", session: "tests" }
           - { python: "3.11", os: "ubuntu-latest", session: "tests" }
           - { python: "3.10", os: "ubuntu-latest", session: "tests" }
           - { python: "3.9", os: "ubuntu-latest", session: "tests" }
-          - { python: "3.12", os: "windows-latest", session: "tests" }
-          - { python: "3.12", os: "macos-latest", session: "tests" }
-          - { python: "3.12", os: "ubuntu-latest", session: "typeguard" }
-          - { python: "3.12", os: "ubuntu-latest", session: "xdoctest" }
-          - { python: "3.12", os: "ubuntu-latest", session: "docs-build" }
+          - { python: "3.13", os: "windows-latest", session: "tests" }
+          - { python: "3.13", os: "macos-latest", session: "tests" }
+          - { python: "3.13", os: "ubuntu-latest", session: "typeguard" }
+          - { python: "3.13", os: "ubuntu-latest", session: "xdoctest" }
+          - { python: "3.13", os: "ubuntu-latest", session: "docs-build" }
 
     steps:
       - name: Check out the repository
@@ -42,10 +43,12 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt pip
           pip --version
 
-      - name: Install Hatch
+      - name: Install UV
+        uses: astral-sh/setup-uv@v5
+
+      - name: Install Nox
         run: |
-          pipx install --pip-args=--constraint=.github/workflows/hatch-constraints.txt hatch
-          hatch --version
+          uv sync --all-extras --frozen
 
       - name: Compute pre-commit cache key
         if: matrix.session == 'pre-commit'
@@ -71,9 +74,9 @@ jobs:
           restore-keys: |
             ${{ steps.pre-commit-cache.outputs.result }}-
 
-      - name: Run Hatch
+      - name: Run Nox
         run: |
-          hatch run +python=${{ matrix.python }} sessions:run-${{ matrix.session }}
+          uv run nox -s tests --force-color --python=${{ matrix.python }}
 
       - name: Upload coverage data
         if: always() && matrix.session == 'tests' && matrix.os == 'ubuntu-latest'
@@ -100,17 +103,15 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.13"
 
       - name: Upgrade pip
         run: |
           pip install --constraint=.github/workflows/constraints.txt pip
           pip --version
 
-      - name: Install Hatch
-        run: |
-          pipx install --pip-args=--constraint=.github/workflows/hatch-constraints.txt hatch
-          hatch --version
+      - name: Install UV
+        uses: astral-sh/setup-uv@v5
 
       - name: Download coverage data
         uses: actions/download-artifact@v4
@@ -118,15 +119,16 @@ jobs:
       - name: Combine coverage data and display human readable report
         run: |
           shopt -s dotglob
+          mv coverage-data-3.13-ubuntu-latest/* .
           mv coverage-data-3.12-ubuntu-latest/* .
           mv coverage-data-3.11-ubuntu-latest/* .
           mv coverage-data-3.10-ubuntu-latest/* .
           mv coverage-data-3.9-ubuntu-latest/* .
-          hatch run coverage:run
+          uv run nox --force-color --session=coverage
 
       - name: Create coverage report
         run: |
-          hatch run coverage:run-xml
+          uv run nox --force-color --session=coverage -- xml
 
       - name: Upload coverage report
         uses: codecov/codecov-action@v5
