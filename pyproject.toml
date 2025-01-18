@@ -19,7 +19,10 @@ requires-python = ">=3.9"
 dependencies = []
 
 [tool.hatch.version]
-path = "src/human_readable/__about__.py"
+source = "vcs"
+
+[tool.hatch.version.raw-options]
+local_scheme = "no-local-version"
 
 [dependency-groups]
 dev = [
@@ -72,5 +75,5 @@ module = ["pytest_mock"]
 ignore_missing_imports = true
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
