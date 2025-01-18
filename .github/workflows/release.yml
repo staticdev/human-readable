@@ -1,9 +1,12 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: Release Tag
+        required: true
+        type: string
 
 jobs:
   release:
@@ -32,24 +35,6 @@ jobs:
         run: |
           pip install --constraint=.github/workflows/hatch-constraints.txt hatch
           hatch --version
-
-      - name: Check if there is a parent commit
-        id: check-parent-commit
-        run: |
-          echo "::set-output name=sha::$(git rev-parse --verify --quiet HEAD^)"
-
-      - name: Detect and tag new version
-        id: check-version
-        if: steps.check-parent-commit.outputs.sha
-        uses: salsify/action-detect-and-tag-new-version@v2
-        with:
-          version-command: |
-            bash -o pipefail -c "hatch version"
-
-      - name: Bump version for developmental release
-        if: "! steps.check-version.outputs.tag"
-        run: |
-          hatch version b
 
       - name: Install UV
         uses: astral-sh/setup-uv@v5
