@@ -117,3 +117,12 @@ This will allow a chance to talk it over with the owners and validate your appro
 <!-- github-only -->
 
 [code of conduct]: CODE_OF_CONDUCT.md
+
+## How to release a new version
+
+Just push a tag starting with v and using semantic versioning. Eg.
+
+```sh
+git tag v2.0.0
+git push --tags
+```
