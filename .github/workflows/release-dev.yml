@@ -1,4 +1,4 @@
-name: Release
+name: Release Dev
 on:
   push:
     branches:
@@ -40,4 +40,4 @@ jobs:
         with:
           user: __token__
           password: ${{ secrets.TEST_PYPI_TOKEN }}
-          repository_url: https://test.pypi.org/legacy/
+          repository-url: https://test.pypi.org/legacy/
