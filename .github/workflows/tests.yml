@@ -38,15 +38,10 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
 
-      - name: Upgrade pip
-        run: |
-          pip install --constraint=.github/workflows/constraints.txt pip
-          pip --version
-
       - name: Install UV
         uses: astral-sh/setup-uv@v5
 
-      - name: Install Nox
+      - name: Install dependencies
         run: |
           uv sync --all-extras --frozen
 
@@ -104,11 +99,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-
-      - name: Upgrade pip
-        run: |
-          pip install --constraint=.github/workflows/constraints.txt pip
-          pip --version
 
       - name: Install UV
         uses: astral-sh/setup-uv@v5
