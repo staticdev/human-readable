@@ -26,6 +26,7 @@ local_scheme = "no-local-version"
 
 [dependency-groups]
 dev = [
+    "hatch>=1.14.0",
     "nox>=2024.10.9",
 ]
 
