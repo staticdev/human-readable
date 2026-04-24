@@ -7,6 +7,11 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/human-readable
+    permissions:
+      id-token: write
     steps:
       - name: Check out the repository
         uses: actions/checkout@v6
@@ -34,5 +39,4 @@ jobs:
       - name: Publish package on TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          password: ${{ secrets.TEST_PYPI_TOKEN }}
           repository-url: https://test.pypi.org/legacy/

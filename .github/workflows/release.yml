@@ -9,6 +9,11 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/human-readable
+    permissions:
+      id-token: write
     steps:
       - name: Check out the repository
         uses: actions/checkout@v6
@@ -38,9 +43,6 @@ jobs:
 
       - name: Publish package on PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_TOKEN }}
 
       - name: Publish the release notes
         uses: release-drafter/release-drafter@v7
