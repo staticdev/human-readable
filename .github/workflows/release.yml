@@ -45,7 +45,7 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
 
       - name: Publish the release notes
-        uses: release-drafter/release-drafter@v7
+        uses: release-drafter/release-drafter@v7.6.0
         with:
           tag: ${{ env.RELEASE_VERSION }}
         env:
