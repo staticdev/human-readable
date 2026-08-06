@@ -61,5 +61,10 @@ def file_size(
     for i, suffix in enumerate(suffixes):
         unit = base ** (i + 2)
         if byte_size < unit:
-            return f"{base * byte_size / unit:{formatting}}{suffix}"
+            formatted = f"{base * byte_size / unit:{formatting}}"
+            # Rounding can push the mantissa to base (e.g. 999,999 bytes is
+            # 999.999 KB, which rounds to "1000.0 KB"). Step up one suffix.
+            if float(formatted) >= base and i + 1 < len(suffixes):
+                return f"{byte_size / unit:{formatting}}{suffixes[i + 1]}"
+            return f"{formatted}{suffix}"
     return f"{base * byte_size / unit:{formatting}}{suffix}"
