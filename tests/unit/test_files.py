@@ -15,6 +15,10 @@ from human_readable import files
         (2900000, "2.9 MB"),  # millions number
         (2000000000, "2.0 GB"),  # billions number
         (10**26 * 30, "3000.0 YB"),  # giant number
+        # Rollover: mantissa rounds up to base, must carry to the next suffix
+        (999999, "1.0 MB"),
+        (999999999, "1.0 GB"),
+        (999999999999, "1.0 TB"),
     ],
 )
 def test_file_size(params: int, expected: str) -> None:
