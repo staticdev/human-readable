@@ -77,12 +77,21 @@ def test_ap_number(params: int, expected: str) -> None:
     [
         (1, "1"),  # whole number int
         (2.0, "2"),  # whole number float
+        (0, "0"),  # zero integer
+        (0.0, "0"),  # zero float
+        (-0.0, "0"),  # negative zero float
+        ("0", "0"),  # zero string
+        (-2, "-2"),  # negative whole number
         (5 / 6.0, "5/6"),  # simple fraction
         (8.9, "8 9/10"),  # compound fraction
         ("8.9", "8 9/10"),  # string fraction
+        (-0.5, "-1/2"),  # negative fraction
+        (-1.5, "-1 -1/2"),  # negative compound fraction
+        (0.3333333, "1/3"),  # limited denominator approximation
+        (0.0001, "0/1"),  # nonzero value rounded to zero by denominator limit
     ],
 )
-def test_fractional(params: int, expected: str) -> None:
+def test_fractional(params: str | float, expected: str) -> None:
     """Fractional number tests."""
     assert numbers.fractional(params) == expected
 

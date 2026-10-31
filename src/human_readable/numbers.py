@@ -191,6 +191,8 @@ def fractional(value: str | float) -> str:
         '1/3'
         >>> fractional(1)
         '1'
+        >>> fractional(0.0)
+        '0'
 
     This will always return a string.
 
@@ -202,6 +204,8 @@ def fractional(value: str | float) -> str:
 
     """
     number = float(value)
+    if number == 0:
+        return "0"
     whole_number = int(number)
     frac = fractions.Fraction(number - whole_number).limit_denominator(1000)
     numerator = frac.numerator
