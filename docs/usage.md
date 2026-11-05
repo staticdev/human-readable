@@ -344,6 +344,9 @@ human_readable.fractional(1.5)
 
 human_readable.fractional(0.3)
 "3/10"
+
+human_readable.fractional(0.0)
+"0"
 ```
 
 ### Scientific notation
